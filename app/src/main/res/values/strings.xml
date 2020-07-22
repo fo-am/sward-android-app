@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">SwardApp</string>
+    <string name="my_fields">My Fields</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="about_text">All about the wonderful app.....</string>
+
+    <string name="hint_field">Name…</string>
+    <string name="button_field_save">Save</string>
+    <string name="empty_field_not_saved">Field not saved because it is empty.</string>
+    <string name="title_activity_new_field">NewField</string>
 
 </resources>

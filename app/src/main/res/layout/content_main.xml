@@ -9,32 +9,33 @@
     tools:showIn="@layout/activity_main">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Switch" />
-
-        <Button
-            android:id="@+id/boombutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BOOM" />
-
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/fieldsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/my_fields" />
 
-        <RatingBar
-            android:id="@+id/ratingBar2"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fields_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

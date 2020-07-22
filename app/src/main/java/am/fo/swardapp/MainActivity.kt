@@ -1,53 +1,49 @@
 package am.fo.swardapp
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import androidx.lifecycle.LiveData
-import androidx.room.*
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
-//////////////////////////////////////////////////////////////////
-
-@Entity(tableName="sward_table")
-data class Sward(@PrimaryKey(autoGenerate = true) val id: Int,
-                 @ColumnInfo(name = "name") val name: String)
-
-@Dao
-interface SwardDao {
-    @Query("SELECT * from sward_table ORDER BY name ASC")
-    fun getAlphabetizedName(): LiveData<List<Sward>>
-
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(word: Sward)
-
-    @Query("DELETE FROM sward_table")
-    suspend fun deleteAll()
-}
-
-/////////////////////////////////////////////////////////////////////
-
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var fieldViewModel: FieldViewModel
+    private val newFieldActivityRequestCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        boombutton.setOnClickListener { view ->
-            Snackbar.make(view, "YOU PRESSED BOOM", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        val recyclerView = findViewById<RecyclerView>(R.id.fields_recycler_view)
+        val adapter = FieldListAdapter(this)
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        fieldViewModel = ViewModelProvider(this).get(FieldViewModel::class.java)
+        fieldViewModel.allFields.observe(this, Observer { words ->
+            // Update the cached copy of the words in the adapter.
+            words?.let { adapter.setWords(it) }
+        })
+
+        val fab = findViewById<FloatingActionButton>(R.id.fab)
+        fab.setOnClickListener {
+            val intent = Intent(this@MainActivity, NewFieldActivity::class.java)
+            startActivityForResult(intent, newFieldActivityRequestCode)
         }
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -67,6 +63,22 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == newFieldActivityRequestCode && resultCode == Activity.RESULT_OK) {
+            data?.getStringExtra(NewFieldActivity.EXTRA_REPLY)?.let {
+                val field = Field(name=it)
+                fieldViewModel.insert(field)
+            }
+        } else {
+            Toast.makeText(
+                applicationContext,
+                R.string.empty_field_not_saved,
+                Toast.LENGTH_LONG).show()
         }
     }
 }

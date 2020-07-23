@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorBackground</item>
 
+        <item name="android:colorButtonNormal">@color/colorButtonBackground</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="buttonStyle">@style/SwardButton</item>
+
         <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/sen_regular</item>
     </style>
 
@@ -17,7 +21,6 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- The default font for RecyclerView items is too small.
@@ -28,6 +31,20 @@
         <item name="android:paddingLeft">8dp</item>
         <item name="android:background">@color/colorPrimaryDark</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+    </style>
+
+    <style name="SwardThemeOverlay_Toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <!-- color used by navigation icon and overflow icon -->
+        <item name="colorOnPrimary">@color/colorText</item>
+        <item name="titleTextColor">@color/colorText</item>
+        <item name="android:background">@color/colorBackground</item>
+        <!-- <item name="android:src"></item> -->
+    </style>
+
+    <style name="SwardButton" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textSize">10pt</item>
     </style>
 
 </resources>

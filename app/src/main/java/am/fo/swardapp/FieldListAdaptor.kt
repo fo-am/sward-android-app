@@ -1,9 +1,11 @@
 package am.fo.swardapp
 
+import am.fo.swardapp.data.Field
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -15,17 +17,17 @@ class FieldListAdapter internal constructor(
     private var fields = emptyList<Field>() // Cached copy of words
 
     inner class FieldViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val wordItemView: TextView = itemView.findViewById(R.id.textView)
+        val fieldItemView: Button = itemView.findViewById(R.id.fieldButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FieldViewHolder {
-        val itemView = inflater.inflate(R.layout.field_recyclerview_item, parent, false)
+        val itemView = inflater.inflate(R.layout.field_item, parent, false)
         return FieldViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: FieldViewHolder, position: Int) {
         val current = fields[position]
-        holder.wordItemView.text = current.name
+        holder.fieldItemView.text = current.name
     }
 
     internal fun setWords(fields: List<Field>) {

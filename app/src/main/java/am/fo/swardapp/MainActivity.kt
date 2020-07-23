@@ -1,12 +1,13 @@
 package am.fo.swardapp
 
+import am.fo.swardapp.data.Field
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -15,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
             words?.let { adapter.setWords(it) }
         })
 
-        val fab = findViewById<FloatingActionButton>(R.id.fab)
-        fab.setOnClickListener {
+        val new_field_button = findViewById<Button>(R.id.new_field_button)
+        new_field_button.setOnClickListener {
             val intent = Intent(this@MainActivity, NewFieldActivity::class.java)
             startActivityForResult(intent, newFieldActivityRequestCode)
         }
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == newFieldActivityRequestCode && resultCode == Activity.RESULT_OK) {
             data?.getStringExtra(NewFieldActivity.EXTRA_REPLY)?.let {
-                val field = Field(name=it)
+                val field = Field(name = it)
                 fieldViewModel.insert(field)
             }
         } else {

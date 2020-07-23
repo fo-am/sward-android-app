@@ -1,4 +1,4 @@
-package am.fo.swardapp
+package am.fo.swardapp.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

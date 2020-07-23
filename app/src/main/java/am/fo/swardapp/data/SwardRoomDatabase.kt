@@ -1,4 +1,4 @@
-package am.fo.swardapp
+package am.fo.swardapp.data
 
 import android.content.Context
 import androidx.room.Database
@@ -47,7 +47,8 @@ public abstract class SwardRoomDatabase : RoomDatabase() {
 
             //context.deleteDatabase("sward_database")
 
-            val tempInstance = INSTANCE
+            val tempInstance =
+                INSTANCE
             if (tempInstance != null) {
                 return tempInstance
             }

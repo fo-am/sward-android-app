@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
 @Database(entities = arrayOf(Field::class), version = 1, exportSchema = false)
-public abstract class SwardRoomDatabase : RoomDatabase() {
+abstract class SwardRoomDatabase : RoomDatabase() {
 
     abstract fun swardDao(): SwardDao
 
@@ -22,15 +22,15 @@ public abstract class SwardRoomDatabase : RoomDatabase() {
             super.onOpen(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    var swardDao = database.swardDao()
+                    val swardDao = database.swardDao()
 
                     // Delete all content here.
                     swardDao.deleteAllFields()
 
                     // Add sample words.
-                    var field = Field("Top field","","","")
+                    var field = Field("Top field","",0,"")
                     swardDao.insertField(field)
-                    field = Field("Marshy field","","","")
+                    field = Field("Marshy field","",0,"")
                     swardDao.insertField(field)
                 }
             }

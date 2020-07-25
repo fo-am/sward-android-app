@@ -9,16 +9,16 @@
     <string name="field_date_sown">Date sown</string>
     <string name="field_soil_type">Soil type</string>
     <string name="field_notes">Notes</string>
+    <string name="field_notes_hint">Add your notes here…</string>
 
     <string-array name="soil_types">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Sandy/Shallow</item>
+        <item>Medium/Shallow</item>
+        <item>Medium</item>
+        <item>Deep clay</item>
+        <item>Deep silt</item>
+        <item>Organic</item>
+        <item>Peat</item>
     </string-array>
 
     <string name="title_activity_about">About</string>

@@ -28,7 +28,7 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */
-    fun insert(field: Field) = viewModelScope.launch(Dispatchers.IO) {
+    fun insertField(field: Field) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(field)
     }
 }

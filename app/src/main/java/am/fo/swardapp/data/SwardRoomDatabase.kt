@@ -28,9 +28,9 @@ public abstract class SwardRoomDatabase : RoomDatabase() {
                     swardDao.deleteAllFields()
 
                     // Add sample words.
-                    var field = Field("Top field")
+                    var field = Field("Top field","","","")
                     swardDao.insertField(field)
-                    field = Field("Marshy field")
+                    field = Field("Marshy field","","","")
                     swardDao.insertField(field)
                 }
             }
@@ -45,7 +45,7 @@ public abstract class SwardRoomDatabase : RoomDatabase() {
 
         fun getDatabase(context: Context, scope: CoroutineScope): SwardRoomDatabase {
 
-            //context.deleteDatabase("sward_database")
+            context.deleteDatabase("sward_database")
 
             val tempInstance =
                 INSTANCE

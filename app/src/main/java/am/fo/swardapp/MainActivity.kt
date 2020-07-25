@@ -1,6 +1,7 @@
 package am.fo.swardapp
 
 import am.fo.swardapp.data.Field
+import am.fo.swardapp.data.SwardViewModel
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -13,29 +14,25 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : SwardActivity() {
 
-    private lateinit var fieldViewModel: FieldViewModel
     private val newFieldActivityRequestCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        super.onCreate(savedInstanceState)
 
         val recyclerView = findViewById<RecyclerView>(R.id.fields_recycler_view)
         val adapter = FieldListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        fieldViewModel = ViewModelProvider(this).get(FieldViewModel::class.java)
-        fieldViewModel.allFields.observe(this, Observer { words ->
+        swardViewModel.allFields.observe(this, Observer { fields ->
             // Update the cached copy of the words in the adapter.
-            words?.let { adapter.setWords(it) }
+            fields?.let { adapter.setWords(it) }
         })
 
         val new_field_button = findViewById<Button>(R.id.new_field_button)
@@ -46,35 +43,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            R.id.action_about -> {
-                startActivity(Intent(this, AboutActivity::class.java))
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == newFieldActivityRequestCode && resultCode == Activity.RESULT_OK) {
-            data?.getStringExtra(NewFieldActivity.EXTRA_REPLY)?.let {
-                val field = Field(name = it)
-                fieldViewModel.insert(field)
-            }
-        } else {
+        if (requestCode == newFieldActivityRequestCode && resultCode != Activity.RESULT_OK) {
             Toast.makeText(
                 applicationContext,
                 R.string.empty_field_not_saved,

@@ -1,4 +1,4 @@
-package am.fo.swardapp
+package am.fo.swardapp.data
 
 import am.fo.swardapp.data.Field
 import am.fo.swardapp.data.SwardRepository
@@ -10,7 +10,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FieldViewModel(application: Application) : AndroidViewModel(application) {
+class SwardViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: SwardRepository
     // Using LiveData and caching what getAlphabetizedWords returns has several benefits:

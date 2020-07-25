@@ -1,76 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".NewFieldActivity"
+    tools:showIn="@layout/activity_new_field">
+
+    <EditText
+        android:id="@+id/field_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".NewFieldActivity"
-        tools:showIn="@layout/activity_new_field">
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_field"
+        android:inputType="textAutoComplete"
+        android:minHeight="@dimen/min_height"
+        android:textSize="18sp"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="379dp"
+        tools:layout_editor_absoluteX="30dp" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/field_date_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:text="@string/field_date_sown"
+        app:layout_constraintTop_toBottomOf="@+id/field_name"
+        tools:layout_editor_absoluteX="30dp" />
 
-        <EditText
-            android:id="@+id/field_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:hint="@string/hint_field"
-            android:inputType="textAutoComplete"
-            android:minHeight="@dimen/min_height"
-            android:textSize="18sp"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="379dp" />
+    <EditText
+        android:id="@+id/field_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@id/field_date_text"
+        tools:layout_editor_absoluteX="30dp" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/field_date_sown" />
+    <TextView
+        android:id="@+id/soil_type_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/field_soil_type"
+        app:layout_constraintTop_toBottomOf="@id/field_date"
+        tools:layout_editor_absoluteX="30dp" />
 
-        <EditText
-            android:id="@+id/field_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date" />
+    <Spinner
+        android:id="@+id/field_soil_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/soil_type_text"
+        tools:layout_editor_absoluteX="30dp" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/field_soil_type" />
+    <TextView
+        android:id="@+id/field_notes_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/field_notes"
+        app:layout_constraintTop_toBottomOf="@id/field_soil_type"
+        tools:layout_editor_absoluteX="30dp" />
 
-        <Spinner
-            android:id="@+id/field_soil_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/field_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:minLines="5"
+        app:layout_constraintTop_toBottomOf="@id/field_notes_text"
+        tools:layout_editor_absoluteX="30dp" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/field_notes" />
-
-        <EditText
-            android:id="@+id/field_notes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:minLines="5" />
-
-        <Button
-            android:id="@+id/field_button_save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button_field_save"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="379dp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/field_button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_field_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="379dp"
+        tools:layout_editor_absoluteX="30dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

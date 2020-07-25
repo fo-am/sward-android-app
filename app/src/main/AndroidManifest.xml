@@ -10,10 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SwardActivity"
-            android:label="@string/title_activity_sward"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
             android:name=".NewFieldActivity"
             android:label="@string/title_activity_new_field"
             android:theme="@style/AppTheme.NoActionBar" />

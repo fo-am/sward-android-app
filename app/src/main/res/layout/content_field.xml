@@ -75,7 +75,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/space_3" />
 
-    <View
+    <am.fo.swardapp.drawing.SwardCanvas
         android:id="@+id/field_canvas_view"
         android:layout_width="0dp"
         android:layout_height="300dp"

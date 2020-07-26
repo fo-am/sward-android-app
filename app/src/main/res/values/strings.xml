@@ -21,6 +21,12 @@
         <item>Peat</item>
     </string-array>
 
+    <string name="field_survey">Perform survey</string>
+    <string name="field_results">Detailed results</string>
+    <string name="field_biodiversity">Field biodiversity</string>
+    <string name="field_delete">Delete field</string>
+
+
     <string name="title_activity_about">About</string>
     <string name="about_text">All about the wonderful app.....</string>
 
@@ -29,13 +35,9 @@
     <string name="empty_field_not_saved">Field not saved because it is empty.</string>
     <string name="title_activity_new_field">NewField</string>
     <string name="title_activity_sward">SwardActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_field">FieldActivity</string>
 
 </resources>

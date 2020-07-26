@@ -15,26 +15,26 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : SwardActivity() {
 
     private val newFieldActivityRequestCode = 1
+    private val fieldActivityRequestCode = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_main)
         super.onCreate(savedInstanceState)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.fields_recycler_view)
         val adapter = FieldListAdapter(this)
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        fields_recycler_view.adapter = adapter
+        fields_recycler_view.layoutManager = LinearLayoutManager(this)
 
         swardViewModel.allFields.observe(this, Observer { fields ->
             // Update the cached copy of the words in the adapter.
             fields?.let { adapter.setFields(it) }
         })
 
-        val new_field_button = findViewById<Button>(R.id.new_field_button)
         new_field_button.setOnClickListener {
             val intent = Intent(this@MainActivity, NewFieldActivity::class.java)
             startActivityForResult(intent, newFieldActivityRequestCode)

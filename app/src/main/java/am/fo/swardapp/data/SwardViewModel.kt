@@ -19,6 +19,8 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
     // - Repository is completely separated from the UI through the ViewModel.
     val allFields: LiveData<List<Field>>
 
+    fun getField(field_id: Int) : LiveData<Field> = repository.getField(field_id)
+
     init {
         val swardDao = SwardRoomDatabase.getDatabase(application,viewModelScope).swardDao()
         repository = SwardRepository(swardDao)

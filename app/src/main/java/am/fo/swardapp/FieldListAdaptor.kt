@@ -2,19 +2,20 @@ package am.fo.swardapp
 
 import am.fo.swardapp.data.Field
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class FieldListAdapter internal constructor(
+class FieldListAdapter internal constructor (
     context: Context
 ) : RecyclerView.Adapter<FieldListAdapter.FieldViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var fields = emptyList<Field>() // Cached copy of fields
+    private var context = context
 
     inner class FieldViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val fieldItemView: Button = itemView.findViewById(R.id.fieldButton)
@@ -28,6 +29,12 @@ class FieldListAdapter internal constructor(
     override fun onBindViewHolder(holder: FieldViewHolder, position: Int) {
         val current = fields[position]
         holder.fieldItemView.text = current.name
+        holder.fieldItemView.setOnClickListener {
+            Intent(context, FieldActivity::class.java).let {
+                it.putExtra("FIELD_ID", current.field_id)
+                context.startActivity(it)
+            }
+        }
     }
 
     internal fun setFields(fields: List<Field>) {

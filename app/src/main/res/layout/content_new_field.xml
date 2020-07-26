@@ -11,7 +11,7 @@
     tools:showIn="@layout/activity_new_field">
 
     <EditText
-        android:id="@+id/field_name"
+        android:id="@+id/new_field_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
@@ -26,47 +26,47 @@
         android:importantForAutofill="no" />
 
     <TextView
-        android:id="@+id/field_date_text"
+        android:id="@+id/new_field_date_text"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/field_date_sown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/field_name" />
+        app:layout_constraintTop_toBottomOf="@+id/new_field_name" />
 
     <TextView
-        android:id="@+id/field_date"
+        android:id="@+id/new_field_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/field_date_text"
-        app:layout_constraintTop_toBottomOf="@+id/field_name" />
+        app:layout_constraintStart_toEndOf="@+id/new_field_date_text"
+        app:layout_constraintTop_toBottomOf="@+id/new_field_name" />
 
     <TextView
-        android:id="@+id/soil_type_text"
+        android:id="@+id/new_field_soil_type_text"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/field_soil_type"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/field_date" />
+        app:layout_constraintTop_toBottomOf="@+id/new_field_date" />
 
     <Spinner
-        android:id="@+id/field_soil_type"
+        android:id="@+id/new_field_soil_type"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/soil_type_text"
-        app:layout_constraintTop_toBottomOf="@+id/field_date" />
+        app:layout_constraintStart_toEndOf="@+id/new_field_soil_type_text"
+        app:layout_constraintTop_toBottomOf="@+id/new_field_date" />
 
     <TextView
-        android:id="@+id/field_notes_text"
+        android:id="@+id/new_field_notes_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/field_notes"
-        app:layout_constraintTop_toBottomOf="@id/field_soil_type"
+        app:layout_constraintTop_toBottomOf="@id/new_field_soil_type"
         tools:layout_editor_absoluteX="30dp" />
 
     <EditText
-        android:id="@+id/field_notes"
+        android:id="@+id/new_field_notes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -74,12 +74,12 @@
         android:hint="@string/field_notes_hint"
         android:inputType="textMultiLine"
         android:minLines="5"
-        app:layout_constraintTop_toBottomOf="@id/field_notes_text"
+        app:layout_constraintTop_toBottomOf="@id/new_field_notes_text"
         tools:layout_editor_absoluteX="30dp"
         android:importantForAutofill="no" />
 
     <Button
-        android:id="@+id/field_button_save"
+        android:id="@+id/new_field_button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_field_save"

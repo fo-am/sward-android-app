@@ -31,7 +31,7 @@ class MainActivity : SwardActivity() {
 
         swardViewModel.allFields.observe(this, Observer { fields ->
             // Update the cached copy of the words in the adapter.
-            fields?.let { adapter.setWords(it) }
+            fields?.let { adapter.setFields(it) }
         })
 
         val new_field_button = findViewById<Button>(R.id.new_field_button)

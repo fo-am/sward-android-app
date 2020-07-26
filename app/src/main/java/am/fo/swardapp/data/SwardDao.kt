@@ -11,8 +11,21 @@ interface SwardDao {
     @Query("SELECT * from field_table ORDER BY name ASC")
     fun getFields(): LiveData<List<Field>>
 
+    @Query("SELECT * from field_table Where field_id=:field_id ORDER BY name ASC")
+    fun getField(field_id: Int): LiveData<Field>
+
+    @Query("SELECT * from survey_table WHERE field_id=:field_id")
+    fun getSurveysForField(field_id: Int): LiveData<List<Survey>>
+
+    @Query("SELECT * from species_table WHERE survey_id=:survey_id")
+    fun getSpeciesForSurvey(survey_id: Int): LiveData<List<Species>>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertField(field: Field)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertSurvey(survey: Survey)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertSpecies(species: Species)
 
     @Query("DELETE FROM field_table")
     suspend fun deleteAllFields()
@@ -26,7 +39,11 @@ class SwardRepository(private val swardDao: SwardDao) {
     // Observed LiveData will notify the observer when the data has changed.
     val allFields: LiveData<List<Field>> = swardDao.getFields()
 
-    suspend fun insert(field: Field) {
-        swardDao.insertField(field)
-    }
+    fun getField(field_id: Int) { swardDao.getField(field_id) }
+    fun getSurveysForField(field: Field) { swardDao.getSurveysForField(field.field_id) }
+    fun getSpeciesForSurvey(survey: Survey) { swardDao.getSpeciesForSurvey(survey.survey_id) }
+
+    suspend fun insertField(field: Field) { swardDao.insertField(field) }
+    suspend fun insertSurvey(survey: Survey) { swardDao.insertSurvey(survey) }
+    suspend fun insertSpecies(species: Species) { swardDao.insertSpecies(species) }
 }

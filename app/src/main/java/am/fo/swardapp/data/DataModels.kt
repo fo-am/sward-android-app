@@ -9,18 +9,18 @@ data class Field(val name: String,
                  val dateSown:String,
                  val soilType:Int,
                  val notes:String) {
-    @PrimaryKey(autoGenerate = true) var id:Int = 0
+    @PrimaryKey(autoGenerate = true) var field_id:Int = 0
 }
 
 @Entity(tableName="survey_table")
-data class Survey(@PrimaryKey(autoGenerate = true) val id: Int,
-                  val time: String,
-                  @Embedded val trip: Field
-)
+data class Survey(val time: String,
+                  @Embedded val field: Field) {
+    @PrimaryKey(autoGenerate = true) var survey_id:Int = 0
+}
 
 @Entity(tableName="species_table")
-data class Species(@PrimaryKey(autoGenerate = true) val id: Int,
-                  val sample: Int,
-                  val type: String,
-                  @Embedded val survey: Survey
-)
+data class Species(val sample: Int,
+                   val type: String,
+                   @Embedded val survey: Survey) {
+    @PrimaryKey(autoGenerate = true) var species_id: Int = 0
+}

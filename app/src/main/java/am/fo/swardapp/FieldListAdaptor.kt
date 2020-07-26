@@ -14,7 +14,7 @@ class FieldListAdapter internal constructor(
 ) : RecyclerView.Adapter<FieldListAdapter.FieldViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var fields = emptyList<Field>() // Cached copy of words
+    private var fields = emptyList<Field>() // Cached copy of fields
 
     inner class FieldViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val fieldItemView: Button = itemView.findViewById(R.id.fieldButton)
@@ -30,7 +30,7 @@ class FieldListAdapter internal constructor(
         holder.fieldItemView.text = current.name
     }
 
-    internal fun setWords(fields: List<Field>) {
+    internal fun setFields(fields: List<Field>) {
         this.fields = fields
         notifyDataSetChanged()
     }

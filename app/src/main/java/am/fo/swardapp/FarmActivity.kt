@@ -1,23 +1,15 @@
 package am.fo.swardapp
 
-import am.fo.swardapp.data.Field
-import am.fo.swardapp.data.SwardViewModel
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : SwardActivity() {
+class FarmActivity : SwardActivity() {
 
     private val newFieldActivityRequestCode = 1
     private val fieldActivityRequestCode = 2
@@ -36,7 +28,7 @@ class MainActivity : SwardActivity() {
         })
 
         new_field_button.setOnClickListener {
-            val intent = Intent(this@MainActivity, NewFieldActivity::class.java)
+            val intent = Intent(this@FarmActivity, NewFieldActivity::class.java)
             startActivityForResult(intent, newFieldActivityRequestCode)
         }
 

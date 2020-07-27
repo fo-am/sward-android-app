@@ -32,11 +32,21 @@ abstract class SwardActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_main -> {
+                startActivity(Intent(this, FarmActivity::class.java))
+                true }
+            R.id.action_species -> {
+                startActivity(Intent(this, FarmActivity::class.java))
+                true }
+            R.id.action_identification -> {
+                startActivity(Intent(this, IdentificationActivity::class.java))
+                true }
+            R.id.action_survey -> {
+                startActivity(Intent(this, FarmActivity::class.java))
+                true }
             R.id.action_about -> {
                 startActivity(Intent(this, AboutActivity::class.java))
-                true
-            }
+                true }
             else -> super.onOptionsItemSelected(item)
         }
     }

@@ -1,16 +1,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="am.fo.swardapp.MainActivity">
+    tools:context="am.fo.swardapp.FarmActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/action_main"
+        android:title="@string/action_main" />
     <item
-        android:id="@+id/action_help"
-        android:title="help" />
+        android:id="@+id/action_species"
+        android:title="@string/action_species" />
+    <item
+        android:id="@+id/action_identification"
+        android:title="@string/action_identification" />
+    <item
+        android:id="@+id/action_survey"
+        android:title="@string/action_survey" />
     <item
         android:id="@+id/action_about"
-        android:title="About" />
+        android:title="@string/action_about" />
 </menu>

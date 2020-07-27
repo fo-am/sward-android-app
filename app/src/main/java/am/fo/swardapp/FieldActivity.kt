@@ -3,7 +3,6 @@ package am.fo.swardapp
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_field.*
-import kotlinx.android.synthetic.main.content_field.*
 
 class FieldActivity : SwardActivity() {
 

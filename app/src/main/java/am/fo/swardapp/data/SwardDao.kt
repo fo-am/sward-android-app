@@ -17,15 +17,15 @@ interface SwardDao {
     @Query("SELECT * from survey_table WHERE field_id=:field_id")
     fun getSurveysForField(field_id: Int): LiveData<List<Survey>>
 
-    @Query("SELECT * from species_table WHERE survey_id=:survey_id")
-    fun getSpeciesForSurvey(survey_id: Int): LiveData<List<Species>>
+    @Query("SELECT * from record_table WHERE survey_id=:survey_id")
+    fun getRecordForSurvey(survey_id: Int): LiveData<List<Record>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertField(field: Field)
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertSurvey(survey: Survey)
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertSpecies(species: Species)
+    suspend fun insertRecord(record: Record)
 
     @Query("DELETE FROM field_table")
     suspend fun deleteAllFields()

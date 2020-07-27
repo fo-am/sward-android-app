@@ -10,7 +10,7 @@ import android.widget.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-import kotlinx.android.synthetic.main.content_new_field.*
+import kotlinx.android.synthetic.main.activity_new_field.*
 
 class NewFieldActivity : SwardActivity() {
 

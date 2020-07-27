@@ -15,9 +15,9 @@ class SwardRepository(private val swardDao: SwardDao) {
 
     fun getField(field_id: Int): LiveData<Field> = swardDao.getField(field_id)
     fun getSurveysForField(field: Field) = swardDao.getSurveysForField(field.field_id)
-    fun getSpeciesForSurvey(survey: Survey) = swardDao.getSpeciesForSurvey(survey.survey_id)
+    fun getRecordForSurvey(survey: Survey) = swardDao.getRecordForSurvey(survey.survey_id)
 
     suspend fun insertField(field: Field) = swardDao.insertField(field)
     suspend fun insertSurvey(survey: Survey) = swardDao.insertSurvey(survey)
-    suspend fun insertSpecies(species: Species) = swardDao.insertSpecies(species)
+    suspend fun insertRecord(record: Record) = swardDao.insertRecord(record)
 }

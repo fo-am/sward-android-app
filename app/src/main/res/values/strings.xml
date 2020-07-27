@@ -1,19 +1,18 @@
 <resources>
     <string name="app_name">Sward App</string>
+
+    <string name="title_activity_launcher">SWARD APP</string>
     <string name="app_title">MULTI-SPECIES SWARD APP</string>
     <string name="app_strap">Support for identifying and monitoring your sward species. Click on the menu to start.</string>
-    <string name="title_activity_launcher">Sward App</string>
 
-    <string name="title_activity_farm">My Farm</string>
+    <string name="title_activity_farm">MY FARM</string>
     <string name="button_new_field">Add new field</string>
     <string name="button_download_data">Download data</string>
-    <string name="action_settings">Settings</string>
 
     <string name="field_date_sown">Date sown</string>
     <string name="field_soil_type">Soil type</string>
     <string name="field_notes">Notes</string>
     <string name="field_notes_hint">Add your notes here…</string>
-
     <string-array name="soil_types">
         <item>Sandy/Shallow</item>
         <item>Medium/Shallow</item>
@@ -24,35 +23,41 @@
         <item>Peat</item>
     </string-array>
 
+    <string name="title_activity_field">FIELD</string>
     <string name="field_survey">Perform survey</string>
     <string name="field_results">Detailed results</string>
     <string name="field_biodiversity">Field biodiversity</string>
     <string name="field_delete">Delete field</string>
 
-
-    <string name="title_activity_about">About</string>
-    <string name="about_text">All about the wonderful app.....</string>
-
+    <string name="title_activity_new_field">ADD FIELD</string>
     <string name="hint_field">Name…</string>
     <string name="button_field_save">Save</string>
     <string name="empty_field_not_saved">Field not saved because it is empty.</string>
-    <string name="title_activity_new_field">NewField</string>
-    <string name="title_activity_sward">SwardActivity</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_field">FieldActivity</string>
-    <string name="title_activity_identification">IdentificationActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="title_activity_about">ABOUT</string>
+    <string name="about_text">All about the wonderful app.....</string>
+
+    <string name="title_activity_identification">ID KEY</string>
 
     <string name="action_main">My Farm</string>
     <string name="action_species">Species Info</string>
     <string name="action_identification">ID Key</string>
     <string name="action_survey">Survey</string>
     <string name="action_about">About</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="id_first_text">Would you like to ID a grass or a legume?</string>
+    <string name="id_first_one">Grass</string>
+    <string name="id_first_two">Legume</string>
+
+    <string name="id_legume_leaves_text">What are the leaves like?</string>
+    <string name="id_legume_leaves_one">There are three leaflets</string>
+    <string name="id_legume_leaves_two">There are five leaflets (2 clasp on the stem)</string>
+    <string name="id_legume_leaves_three">There are many leaflets</string>
+
+    <string name="id_legume_leaflet_text">What is the leaflet on the end like?</string>
+    <string name="id_legume_leaflet_one">The leaflet on the end has no "stalk"</string>
+    <string name="id_legume_leaflet_two">The leaflet on the end has a "stalk"</string>
 
 </resources>

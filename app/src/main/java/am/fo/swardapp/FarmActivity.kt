@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_farm.*
 
 class FarmActivity : SwardActivity() {
 
@@ -15,7 +15,7 @@ class FarmActivity : SwardActivity() {
     private val fieldActivityRequestCode = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_farm)
         super.onCreate(savedInstanceState)
 
         val adapter = FieldListAdapter(this)

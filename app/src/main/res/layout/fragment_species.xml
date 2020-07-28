@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SpeciesFragment">
+
+    <Button
+        android:id="@+id/grass_cocksfoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/grass_cocksfoot_button"
+        android:text="@string/grass_cocksfoot" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/grass_meadowfescue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/grass_meadowfescue_button"
+        android:text="@string/grass_meadowfescue" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/grass_meadowfoxtail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/grass_meadowfoxtail_button"
+        android:text="@string/grass_meadowfoxtail" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/grass_perennialryegrass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/grass_perennialryegrass_button"
+        android:text="@string/grass_perennialryegrass" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/grass_tallfescue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/grass_tallfescue_button"
+        android:text="@string/grass_tallfescue" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/grass_timothy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/grass_timothy_button"
+        android:text="@string/grass_tallfescue" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/herb_chicory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/herb_chicory_button"
+        android:text="@string/herb_chicory" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/herb_ribwort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/herb_ribwort_button"
+        android:text="@string/herb_ribwort" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/herb_sheepsburnet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/herb_sheepsburnet_button"
+        android:text="@string/herb_sheepsburnet" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/herb_sheepsparsley"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/herb_sheepsparsley_button"
+        android:text="@string/herb_sheepsparsley" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/herb_yarrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/herb_yarrow_button"
+        android:text="@string/herb_yarrow" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/legume_alsike"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/legume_alsike_button"
+        android:text="@string/legume_alsike" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/legume_birdsfoottrefoil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/legume_birdsfoottrefoil_button"
+        android:text="@string/legume_birdsfootrefoil" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/legume_lucern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/legume_lucerne_button"
+        android:text="@string/legume_lucern" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/legume_redclover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/legume_redclover_button"
+        android:text="@string/legume_redclover" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/legume_sainfoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/legume_sainfoin_button"
+        android:text="@string/legume_sainfoin" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/legume_whiteclover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
+        android:drawableRight="@drawable/legume_whiteclover_button"
+        android:text="@string/legume_whiteclover" />
+
+</LinearLayout>

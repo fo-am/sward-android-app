@@ -27,6 +27,7 @@
         <item name="colorOnPrimary">@color/colorText</item>
         <item name="titleTextColor">@color/colorText</item>
         <item name="android:background">@color/colorBackground</item>
+        <item name="android:popupTheme">@style/SwardPopupMenuStyle</item>
         <!-- <item name="android:src"></item> -->
     </style>
 
@@ -36,4 +37,15 @@
         <item name="android:textSize">10pt</item>
     </style>
 
+    <style name="SwardImageButton" parent="SwardButton">
+        <item name="android:drawableRight">@drawable/test_button</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="SwardPopupMenuStyle" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/colorMenuBackground</item>
+        <item name="android:textColor">@color/colorMenuText</item>
+    </style>
 </resources>

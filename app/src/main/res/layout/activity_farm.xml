@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:theme="@style/SwardThemeOverlay_Toolbar"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/SwardPopupMenuStyle" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -35,7 +35,7 @@
             android:id="@+id/new_field_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_new_field"
+            android:text="@string/farm_new_field"
             app:layout_constraintBottom_toTopOf="@id/fields_recycler_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,11 +57,19 @@
             android:id="@+id/download_data_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_download_data"
+            android:text="@string/farm_download_data"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fields_recycler_view" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/farm_fields"
+            app:layout_constraintBottom_toTopOf="@+id/fields_recycler_view"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

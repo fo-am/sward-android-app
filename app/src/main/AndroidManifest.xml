@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LauncherActivity"
+        <activity
+            android:name=".LauncherActivity"
             android:label="@string/title_activity_launcher"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -22,10 +24,13 @@
             android:label="@string/title_activity_identification"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".SpeciesActivity"
+            android:label="@string/title_species"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".FarmActivity"
             android:label="@string/title_activity_farm"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FieldActivity"
             android:label="@string/title_activity_field"

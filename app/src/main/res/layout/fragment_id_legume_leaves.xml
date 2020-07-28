@@ -23,9 +23,7 @@
         android:id="@+id/one"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:drawableRight="@drawable/test_button"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="30dp"
+        style="@style/SwardImageButton"
         android:text="@string/id_legume_leaves_one"
         app:layout_constraintBottom_toTopOf="@+id/two"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,9 +34,7 @@
         android:id="@+id/two"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:drawableRight="@drawable/test_button"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="30dp"
+        style="@style/SwardImageButton"
         android:text="@string/id_legume_leaves_two"
         app:layout_constraintBottom_toTopOf="@+id/three"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,13 +45,23 @@
         android:id="@+id/three"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:drawableRight="@drawable/test_button"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="30dp"
+        style="@style/SwardImageButton"
+        android:text="@string/id_legume_leaves_three"
+        app:layout_constraintBottom_toTopOf="@id/four"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/two" />
+
+    <Button
+        android:id="@+id/four"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/SwardImageButton"
         android:text="@string/id_legume_leaves_three"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/two" />
+        app:layout_constraintTop_toBottomOf="@id/three" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

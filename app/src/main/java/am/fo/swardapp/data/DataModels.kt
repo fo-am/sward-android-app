@@ -10,14 +10,14 @@ data class Field(val name: String,
                  val soilType:Int,
                  val notes:String) {
     @PrimaryKey(autoGenerate = true)
-    var field_id:Int = 0
+    var fieldId:Int = 0
 }
 
 @Entity(tableName="survey_table")
 data class Survey(val time: String,
                   @Embedded val field: Field) {
     @PrimaryKey(autoGenerate = true)
-    var survey_id:Int = 0
+    var surveyId:Int = 0
 }
 
 @Entity(tableName="record_table")
@@ -25,5 +25,5 @@ data class Record(val sample: Int,
                    val type: String,
                    @Embedded val survey: Survey) {
     @PrimaryKey(autoGenerate = true)
-    var record_id: Int = 0
+    var recordId: Int = 0
 }

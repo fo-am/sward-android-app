@@ -10,15 +10,14 @@ import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 
 class FieldListAdapter internal constructor (
-    context: Context
+    private var context: Context
 ) : RecyclerView.Adapter<FieldListAdapter.FieldViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var fields = emptyList<Field>() // Cached copy of fields
-    private var context = context
 
     inner class FieldViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val fieldItemView: Button = itemView.findViewById(R.id.fieldButton)
+        val fieldItemView: Button = itemView.findViewById(R.id.field_button)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FieldViewHolder {
@@ -31,7 +30,7 @@ class FieldListAdapter internal constructor (
         holder.fieldItemView.text = current.name
         holder.fieldItemView.setOnClickListener {
             Intent(context, FieldActivity::class.java).let {
-                it.putExtra("FIELD_ID", current.field_id)
+                it.putExtra("FIELD_ID", current.fieldId)
                 context.startActivity(it)
             }
         }

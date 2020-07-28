@@ -1,6 +1,5 @@
 package am.fo.swardapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class LauncherActivity : SwardActivity() {

@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_farm.*
 class FarmActivity : SwardActivity() {
 
     private val newFieldActivityRequestCode = 1
-    private val fieldActivityRequestCode = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_farm)

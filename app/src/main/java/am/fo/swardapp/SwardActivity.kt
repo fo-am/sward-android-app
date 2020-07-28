@@ -29,20 +29,20 @@ abstract class SwardActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // automatically handle clicks on the Home/Up button_normal, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_main -> {
+            R.id.action_farm -> {
                 startActivity(Intent(this, FarmActivity::class.java))
                 true }
             R.id.action_species -> {
-                startActivity(Intent(this, FarmActivity::class.java))
+                startActivity(Intent(this, SpeciesActivity::class.java))
                 true }
             R.id.action_identification -> {
                 startActivity(Intent(this, IdentificationActivity::class.java))
                 true }
             R.id.action_survey -> {
-                startActivity(Intent(this, FarmActivity::class.java))
+                //startActivity(Intent(this, FarmActivity::class.java))
                 true }
             R.id.action_about -> {
                 startActivity(Intent(this, AboutActivity::class.java))

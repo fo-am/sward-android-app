@@ -13,9 +13,9 @@ class SwardRepository(private val swardDao: SwardDao) {
     // Observed LiveData will notify the observer when the data has changed.
     val allFields: LiveData<List<Field>> = swardDao.getFields()
 
-    fun getField(field_id: Int): LiveData<Field> = swardDao.getField(field_id)
-    fun getSurveysForField(field: Field) = swardDao.getSurveysForField(field.field_id)
-    fun getRecordForSurvey(survey: Survey) = swardDao.getRecordForSurvey(survey.survey_id)
+    fun getField(fieldId: Int): LiveData<Field> = swardDao.getField(fieldId)
+    fun getSurveysForField(field: Field) = swardDao.getSurveysForField(field.fieldId)
+    fun getRecordForSurvey(survey: Survey) = swardDao.getRecordForSurvey(survey.surveyId)
 
     suspend fun insertField(field: Field) = swardDao.insertField(field)
     suspend fun insertSurvey(survey: Survey) = swardDao.insertSurvey(survey)

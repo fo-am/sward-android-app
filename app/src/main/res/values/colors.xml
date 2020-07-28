@@ -7,6 +7,8 @@
     <color name="colorButtonBackground">#FFFFFF</color>
     <color name="colorButtonBorder">#a3b18a</color>
     <color name="colorText">#14281d</color>
+    <color name="colorMenuBackground">#7b8441</color>
+    <color name="colorMenuText">#FFFFFF</color>
 
     <color name="buttonLabel">#FFFFFF</color>
 

@@ -16,7 +16,7 @@ tools:context=".AboutActivity">
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:theme="@style/SwardThemeOverlay_Toolbar"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/SwardPopupMenuStyle"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 

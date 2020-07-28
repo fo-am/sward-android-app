@@ -1,10 +1,6 @@
 package am.fo.swardapp
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import am.fo.swardapp.R
 import androidx.navigation.fragment.NavHostFragment
 import kotlinx.android.synthetic.main.activity_identification.*
 

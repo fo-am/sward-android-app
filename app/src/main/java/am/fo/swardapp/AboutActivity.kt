@@ -11,7 +11,6 @@ class AboutActivity : SwardActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_about)
         super.onCreate(savedInstanceState)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
 }

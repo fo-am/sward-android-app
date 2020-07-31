@@ -57,13 +57,30 @@ tools:context=".AboutActivity">
             app:layout_constraintTop_toBottomOf="@+id/app_title" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/strap_line"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_strap"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/space_2" />
+
+        <Space
+            android:id="@+id/space_3"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toTopOf="@id/version_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/strap_line" />
+
+        <TextView
+            android:id="@+id/version_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/space_3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

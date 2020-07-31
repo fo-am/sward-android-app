@@ -43,25 +43,14 @@
 
     <Button
         android:id="@+id/three"
+        style="@style/SwardImageButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/SwardImageButton"
-        android:text="@string/id_legume_leaves_three"
-        app:layout_constraintBottom_toTopOf="@id/four"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/two" />
-
-    <Button
-        android:id="@+id/four"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        style="@style/SwardImageButton"
         android:text="@string/id_legume_leaves_three"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/three" />
+        app:layout_constraintTop_toBottomOf="@id/two" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

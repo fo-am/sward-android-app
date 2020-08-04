@@ -7,13 +7,13 @@
     android:orientation="vertical"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
-    tools:context=".id_fragments.IdLegumeHairyFragment">
+    tools:context=".id_fragments.IdLegumeFlowerFragment">
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/id_legume_hairy_text"
+        android:text="@string/id_legume_flower_text"
         android:textSize="36sp" />
 
     <Space
@@ -25,8 +25,8 @@
         style="@style/SwardImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableRight="@drawable/legume_hairless"
-        android:text="@string/id_legume_hairy_one" />
+        android:drawableRight="@drawable/legume_flower_pink"
+        android:text="@string/id_legume_flower_one" />
 
     <Space
         android:layout_width="match_parent"
@@ -37,7 +37,18 @@
         style="@style/SwardImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableRight="@drawable/legume_hairy"
-        android:text="@string/id_legume_hairy_two" />
+        android:drawableRight="@drawable/legume_flower_white"
+        android:text="@string/id_legume_flower_two" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/three"
+        style="@style/SwardButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/id_legume_flower_three" />
 
 </LinearLayout>

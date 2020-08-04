@@ -12,13 +12,172 @@
         tools:layout="@layout/fragment_id_first" >
         <action
             android:id="@+id/action_IdFirstFragment_to_IdLegumeLeavesFragment"
-            app:destination="@id/IdLegumeLeavesFragment" />
+            app:destination="@id/IdLegumeLeavesFragment"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_IdFirstFragment_to_idGrassAuricleFragment"
+            app:destination="@id/idGrassAuricleFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/IdLegumeLeavesFragment"
         android:name="am.fo.swardapp.id_fragments.IdLegumeLeavesFragment"
         android:label="@string/id_legume_leaves_text"
-        tools:layout="@layout/fragment_id_legume_leaves" />
+        tools:layout="@layout/fragment_id_legume_leaves" >
+        <action
+            android:id="@+id/action_IdLegumeLeavesFragment_to_idLegumeLeafletFragment"
+            app:destination="@id/idLegumeLeafletFragment" />
+        <action
+            android:id="@+id/action_IdLegumeLeavesFragment_to_idResultFragment"
+            app:destination="@id/idResultFragment">
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_birdsfoottrefoil" />
+        </action>
+        <action
+            android:id="@+id/action_IdLegumeLeavesFragment_to_idResultFragment2"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_sainfoin" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/idLegumeLeafletFragment"
+        android:name="am.fo.swardapp.id_fragments.IdLegumeLeafletFragment"
+        android:label="fragment_id_legume_leaflet"
+        tools:layout="@layout/fragment_id_legume_leaflet" >
+        <action
+            android:id="@+id/action_idLegumeLeafletFragment_to_idLegumeHairyFragment"
+            app:destination="@id/idLegumeHairyFragment" />
+        <action
+            android:id="@+id/action_idLegumeLeafletFragment_to_idResultFragment"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_lucern" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/idLegumeHairyFragment"
+        android:name="am.fo.swardapp.id_fragments.IdLegumeHairyFragment"
+        android:label="fragment_id_legume_hairy"
+        tools:layout="@layout/fragment_id_legume_hairy" >
+        <action
+            android:id="@+id/action_idLegumeHairyFragment_to_idLegumeStolonsFragment"
+            app:destination="@id/idLegumeStolonsFragment" />
+        <action
+            android:id="@+id/action_idLegumeHairyFragment_to_idResultFragment"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_redclover" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/idLegumeStolonsFragment"
+        android:name="am.fo.swardapp.id_fragments.IdLegumeStolonsFragment"
+        android:label="fragment_id_legume_stolons"
+        tools:layout="@layout/fragment_id_legume_stolons" >
+        <action
+            android:id="@+id/action_idLegumeStolonsFragment_to_idLegumeCrescentFragment2"
+            app:destination="@id/idLegumeCrescentFragment" />
+        <action
+            android:id="@+id/action_idLegumeStolonsFragment_to_idResultFragment"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_alsike" />
+        </action>
+        <action
+            android:id="@+id/action_idLegumeStolonsFragment_to_idResultFragment2"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_whiteclover" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/idLegumeCrescentFragment"
+        android:name="am.fo.swardapp.id_fragments.IdLegumeCrescentFragment"
+        android:label="fragment_id_legume_crescent"
+        tools:layout="@layout/fragment_id_legume_crescent" >
+        <action
+            android:id="@+id/action_idLegumeCrescentFragment_to_idResultFragment"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_whiteclover" />
+        </action>
+        <action
+            android:id="@+id/action_idLegumeCrescentFragment_to_idLegumeFlowerFragment"
+            app:destination="@id/idLegumeFlowerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/idLegumeFlowerFragment"
+        android:name="am.fo.swardapp.id_fragments.IdLegumeFlowerFragment"
+        android:label="IdLegumeFlowerFragment"
+        tools:layout="@layout/fragment_id_legume_flower">
+        <action
+            android:id="@+id/action_idLegumeFlowerFragment_to_idResultFragment"
+            app:destination="@id/idResultFragment">
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_whiteclover" />
+        </action>
+        <action
+            android:id="@+id/action_idLegumeFlowerFragment_to_idResultFragment2"
+            app:destination="@id/idResultFragment">
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_alsike" />
+        </action>
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/idGrassStemFragment"
+        android:name="am.fo.swardapp.id_fragments.IdGrassStemFragment"
+        android:label="fragment_id_grass_stem"
+        tools:layout="@layout/fragment_id_grass_stem" >
+        <action
+            android:id="@+id/action_idGrassStemFragment_to_idGrassLiguleFragment"
+            app:destination="@id/idGrassLiguleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/idGrassAuricleFragment"
+        android:name="am.fo.swardapp.id_fragments.IdGrassAuricleFragment"
+        android:label="fragment_id_grass_auricle"
+        tools:layout="@layout/fragment_id_grass_auricle" >
+        <action
+            android:id="@+id/action_idGrassAuricleFragment_to_idGrassAuricle2Fragment"
+            app:destination="@id/idGrassAuricle2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/idGrassAuricle2Fragment"
+        android:name="am.fo.swardapp.id_fragments.IdGrassAuricle2Fragment"
+        android:label="fragment_id_grass_auricle2"
+        tools:layout="@layout/fragment_id_grass_auricle2" >
+        <action
+            android:id="@+id/action_idGrassAuricle2Fragment_to_idGrassStemFragment"
+            app:destination="@id/idGrassStemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/idGrassLiguleFragment"
+        android:name="am.fo.swardapp.id_fragments.IdGrassLiguleFragment"
+        android:label="fragment_id_grass_ligule"
+        tools:layout="@layout/fragment_id_grass_ligule" />
+    <fragment
+        android:id="@+id/idResultFragment"
+        android:name="am.fo.swardapp.id_fragments.IdResultFragment"
+        android:label="fragment_id_result"
+        tools:layout="@layout/fragment_id_result" >
+        <argument
+            android:name="answer"
+            app:argType="string"
+            android:defaultValue="none" />
+    </fragment>
+
 
 </navigation>

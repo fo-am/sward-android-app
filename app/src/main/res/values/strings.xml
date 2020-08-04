@@ -61,6 +61,25 @@
     <string name="id_legume_leaflet_one">The leaflet on the end has no "stalk"</string>
     <string name="id_legume_leaflet_two">The leaflet on the end has a "stalk"</string>
 
+    <string name="id_legume_hairy_text">Are the leaves hairy? Try stroking the underside with your finger.</string>
+    <string name="id_legume_hairy_one">Leaf is hairless, it feels smooth.</string>
+    <string name="id_legume_hairy_two">Leaf is hairy, it feels rough.</string>
+
+    <string name="id_legume_stolons_text">Is the plant upright, or creeping along the ground, and does it have stolons (horizontal stems with roots along their length)? Try following a flowering stem to the soil with your fingers and gently pull it up.</string>
+    <string name="id_legume_stolons_one">Plant is upright (no stolons).</string>
+    <string name="id_legume_stolons_two">Plant is creeping, their are roots (stolons) along the uprooted stem.</string>
+    <string name="id_legume_stolons_three">I am not sure (the next question will use less reliable features).</string>
+
+    <string name="id_legume_crescent_text">Do the leaves have crescent shaped marks?</string>
+    <string name="id_legume_crescent_one">Some leaves have crescent marks.</string>
+    <string name="id_legume_crescent_two">No leaves have crescent marks.</string>
+
+    <string name="id_legume_flower_text">If there are flowers, what colour are they?</string>
+    <string name="id_legume_flower_one">Pink.</string>
+    <string name="id_legume_flower_two">White.</string>
+    <string name="id_legume_flower_three">No flowers.</string>
+
+
     <string name="title_species">SPECIES INFO</string>
     <string name="species_text">Discover special traits and features of common sward species.</string>
 

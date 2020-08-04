@@ -22,8 +22,16 @@ class IdLegumeLeavesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        one.setOnClickListener {
+            findNavController().navigate(R.id.action_IdLegumeLeavesFragment_to_idLegumeLeafletFragment)
+        }
+
         two.setOnClickListener {
-            //findNavController().navigate(R.id.action_IdFirstFragment_to_IdLegumeLeavesFragment)
+            findNavController().navigate(R.id.action_IdLegumeLeavesFragment_to_idResultFragment)
+        }
+
+        three.setOnClickListener {
+            findNavController().navigate(R.id.action_IdLegumeLeavesFragment_to_idResultFragment2)
         }
     }
 

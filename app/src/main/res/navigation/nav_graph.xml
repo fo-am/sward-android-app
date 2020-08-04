@@ -133,9 +133,6 @@
                 android:defaultValue="legume_alsike" />
         </action>
     </fragment>
-
-
-
     <fragment
         android:id="@+id/idGrassStemFragment"
         android:name="am.fo.swardapp.id_fragments.IdGrassStemFragment"
@@ -144,6 +141,13 @@
         <action
             android:id="@+id/action_idGrassStemFragment_to_idGrassLiguleFragment"
             app:destination="@id/idGrassLiguleFragment" />
+        <action
+            android:id="@+id/action_idGrassStemFragment_to_idResultFragment"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="grass_cocksfoot" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/idGrassAuricleFragment"
@@ -153,6 +157,9 @@
         <action
             android:id="@+id/action_idGrassAuricleFragment_to_idGrassAuricle2Fragment"
             app:destination="@id/idGrassAuricle2Fragment" />
+        <action
+            android:id="@+id/action_idGrassAuricleFragment_to_idGrassStemFragment"
+            app:destination="@id/idGrassStemFragment" />
     </fragment>
     <fragment
         android:id="@+id/idGrassAuricle2Fragment"
@@ -160,14 +167,47 @@
         android:label="fragment_id_grass_auricle2"
         tools:layout="@layout/fragment_id_grass_auricle2" >
         <action
-            android:id="@+id/action_idGrassAuricle2Fragment_to_idGrassStemFragment"
-            app:destination="@id/idGrassStemFragment" />
+            android:id="@+id/action_idGrassAuricle2Fragment_to_idResultFragment"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="grass_tallfescue" />
+        </action>
+        <action
+            android:id="@+id/action_idGrassAuricle2Fragment_to_idResultFragment2"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="grass_meadowfescue" />
+        </action>
+        <action
+            android:id="@+id/action_idGrassAuricle2Fragment_to_idResultFragment3"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="grass_ryegrass" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/idGrassLiguleFragment"
         android:name="am.fo.swardapp.id_fragments.IdGrassLiguleFragment"
         android:label="fragment_id_grass_ligule"
-        tools:layout="@layout/fragment_id_grass_ligule" />
+        tools:layout="@layout/fragment_id_grass_ligule" >
+        <action
+            android:id="@+id/action_idGrassLiguleFragment_to_idResultFragment"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="grass_timothy" />
+        </action>
+        <action
+            android:id="@+id/action_idGrassLiguleFragment_to_idResultFragment2"
+            app:destination="@id/idResultFragment" >
+            <argument
+                android:name="answer"
+                android:defaultValue="grass_meadowfoxtail" />
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/idResultFragment"
         android:name="am.fo.swardapp.id_fragments.IdResultFragment"

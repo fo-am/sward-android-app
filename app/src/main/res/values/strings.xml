@@ -79,6 +79,23 @@
     <string name="id_legume_flower_two">White.</string>
     <string name="id_legume_flower_three">No flowers.</string>
 
+    <string name="id_grass_auricle_text">Look at the place where the leaf joins the stem.</string>
+    <string name="id_grass_auricle_text2">Can you see tiny flaps (called auricles) at the leaf base?</string>
+    <string name="id_grass_auricle_one">There are auricles</string>
+    <string name="id_grass_auricle_two">There are no auricles</string>
+
+    <string name="id_grass_auricle2_text">Look closely at the auricles - what can you see?</string>
+    <string name="id_grass_auricle2_one">There are tiny hairs on the auricles</string>
+    <string name="id_grass_auricle2_two">The auricles are short (1mm or less)</string>
+    <string name="id_grass_auricle2_three">The auricles are long (2mm or more)</string>
+
+    <string name="id_grass_stem_text">Cut across the stem - what shape is it?</string>
+    <string name="id_grass_stem_one">The stem is round</string>
+    <string name="id_grass_stem_two">The stem is flattened</string>
+
+    <string name="id_grass_ligule_text">Look at the place where the leaf joins the stem and find the skin-like flap - this is called the \'ligule\'. What does it look like?</string>
+    <string name="id_grass_ligule_one">Ligule has a pointed tip</string>
+    <string name="id_grass_ligule_two">Ligule has a flat, ragged top.</string>
 
     <string name="title_species">SPECIES INFO</string>
     <string name="species_text">Discover special traits and features of common sward species.</string>

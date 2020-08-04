@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import am.fo.swardapp.R
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_id_legume_leaves.*
+import kotlinx.android.synthetic.main.fragment_id_legume_hairy.*
 
 class IdLegumeHairyFragment : Fragment() {
 

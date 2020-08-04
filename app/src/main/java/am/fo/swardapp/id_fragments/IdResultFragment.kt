@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import am.fo.swardapp.R
-import android.util.Log
-import android.widget.TextView
 import kotlinx.android.synthetic.main.fragment_id_result.*
 import kotlinx.android.synthetic.main.fragment_id_result.view.*
 

@@ -25,8 +25,11 @@ class IdGrassAuricleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        button_second.setOnClickListener {
-            //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+        one.setOnClickListener {
+            findNavController().navigate(R.id.action_idGrassAuricleFragment_to_idGrassAuricle2Fragment)
+        }
+        two.setOnClickListener {
+            findNavController().navigate(R.id.action_idGrassAuricleFragment_to_idGrassStemFragment)
         }
     }
 }

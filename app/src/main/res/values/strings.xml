@@ -105,6 +105,11 @@
     <string name="id_results_id_again">ID another plant</string>
 
     <string name="title_activity_species_info">SPECIES INFO</string>
+    <string name="persistence">Persistence</string>
+    <string name="productivity">Productivity</string>
+    <string name="feedvalue">Feed value</string>
+    <string name="palatability">Palatability</string>
+    <string name="leachingcontribution">Leaching contribution</string>
 
     <string name="grass_cocksfoot">Cock\'s Foot</string>
     <string name="grass_meadowfescue">Meadow Fescue</string>
@@ -167,5 +172,8 @@
     <string name="grass_cocksfoot_flower_cap">Lorem ipsum…</string>
     <string name="grass_cocksfoot_stem_cap">Lorem ipsum…</string>
     <string name="grass_cocksfoot_stemsheath_annotated_cap">Lorem ipsum…</string>
+    <string name="grass_meadowfescue_plant_cap"></string>
+    <string name="grass_meadowfescue_flower_cap"></string>
+    <string name="grass_meadowfescue_stemsheath_annotated_cap"></string>
 
 </resources>

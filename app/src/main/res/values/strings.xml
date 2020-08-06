@@ -104,6 +104,8 @@
     <string name="id_results_species_info">Go to species info</string>
     <string name="id_results_id_again">ID another plant</string>
 
+    <string name="title_activity_species_info">SPECIES INFO</string>
+
     <string name="grass_cocksfoot">Cock\'s Foot</string>
     <string name="grass_meadowfescue">Meadow Fescue</string>
     <string name="grass_meadowfoxtail">Meadow Foxtail</string>
@@ -116,7 +118,7 @@
     <string name="herb_sheepsparsley">Sheep\'s Parsley</string>
     <string name="herb_yarrow">Yarrow</string>
     <string name="legume_alsike">Alsike Clover</string>
-    <string name="legume_birdsfootrefoil">Bird\'s Foot Trefoil</string>
+    <string name="legume_birdsfoottrefoil">Bird\'s Foot Trefoil</string>
     <string name="legume_lucern">Lucern</string>
     <string name="legume_redclover">Red Clover</string>
     <string name="legume_sainfoin">Sainfoin</string>
@@ -158,5 +160,12 @@
     <string name="legume_redclover_lat">Trifolium pratense</string>
     <string name="legume_sainfoin_lat">Onobrychis viciifolia</string>
     <string name="legume_whiteclover_lat">Trifolium repens</string>
+
+    <string name="species_not_found">Species not found!</string>
+
+    <string name="grass_cocksfoot_plant_cap">Lorem ipsum…</string>
+    <string name="grass_cocksfoot_flower_cap">Lorem ipsum…</string>
+    <string name="grass_cocksfoot_stem_cap">Lorem ipsum…</string>
+    <string name="grass_cocksfoot_stemsheath_annotated_cap">Lorem ipsum…</string>
 
 </resources>

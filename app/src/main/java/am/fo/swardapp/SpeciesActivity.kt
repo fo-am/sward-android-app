@@ -9,5 +9,8 @@ class SpeciesActivity : SwardActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_species)
         setSupportActionBar(toolbar)
+
+
     }
+
 }

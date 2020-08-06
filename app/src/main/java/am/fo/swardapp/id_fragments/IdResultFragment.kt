@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import am.fo.swardapp.R
 import am.fo.swardapp.SpeciesActivity
+import am.fo.swardapp.data.SpeciesDesc
+import am.fo.swardapp.data.SpeciesDesc.Companion.createSpeciesDesc
 import android.content.Intent
 import kotlinx.android.synthetic.main.fragment_id_result.*
 import kotlinx.android.synthetic.main.fragment_id_result.view.*
@@ -35,22 +37,7 @@ class IdResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         answer?.let {
-            val desc: Desc = when (answer) {
-                    "grass_cocksfoot" -> Desc(R.string.grass_cocksfoot,R.string.grass_cocksfoot_lat,R.drawable.grass_cocksfoot_plant)
-                    "grass_meadowfescue" -> Desc(R.string.grass_meadowfescue,R.string.grass_meadowfescue_lat,R.drawable.grass_meadowfescue_plant)
-                    "grass_meadowfoxtail" -> Desc(R.string.grass_meadowfescue,R.string.grass_meadowfescue_lat,R.drawable.grass_meadowfescue_plant)
-                    "grass_perennialryegrass" -> Desc(R.string.grass_perennialryegrass,R.string.grass_perennialryegrass_lat,R.drawable.grass_perennialryegrass_plant)
-                    "grass_tallfescue" -> Desc(R.string.grass_tallfescue,R.string.grass_tallfescue_lat,R.drawable.grass_tallfescue_plant)
-                    "grass_timothy" -> Desc(R.string.grass_timothy,R.string.grass_timothy_lat,R.drawable.grass_timothy_plant)
-                    "legume_alsike" -> Desc(R.string.legume_alsike,R.string.legume_alsike_lat,R.drawable.legume_alsike_leaf)
-                    "legume_birdsfootrefoil" -> Desc(R.string.legume_birdsfootrefoil,R.string.legume_birdsfootrefoil_lat,R.drawable.legume_birdsfoottrefoil_plant)
-                    "legume_lucern" -> Desc(R.string.legume_lucern,R.string.legume_lucern_lat,R.drawable.legume_lucerne_plant)
-                    "legume_redclover" -> Desc(R.string.legume_redclover,R.string.legume_redclover_lat,R.drawable.legume_redclover_leaf_1)
-                    "legume_sainfoin" -> Desc(R.string.legume_sainfoin,R.string.legume_sainfoin_lat,R.drawable.legume_sainfoin_leaf)
-                    "legume_whiteclover" -> Desc(R.string.legume_whiteclover,R.string.legume_whiteclover_lat,R.drawable.legume_whiteclover_leaf)
-                    else -> Desc(R.string.legume_whiteclover,R.string.legume_whiteclover_lat,R.drawable.legume_whiteclover_leaf)
-            }
-
+            val desc: SpeciesDesc = createSpeciesDesc(answer)
             species_name.setText(desc.name)
             species_name_lat.setText(desc.lat)
             species_photo.setImageResource(desc.img)

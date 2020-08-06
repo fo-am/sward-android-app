@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SpeciesFragment">
+    tools:context=".species_fragments.SpeciesListFragment">
 
     <Button
         android:id="@+id/grass_cocksfoot"
@@ -157,7 +157,7 @@
         android:layout_height="wrap_content"
         style="@style/SwardImageButton"
         android:drawableRight="@drawable/legume_birdsfoottrefoil_button"
-        android:text="@string/legume_birdsfootrefoil" />
+        android:text="@string/legume_birdsfoottrefoil" />
 
     <Space
         android:layout_width="match_parent"

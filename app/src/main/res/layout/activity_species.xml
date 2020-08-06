@@ -56,7 +56,7 @@
 
                 <fragment
                     android:id="@+id/fragment"
-                    android:name="am.fo.swardapp.SpeciesFragment"
+                    android:name="am.fo.swardapp.species_fragments.SpeciesListFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 

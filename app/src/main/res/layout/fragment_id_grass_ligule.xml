@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/id_grass_ligule_text"
-        android:textSize="36sp" />
+        android:textSize="30sp" />
 
 
     <Space

@@ -12,8 +12,7 @@
         tools:layout="@layout/fragment_id_first" >
         <action
             android:id="@+id/action_IdFirstFragment_to_IdLegumeLeavesFragment"
-            app:destination="@id/IdLegumeLeavesFragment"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:destination="@id/IdLegumeLeavesFragment" />
         <action
             android:id="@+id/action_IdFirstFragment_to_idGrassAuricleFragment"
             app:destination="@id/idGrassAuricleFragment" />

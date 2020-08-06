@@ -100,6 +100,10 @@
     <string name="title_species">SPECIES INFO</string>
     <string name="species_text">Discover special traits and features of common sward species.</string>
 
+    <string name="id_results_this_is">This is </string>
+    <string name="id_results_species_info">Go to species info</string>
+    <string name="id_results_id_again">ID another plant</string>
+
     <string name="grass_cocksfoot">Cock\'s Foot</string>
     <string name="grass_meadowfescue">Meadow Fescue</string>
     <string name="grass_meadowfoxtail">Meadow Foxtail</string>

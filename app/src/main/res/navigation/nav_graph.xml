@@ -122,10 +122,17 @@
             app:destination="@id/idResultFragment">
             <argument
                 android:name="answer"
-                android:defaultValue="legume_whiteclover" />
+                android:defaultValue="legume_alsike" />
         </action>
         <action
             android:id="@+id/action_idLegumeFlowerFragment_to_idResultFragment2"
+            app:destination="@id/idResultFragment">
+            <argument
+                android:name="answer"
+                android:defaultValue="legume_whiteclover" />
+        </action>
+        <action
+            android:id="@+id/action_idLegumeFlowerFragment_to_idResultFragment3"
             app:destination="@id/idResultFragment">
             <argument
                 android:name="answer"
@@ -184,7 +191,7 @@
             app:destination="@id/idResultFragment" >
             <argument
                 android:name="answer"
-                android:defaultValue="grass_ryegrass" />
+                android:defaultValue="grass_perennialryegrass" />
         </action>
     </fragment>
     <fragment

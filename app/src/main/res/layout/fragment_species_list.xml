@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         style="@style/SwardImageButton"
         android:drawableRight="@drawable/grass_timothy_button"
-        android:text="@string/grass_tallfescue" />
+        android:text="@string/grass_timothy" />
 
     <Space
         android:layout_width="match_parent"

@@ -31,15 +31,18 @@
 
         <EditText
             android:id="@+id/new_field_name"
+            style="@style/SwardButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
+            android:gravity="start|center_vertical"
             android:hint="@string/hint_field"
             android:importantForAutofill="no"
             android:inputType="textAutoComplete"
-            android:textSize="18sp"
+            android:paddingLeft="10dp"
             app:layout_constraintBottom_toTopOf="@id/date_layout"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="30dp" />
 
         <LinearLayout
             android:id="@+id/date_layout"
@@ -57,8 +60,11 @@
 
             <TextView
                 android:id="@+id/new_field_date"
+                style="@style/SwardButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="10dp" />
 
         </LinearLayout>
 
@@ -79,12 +85,14 @@
 
             <Spinner
                 android:id="@+id/new_field_soil_type"
+                style="@style/SwardButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
         <EditText
             android:id="@+id/new_field_notes"
+            style="@style/SwardButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -93,6 +101,8 @@
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:minLines="5"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
             app:layout_constraintBottom_toTopOf="@id/new_field_button_save"
             app:layout_constraintTop_toBottomOf="@id/soil_layout"
             tools:layout_editor_absoluteX="30dp" />

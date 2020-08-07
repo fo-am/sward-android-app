@@ -45,7 +45,7 @@
         android:layout_height="30dp" />
 
     <Button
-        android:id="@+id/two"
+        android:id="@+id/three"
         style="@style/SwardButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

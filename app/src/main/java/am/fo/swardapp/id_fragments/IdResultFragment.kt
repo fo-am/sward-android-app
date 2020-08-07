@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import am.fo.swardapp.R
 import am.fo.swardapp.SpeciesActivity
+import am.fo.swardapp.SpeciesInfoActivity
 import am.fo.swardapp.data.SpeciesDesc
 import am.fo.swardapp.data.SpeciesDesc.Companion.createSpeciesDesc
 import android.content.Intent
@@ -43,7 +44,12 @@ class IdResultFragment : Fragment() {
             species_photo.setImageResource(desc.img)
         }
 
-        species_info.setOnClickListener {}
+        species_info.setOnClickListener {
+            Intent(getActivity(), SpeciesInfoActivity::class.java).let {
+                it.putExtra("SPECIES", answer)
+                startActivity(it)
+            }
+        }
 
         id_again.setOnClickListener {
             startActivity(Intent(getActivity(),IdentificationActivity::class.java))

@@ -31,7 +31,7 @@
     <string name="field_delete">Delete field</string>
 
     <string name="title_activity_new_field">ADD FIELD</string>
-    <string name="hint_field">Name…</string>
+    <string name="hint_field">Field name…</string>
     <string name="button_field_save">Save</string>
     <string name="empty_field_not_saved">Field not saved because it is empty.</string>
 
@@ -175,5 +175,9 @@
     <string name="grass_meadowfescue_plant_cap"></string>
     <string name="grass_meadowfescue_flower_cap"></string>
     <string name="grass_meadowfescue_stemsheath_annotated_cap"></string>
+
+    
+
+
 
 </resources>

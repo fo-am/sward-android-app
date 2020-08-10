@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import kotlinx.android.synthetic.main.activity_farm.*
 import kotlinx.android.synthetic.main.activity_farm.toolbar
-import kotlinx.android.synthetic.main.activity_new_field.*
 
 class FarmActivity : SwardActivity() {
 

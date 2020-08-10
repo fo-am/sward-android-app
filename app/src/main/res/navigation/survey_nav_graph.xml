@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/survey_nav_graph"
+    app:startDestination="@id/surveyFieldFragment">
+
+    <fragment
+        android:id="@+id/surveyFieldFragment"
+        android:name="am.fo.swardapp.survey_fragments.SurveyFieldFragment"
+        android:label="fragment_survey_field"
+        tools:layout="@layout/fragment_survey_field" >
+        <action
+            android:id="@+id/action_surveyFieldFragment_to_surveyHowtoFragment"
+            app:destination="@id/surveyHowtoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyEndFragment"
+        android:name="am.fo.swardapp.survey_fragments.SurveyEndFragment"
+        android:label="fragment_survey_end"
+        tools:layout="@layout/fragment_survey_end" >
+        <argument
+            android:name="field_id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyHowtoFragment"
+        android:name="am.fo.swardapp.survey_fragments.SurveyHowtoFragment"
+        android:label="fragment_survey_howto"
+        tools:layout="@layout/fragment_survey_howto" >
+        <action
+            android:id="@+id/action_surveyHowtoFragment_to_surveyMainFragment"
+            app:destination="@id/surveyMainFragment" />
+        <argument
+            android:name="field_id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyMainFragment"
+        android:name="am.fo.swardapp.survey_fragments.SurveyMainFragment"
+        android:label="fragment_survey_main"
+        tools:layout="@layout/fragment_survey_main" >
+        <action
+            android:id="@+id/action_surveyMainFragment_to_surveySampleFragment"
+            app:destination="@id/surveySampleFragment" />
+        <argument
+            android:name="field_id"
+            app:argType="long" />
+        <argument
+            android:name="sample_num"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveySampleFragment"
+        android:name="am.fo.swardapp.survey_fragments.SurveySampleFragment"
+        android:label="fragment_survey_sample"
+        tools:layout="@layout/fragment_survey_sample" >
+        <action
+            android:id="@+id/action_surveySampleFragment_to_surveyEndFragment"
+            app:destination="@id/surveyEndFragment" />
+        <argument
+            android:name="field_id"
+            app:argType="long" />
+        <argument
+            android:name="sample_num"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_surveySampleFragment_to_surveyMainFragment"
+            app:destination="@id/surveyMainFragment" />
+    </fragment>
+</navigation>

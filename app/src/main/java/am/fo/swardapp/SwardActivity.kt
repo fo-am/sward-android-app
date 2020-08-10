@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_farm.*
 // base class for all activities here
 abstract class SwardActivity : AppCompatActivity() {
 
-    protected lateinit var swardViewModel: SwardViewModel
+    lateinit var swardViewModel: SwardViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,7 @@ abstract class SwardActivity : AppCompatActivity() {
                 startActivity(Intent(this, IdentificationActivity::class.java))
                 true }
             R.id.action_survey -> {
-                //startActivity(Intent(this, FarmActivity::class.java))
+                startActivity(Intent(this, SurveyActivity::class.java))
                 true }
             R.id.action_about -> {
                 startActivity(Intent(this, AboutActivity::class.java))

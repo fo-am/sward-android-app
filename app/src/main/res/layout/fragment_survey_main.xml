@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".survey_fragments.SurveyMainFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_padding" />
+
+    <TextView
+        android:id="@+id/survey_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/survey_main" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/survey_image_desc"
+        android:src="@drawable/example_w" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_padding" />
+
+    <Button
+        android:id="@+id/sample_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/survey_sample_button" />
+
+</LinearLayout>

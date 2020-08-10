@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".survey_fragments.SurveyEndFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_padding" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/survey_end" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_padding" />
+
+    <Button
+        android:id="@+id/view_results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/survey_view_button" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_padding" />
+
+    <Button
+        android:id="@+id/download_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/farm_download_data" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_padding" />
+
+</LinearLayout>

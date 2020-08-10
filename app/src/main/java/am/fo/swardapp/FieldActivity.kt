@@ -32,7 +32,7 @@ class FieldActivity : SwardActivity() {
                 Log.i("sward",fieldAndSurveys.field.name)
                 field_date_sown.setText(fieldAndSurveys.field.dateSown)
                 fieldAndSurveys.surveysAndRecords.forEach { surveyAndRecords ->
-                    Log.i("sward", "survey: "+surveyAndRecords.survey.time)
+                    Log.i("sward", "survey: "+ surveyAndRecords.survey.time)
                     surveyAndRecords.records.forEach { species ->
                         Log.i("sward", "recorded species: "+species.species)
                     }

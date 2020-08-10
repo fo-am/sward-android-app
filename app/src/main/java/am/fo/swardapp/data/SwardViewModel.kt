@@ -3,6 +3,7 @@ package am.fo.swardapp.data
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,7 +18,7 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
     val allFields: LiveData<List<Field>>
 
     fun getField(field_id: Long) : LiveData<Field> = repository.getField(field_id)
-    fun getFieldAndSown(fieldId: Long) : LiveData<FieldAndSown> = repository.getFieldAndSownSpecies(fieldId)
+    fun getSown(fieldId: Long) : LiveData<List<Sown>> = repository.getSown(fieldId)
     fun getFieldWithSurveysAndSpecies(fieldId: Long) : LiveData<FieldWithSurveysAndRecords> = repository.getFieldWithSurveysAndSpecies(fieldId)
 
     init {
@@ -34,5 +35,17 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
         sown.forEach { species ->
             repository.insertSown(Sown(fieldId,species))
         }
+    }
+
+    fun insertSurvey(survey: Survey): LiveData<Long> {
+        val liveData = MutableLiveData<Long>()
+        viewModelScope.launch(Dispatchers.IO) {
+            liveData.postValue(repository.insertSurvey(survey))
+        }
+        return liveData
+    }
+
+    fun insertRecord(record: Record) = viewModelScope.launch(Dispatchers.IO) {
+        repository.insertRecord(record)
     }
 }

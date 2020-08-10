@@ -14,12 +14,14 @@ import kotlinx.android.synthetic.main.fragment_survey_main.*
 
 class SurveyMainFragment : Fragment() {
     private var fieldId: Long? = null
+    private var surveyId: Long? = null
     private var sampleNum: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             fieldId = it.getLong("field_id")
+            surveyId = it.getLong("survey_id")
             sampleNum = it.getInt("sample_num")
         }
     }
@@ -43,6 +45,7 @@ class SurveyMainFragment : Fragment() {
             sample_button.setOnClickListener {
                 val bundle = bundleOf(
                     "field_id" to fieldId,
+                    "survey_id" to surveyId,
                     "sample_num" to sampleNum
                 )
                 findNavController().navigate(

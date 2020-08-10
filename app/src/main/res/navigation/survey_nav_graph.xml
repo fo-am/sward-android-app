@@ -50,6 +50,9 @@
             android:name="sample_num"
             app:argType="integer"
             android:defaultValue="1" />
+        <argument
+            android:name="survey_id"
+            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/surveySampleFragment"
@@ -68,5 +71,8 @@
         <action
             android:id="@+id/action_surveySampleFragment_to_surveyMainFragment"
             app:destination="@id/surveyMainFragment" />
+        <argument
+            android:name="survey_id"
+            app:argType="long" />
     </fragment>
 </navigation>

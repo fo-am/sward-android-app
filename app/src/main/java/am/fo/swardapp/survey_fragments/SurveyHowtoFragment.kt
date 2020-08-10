@@ -6,9 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import am.fo.swardapp.R
+import am.fo.swardapp.SwardActivity
+import am.fo.swardapp.data.Survey
 import androidx.core.os.bundleOf
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_survey_howto.*
+import java.time.Instant
 
 class SurveyHowtoFragment : Fragment() {
     private var fieldId: Long? = null
@@ -31,8 +35,16 @@ class SurveyHowtoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         start_survey.setOnClickListener {
-            val bundle = bundleOf("field_id" to fieldId)
-            findNavController().navigate(R.id.action_surveyHowtoFragment_to_surveyMainFragment, bundle)
+            val sa = activity as SwardActivity
+            sa.swardViewModel.insertSurvey(Survey(Instant.now().toString(),fieldId!!)).
+                observe(viewLifecycleOwner, Observer { surveyId ->
+                    val bundle = bundleOf(
+                        "field_id" to fieldId,
+                        "survey_id" to surveyId
+                    )
+                findNavController().navigate(R.id.action_surveyHowtoFragment_to_surveyMainFragment, bundle)
+            })
+
         }
     }
 

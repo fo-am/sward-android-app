@@ -15,8 +15,8 @@ class SwardRepository(private val swardDao: SwardDao) {
 
     fun getField(fieldId: Long): LiveData<Field> = swardDao.getField(fieldId)
 
-    fun getFieldAndSownSpecies(fieldId: Long): LiveData<FieldAndSown> =
-        swardDao.getFieldAndSown(fieldId)
+    fun getSown(fieldId: Long): LiveData<List<Sown>> =
+        swardDao.getSown(fieldId)
 
     fun getSurveys(fieldId: Long): LiveData<List<Survey>> = swardDao.getSurveys(fieldId)
 

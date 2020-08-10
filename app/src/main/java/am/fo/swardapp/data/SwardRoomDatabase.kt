@@ -76,7 +76,7 @@ abstract class SwardRoomDatabase : RoomDatabase() {
 
         fun getDatabase(context: Context, scope: CoroutineScope): SwardRoomDatabase {
 
-            context.deleteDatabase("sward_database")
+            //context.deleteDatabase("sward_database")
 
             val tempInstance =
                 INSTANCE

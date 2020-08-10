@@ -1,19 +1,16 @@
 package am.fo.swardapp.data
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Database(entities=arrayOf(Field::class,
-    Species::class,
-    FieldSpeciesSown::class,
+    Sown::class,
     Survey::class,
-    SurveySpeciesRecorded::class), version = 1, exportSchema = false)
+    Record::class), version = 3, exportSchema = false)
 abstract class SwardRoomDatabase : RoomDatabase() {
 
     abstract fun swardDao(): SwardDao
@@ -29,30 +26,14 @@ abstract class SwardRoomDatabase : RoomDatabase() {
                     val swardDao = database.swardDao()
 
                     // Add sample fields
-                    var field = Field("Top field", "", 0, "")
-                    swardDao.insertField(field)
-                    field = Field("Marshy field", "", 0, "")
-                    swardDao.insertField(field)
+                    var fieldId = swardDao.insertField(Field("Top field", "", 0, ""))
+                    swardDao.insertSown(Sown(fieldId,"grass_cocksfoot"))
+                    var surveyId = swardDao.insertSurvey(Survey("xyz",fieldId))
+                    swardDao.insertRecord(Record(surveyId,"grass_cocksfoot",1))
 
-                    // add all species here - doesn't matter if they already exist
-                    // and allows us to add more species without a database version bump
-                    swardDao.insertSpecies(Species("grass_cocksfoot"))
-                    swardDao.insertSpecies(Species("grass_meadowfescue"))
-                    swardDao.insertSpecies(Species("grass_meadowfoxtail"))
-                    swardDao.insertSpecies(Species("grass_perennialryegrass"))
-                    swardDao.insertSpecies(Species("grass_tallfescue"))
-                    swardDao.insertSpecies(Species("grass_timothy"))
-                    swardDao.insertSpecies(Species("herb_chicory"))
-                    swardDao.insertSpecies(Species("herb_ribwort"))
-                    swardDao.insertSpecies(Species("herb_sheepsburnet"))
-                    swardDao.insertSpecies(Species("herb_sheepsparsley"))
-                    swardDao.insertSpecies(Species("herb_yarrow"))
-                    swardDao.insertSpecies(Species("legume_alsike"))
-                    swardDao.insertSpecies(Species("legume_birdsfootrefoil"))
-                    swardDao.insertSpecies(Species("legume_lucern"))
-                    swardDao.insertSpecies(Species("legume_redclover"))
-                    swardDao.insertSpecies(Species("legume_sainfoin"))
-                    swardDao.insertSpecies(Species("legume_whiteclover"))
+                    swardDao.insertField(Field("Marshy field", "", 0, ""))
+
+
                 }
             }
         }
@@ -75,13 +56,27 @@ abstract class SwardRoomDatabase : RoomDatabase() {
 
         val MIGRATION_1_2 = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
-
+             // remove species and replaced with string
+             /*database.execSQL("""
+                CREATE TABLE new_Song (
+                    id INTEGER PRIMARY KEY NOT NULL,
+                    name TEXT,
+                    tag TEXT NOT NULL DEFAULT ''
+                )
+                """.trimIndent())
+        database.execSQL("""
+                INSERT INTO new_Song (id, name, tag)
+                SELECT id, name, tag FROM Song
+                """.trimIndent())
+        database.execSQL("DROP TABLE Song")
+        database.execSQL("ALTER TABLE new_Song RENAME TO Song")
+            */
             }
         }
 
         fun getDatabase(context: Context, scope: CoroutineScope): SwardRoomDatabase {
 
-            //context.deleteDatabase("sward_database")
+            context.deleteDatabase("sward_database")
 
             val tempInstance =
                 INSTANCE
@@ -94,6 +89,7 @@ abstract class SwardRoomDatabase : RoomDatabase() {
                         SwardRoomDatabase::class.java,
                         "sward_database")
                     //.addMigrations(MIGRATION_1_2)
+                    .fallbackToDestructiveMigration()
                     .addCallback(SwardDatabaseCallback(scope))
                     .build()
                 INSTANCE = instance

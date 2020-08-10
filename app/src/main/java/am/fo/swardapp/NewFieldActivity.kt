@@ -1,10 +1,12 @@
 package am.fo.swardapp
 
 import am.fo.swardapp.data.Field
+import am.fo.swardapp.data.SpeciesDesc
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.*
 import java.text.SimpleDateFormat
@@ -65,11 +67,30 @@ class NewFieldActivity : SwardActivity() {
             if (TextUtils.isEmpty(new_field_name.text)) {
                 setResult(Activity.RESULT_CANCELED)
             } else {
-                swardViewModel.insertField(Field(
+
+                var field = Field(
                     new_field_name.text.toString(),
                     new_field_date.text.toString(),
                     new_field_soil_type.selectedItemPosition, // maybe switch to id lookup??
-                    new_field_notes.text.toString()))
+                    new_field_notes.text.toString()
+                )
+
+                var sown = mutableListOf<String>()
+                // scan over species widgets, inserting them for this field where required
+                SpeciesDesc.speciesList.forEach { species ->
+                    val id = getResources().getIdentifier(species, "id", packageName)
+                    if (id == 0) {
+                        Log.i("sward", "new_field: no widget found for sewn species: " + species)
+                    } else {
+                        val v: Switch = findViewById(id)
+                        if (v.isChecked) {
+                            sown.add(species)
+                        }
+                    }
+                }
+
+                swardViewModel.insertFieldWithSpeciesSown(field, sown)
+
                 setResult(Activity.RESULT_OK)
             }
             finish()

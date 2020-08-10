@@ -33,6 +33,7 @@
     <string name="title_activity_new_field">ADD FIELD</string>
     <string name="hint_field">Field name…</string>
     <string name="button_field_save">Save</string>
+    <string name="species_sown">Species sown</string>
     <string name="empty_field_not_saved">Field not saved because it is empty.</string>
 
     <string name="title_activity_about">ABOUT</string>
@@ -129,25 +130,6 @@
     <string name="legume_sainfoin">Sainfoin</string>
     <string name="legume_whiteclover">White clover</string>
 
-    <string name="grass_cocksfoot_both">Cock\'s Foot (Dactylis glomerata)</string>
-    <string name="grass_meadowfescue_both">Meadow Fescue (Schedonorus pratensis)</string>
-    <string name="grass_meadowfoxtail_both">Alopecurus pratensis</string>
-    <string name="grass_perennialryegrass_both">Lolium perenne</string>
-    <string name="grass_tallfescue_both">Schedonorus arundinaceus</string>
-    <string name="grass_timothy_both">Phleum pratensis</string>
-    <string name="herb_chicory_both">Cichorium intybus</string>
-    <string name="herb_ribwort_both">Plantago lanceolata</string>
-    <string name="herb_sheepsburnet_both">Sanguisorba minor</string>
-    <string name="herb_sheepsparsley_both">Petroselinum sativum</string>
-    <string name="herb_yarrow_both">Achillea millefolium</string>
-    <string name="legume_alsike_both">Trifolium hybridum</string>
-    <string name="legume_birdsfootrefoil_both">Lotus corniculatus</string>
-    <string name="legume_lucern_both">Medicago sativa</string>
-    <string name="legume_redclover_both">Trifolium pratense</string>
-    <string name="legume_sainfoin_both">Onobrychis viciifolia</string>
-    <string name="legume_whiteclover_both">Trifolium repens</string>
-
-
     <string name="grass_cocksfoot_lat">Dactylis glomerata</string>
     <string name="grass_meadowfescue_lat">Schedonorus pratensis</string>
     <string name="grass_meadowfoxtail_lat">Alopecurus pratensis</string>
@@ -168,16 +150,31 @@
 
     <string name="species_not_found">Species not found!</string>
 
-    <string name="grass_cocksfoot_plant_cap">Lorem ipsum…</string>
-    <string name="grass_cocksfoot_flower_cap">Lorem ipsum…</string>
-    <string name="grass_cocksfoot_stem_cap">Lorem ipsum…</string>
-    <string name="grass_cocksfoot_stemsheath_annotated_cap">Lorem ipsum…</string>
-    <string name="grass_meadowfescue_plant_cap"></string>
-    <string name="grass_meadowfescue_flower_cap"></string>
-    <string name="grass_meadowfescue_stemsheath_annotated_cap"></string>
+    <string name="grass_cocksfoot_plant_cap">Up to 150cm, dark bluish-green, dense tufts (may form clumps)</string>
+    <string name="grass_cocksfoot_flower_cap">One-sided, clumped flower head.</string>
+    <string name="grass_cocksfoot_stem_cap">Base of stem is flattened.</string>
+    <string name="grass_cocksfoot_leaf_cap">Long flat leaves (2–14mm wide) that narrow to a point. Each leaf has a prominent keel (like the keel on a boat)</string>
+    <string name="grass_cocksfoot_stemsheath_annotated_cap">No auricles, ligule generally long (2–12mm), ligule has torn, jagged edges.</string>
 
-    
+    <string name="grass_meadowfescue_plant_cap">Up to 80cm, loose tufts (sometimes forms clumps), variable green</string>
+    <string name="grass_meadowfescue_flower_cap">Tinged reddish/brown.</string>
+    <string name="grass_meadowfescue_stem_cap"></string>
+    <string name="grass_meadowfescue_leaf_cap">The leaf blades are ribbed on the upper side and more glossy on the underside. The leaves clasp the stem by long sheaths</string>
+    <string name="grass_meadowfescue_stemsheath_annotated_cap">Short, stubby ligule – barely visible (1mm). Small auricles with no hairs.</string>
+
+    <string name="grass_meadowfoxtail_plant_cap">Up to 120cm, whitish-green, erect tufts.</string>
+    <string name="grass_meadowfoxtail_stemsheath_annotated_cap">No auricles, ligule typically short (1–4mm), ligule tatty.</string>
+    <string name="grass_meadowfoxtail_stem_cap"></string>
+    <string name="grass_meadowfoxtail_leaf_cap">The basal (bottom) leaf sheath is often black or brown, the leaves are hairless.</string>
+    <string name="grass_meadowfoxtail_flower_cap">Tassel-like, cylindrical, up to 13cm long, yellow-green, covered in silver hairs.</string>
 
 
+
+
+    <string name="_plant_cap"></string>
+    <string name="_stemsheath_annotated_cap"></string>
+    <string name="_stem_cap"></string>
+    <string name="_leaf_cap"></string>
+    <string name="_flower_cap"></string>
 
 </resources>

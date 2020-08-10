@@ -50,6 +50,7 @@
             app:layout_constraintTop_toBottomOf="@id/species_text">
 
             <LinearLayout
+                android:id="@+id/species_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -59,7 +60,6 @@
                     android:name="am.fo.swardapp.species_fragments.SpeciesListFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

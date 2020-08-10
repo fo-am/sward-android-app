@@ -12,14 +12,20 @@ class SwardRepository(private val swardDao: SwardDao) {
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
     val allFields: LiveData<List<Field>> = swardDao.getFields()
-    val allSpecies: LiveData<List<Species>> = swardDao.getSpecies()
 
-    fun getField(fieldId: Int): LiveData<Field> = swardDao.getField(fieldId)
-    fun getSurveysForField(field: Field) = swardDao.getSurveysForField(field.fieldId)
-    fun getSpeciesSownForField(field: Field) = swardDao.getSpeciesSownForField(field.fieldId)
-    fun getSpeciesSownForSurvey(survey: Survey) = swardDao.getSpeciesRecordedForSurvey(survey.surveyId)
+    fun getField(fieldId: Long): LiveData<Field> = swardDao.getField(fieldId)
 
-    suspend fun insertField(field: Field) = swardDao.insertField(field)
+    fun getFieldAndSownSpecies(fieldId: Long): LiveData<FieldAndSown> =
+        swardDao.getFieldAndSown(fieldId)
+
+    fun getSurveys(fieldId: Long): LiveData<List<Survey>> = swardDao.getSurveys(fieldId)
+
+    fun getFieldWithSurveysAndSpecies(fieldId: Long): LiveData<FieldWithSurveysAndRecords> =
+        swardDao.getFieldWithSurveysAndSpecies(fieldId)
+
+    suspend fun insertField(field: Field) : Long = swardDao.insertField(field)
     suspend fun insertSurvey(survey: Survey) = swardDao.insertSurvey(survey)
-    suspend fun insertSpecies(species: Species) = swardDao.insertSpecies(species)
+    suspend fun insertSown(sown: Sown) = swardDao.insertSown(sown)
+    suspend fun insertRecord(record: Record) = swardDao.insertRecord(record)
+
 }

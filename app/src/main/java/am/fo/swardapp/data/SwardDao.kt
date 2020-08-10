@@ -1,42 +1,40 @@
 package am.fo.swardapp.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface SwardDao {
     @Query("SELECT * from field_table ORDER BY name ASC")
     fun getFields(): LiveData<List<Field>>
 
-    @Query("SELECT * from field_table Where fieldId=:fieldId ORDER BY name ASC")
-    fun getField(fieldId: Int): LiveData<Field>
+    @Query("SELECT * from field_table Where fieldId=:fieldId")
+    fun getField(fieldId: Long): LiveData<Field>
 
-    @Query("SELECT * from survey_table WHERE fieldId=:fieldId")
-    fun getSurveysForField(fieldId: Int): LiveData<List<Survey>>
+    @Transaction
+    @Query("SELECT * from field_table Where fieldId=:fieldId")
+    fun getFieldAndSown(fieldId: Long): LiveData<FieldAndSown>
 
-    @Query("SELECT * from species_table")
-    fun getSpecies(): LiveData<List<Species>>
+    @Query("SELECT * from survey_table Where fieldId=:fieldId")
+    fun getSurveys(fieldId: Long): LiveData<List<Survey>>
 
-    @Query("SELECT * from field_species_sown_table WHERE fieldId=:fieldId")
-    fun getSpeciesSownForField(fieldId: Int): LiveData<List<FieldSpeciesSown>>
+    @Transaction
+    @Query("SELECT * from survey_table Where surveyId=:surveyId")
+    fun getSurveyAndRecordedSpecies(surveyId: Long): LiveData<SurveyAndRecords>
 
-    @Query("SELECT * from survey_species_recorded_table WHERE surveyId=:surveyId")
-    fun getSpeciesRecordedForSurvey(surveyId: Int): LiveData<List<SurveySpeciesRecorded>>
-
+    @Transaction
+    @Query("SELECT * from field_table Where fieldId=:fieldId")
+    fun getFieldWithSurveysAndSpecies(fieldId: Long): LiveData<FieldWithSurveysAndRecords>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertField(field: Field)
+    suspend fun insertField(field: Field): Long
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertSurvey(survey: Survey)
+    suspend fun insertSurvey(survey: Survey): Long
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertSpecies(record: Species)
+    suspend fun insertSown(sown: Sown): Long
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertFieldSpeciesSown(sown: FieldSpeciesSown)
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertSurveySpeciesRecorded(sown: SurveySpeciesRecorded)
+    suspend fun insertRecord(recorded: Record): Long
+
 
     @Query("DELETE FROM field_table")
     suspend fun deleteAllFields()

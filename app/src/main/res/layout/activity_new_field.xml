@@ -20,101 +20,126 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".NewFieldActivity"
-        tools:showIn="@layout/activity_new_field">
-
-        <EditText
-            android:id="@+id/new_field_name"
-            style="@style/SwardButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:gravity="start|center_vertical"
-            android:hint="@string/hint_field"
-            android:importantForAutofill="no"
-            android:inputType="textAutoComplete"
-            android:paddingLeft="10dp"
-            app:layout_constraintBottom_toTopOf="@id/date_layout"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="30dp" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
-            android:id="@+id/date_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@id/soil_layout"
-            app:layout_constraintTop_toBottomOf="@id/new_field_name">
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
 
-            <TextView
-                android:id="@+id/new_field_date_text"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/field_date_sown" />
-
-            <TextView
-                android:id="@+id/new_field_date"
+            <EditText
+                android:id="@+id/new_field_name"
                 style="@style/SwardButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="start|left|center_vertical"
+                android:fontFamily="sans-serif-light"
+                android:gravity="start|center_vertical"
+                android:hint="@string/hint_field"
+                android:importantForAutofill="no"
+                android:inputType="textAutoComplete"
                 android:paddingLeft="10dp" />
 
-        </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
-        <LinearLayout
-            android:id="@+id/soil_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@id/new_field_notes"
-            app:layout_constraintTop_toBottomOf="@id/date_layout"
-            tools:layout_editor_absoluteX="30dp">
+            <LinearLayout
+                android:id="@+id/date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/new_field_date_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_date_sown" />
+
+                <TextView
+                    android:id="@+id/new_field_date"
+                    style="@style/SwardButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|left|center_vertical"
+                    android:paddingLeft="10dp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <LinearLayout
+                android:id="@+id/soil_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/new_field_soil_type_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_soil_type" />
+
+                <Spinner
+                    android:id="@+id/new_field_soil_type"
+                    style="@style/SwardButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
             <TextView
-                android:id="@+id/new_field_soil_type_text"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/field_soil_type" />
-
-            <Spinner
-                android:id="@+id/new_field_soil_type"
-                style="@style/SwardButton"
+                android:id="@+id/textView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/species_sown" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <fragment
+                    android:id="@+id/fragment2"
+                    android:name="am.fo.swardapp.species_fragments.SpeciesSelectorFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </HorizontalScrollView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <EditText
+                android:id="@+id/new_field_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/field_notes_hint"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:minLines="5"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp" />
+
+            <Button
+                android:id="@+id/new_field_button_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_field_save" />
+
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/new_field_notes"
-            style="@style/SwardButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="start|top"
-            android:hint="@string/field_notes_hint"
-            android:importantForAutofill="no"
-            android:inputType="textMultiLine"
-            android:minLines="5"
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            app:layout_constraintBottom_toTopOf="@id/new_field_button_save"
-            app:layout_constraintTop_toBottomOf="@id/soil_layout"
-            tools:layout_editor_absoluteX="30dp" />
-
-        <Button
-            android:id="@+id/new_field_button_save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button_field_save"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/new_field_notes" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

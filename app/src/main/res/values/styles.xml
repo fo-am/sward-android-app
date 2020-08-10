@@ -10,6 +10,7 @@
         <item name="android:textColor">@color/colorText</item>
         <item name="buttonStyle">@style/SwardButton</item>
         <item name="android:buttonStyle">@style/SwardButton</item>
+        <item name="android:buttonStyleToggle">@style/SwardToggleButton</item>
         <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/sen_regular</item>
     </style>
 
@@ -34,6 +35,12 @@
     <style name="SwardButton" parent="Widget.AppCompat.Button">
         <item name="android:textAllCaps">false</item>
         <item name="android:background">@drawable/button</item>
+        <item name="android:textSize">10pt</item>
+    </style>
+
+    <style name="SwardToggleButton"  parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/button_toggle</item>
         <item name="android:textSize">10pt</item>
     </style>
 

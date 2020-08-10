@@ -1,8 +1,6 @@
 package am.fo.swardapp.data
 
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 
 @Entity(tableName="field_table")
 data class Field(val name: String,
@@ -10,35 +8,57 @@ data class Field(val name: String,
                  val soilType: Int,
                  val notes: String) {
     @PrimaryKey(autoGenerate = true)
-    var fieldId:Int = 0
+    var fieldId:Long = 0
 }
 
-// need to pre-populate these
-@Entity(tableName="species_table")
-data class Species(val type: String) {
+@Entity(tableName="sown_table")
+data class Sown(val fieldId: Long,
+                val species: String) {
     @PrimaryKey(autoGenerate = true)
-    var speciesId: Int = 0
-}
-
-@Entity(tableName="field_species_sown_table")
-data class FieldSpeciesSown(@Embedded val field: Field,
-                            @Embedded val species: Species) {
-    @PrimaryKey(autoGenerate = true)
-    var surveyId: Int = 0
+    var surveyId: Long = 0
 }
 
 @Entity(tableName="survey_table")
 data class Survey(val time: String,
-                  @Embedded val field: Field) {
+                  val fieldId: Long) {
     @PrimaryKey(autoGenerate = true)
-    var surveyId: Int = 0
+    var surveyId: Long = 0
 }
 
-@Entity(tableName="survey_species_recorded_table")
-data class SurveySpeciesRecorded(@Embedded val survey: Survey,
-                                 @Embedded val species: Species,
-                                 val sample: Int) {
+@Entity(tableName="record_table")
+data class Record(val surveyId: Long,
+                  val species: String,
+                  val sample: Int) {
     @PrimaryKey(autoGenerate = true)
-    var recordId: Int = 0
+    var recordId: Long = 0
 }
 
+// for querying
+data class FieldAndSown(
+    @Embedded val field: Field,
+    @Relation(
+        parentColumn = "fieldId",
+        entityColumn = "fieldId"
+    )
+    val sownSpecies: List<Sown>
+)
+
+data class SurveyAndRecords(
+    @Embedded val survey: Survey,
+    @Relation(
+        parentColumn = "surveyId",
+        entityColumn = "surveyId"
+    )
+    val records: List<Record>
+)
+
+
+data class FieldWithSurveysAndRecords (
+    @Embedded val field: Field,
+    @Relation(
+        entity = Survey::class,
+        parentColumn = "fieldId",
+        entityColumn = "fieldId"
+    )
+    val surveysAndRecords: List<SurveyAndRecords>
+)

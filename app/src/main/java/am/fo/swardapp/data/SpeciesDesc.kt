@@ -8,6 +8,13 @@ data class DescImg(val img: Int, val caption: Int)
 class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val imgs: Array<DescImg> ) {
 
     companion object {
+        // other than the layouts - this is the only place where the species should be listed programatically
+        // to make it easier to add species later on (and perhaps to have them stored in the database if required)
+        val speciesList = arrayOf("grass_cocksfoot","grass_meadowfescue","grass_meadowfoxtail","grass_perennialryegrass",
+            "grass_tallfescue","grass_timothy","herb_chicory","herb_ribwort","herb_sheepsburnet","herb_sheepsparsley",
+            "herb_yarrow","legume_alsike","legume_birdsfoottrefoil","legume_lucern","legume_redclover","legume_sainfoin",
+            "legume_whiteclover")
+
         fun createSpeciesDesc(id: String?) =
             when (id) {
                 "grass_cocksfoot" -> SpeciesDesc(

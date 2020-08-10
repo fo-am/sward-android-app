@@ -1,8 +1,5 @@
 package am.fo.swardapp.data
 
-import am.fo.swardapp.data.Field
-import am.fo.swardapp.data.SwardRepository
-import am.fo.swardapp.data.SwardRoomDatabase
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -19,7 +16,9 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
     // - Repository is completely separated from the UI through the ViewModel.
     val allFields: LiveData<List<Field>>
 
-    fun getField(field_id: Int) : LiveData<Field> = repository.getField(field_id)
+    fun getField(field_id: Long) : LiveData<Field> = repository.getField(field_id)
+    fun getFieldAndSown(fieldId: Long) : LiveData<FieldAndSown> = repository.getFieldAndSownSpecies(fieldId)
+    fun getFieldWithSurveysAndSpecies(fieldId: Long) : LiveData<FieldWithSurveysAndRecords> = repository.getFieldWithSurveysAndSpecies(fieldId)
 
     init {
         val swardDao = SwardRoomDatabase.getDatabase(application,viewModelScope).swardDao()
@@ -30,7 +29,10 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */
-    fun insertField(field: Field) = viewModelScope.launch(Dispatchers.IO) {
-        repository.insertField(field)
+    fun insertFieldWithSpeciesSown(field: Field, sown: List<String>) = viewModelScope.launch(Dispatchers.IO) {
+        val fieldId = repository.insertField(field)
+        sown.forEach { species ->
+            repository.insertSown(Sown(fieldId,species))
+        }
     }
 }

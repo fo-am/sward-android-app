@@ -35,7 +35,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
             <TextView
                 android:id="@+id/species_name"
@@ -73,7 +73,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
             <LinearLayout
                 style="@style/SwardButton"
@@ -100,7 +100,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
             <LinearLayout
                 style="@style/SwardButton"
@@ -127,7 +127,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
             <LinearLayout
                 style="@style/SwardButton"
@@ -154,7 +154,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
             <LinearLayout
                 style="@style/SwardButton"
@@ -181,7 +181,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
             <LinearLayout
                 style="@style/SwardButton"
@@ -208,7 +208,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
 
         </LinearLayout>

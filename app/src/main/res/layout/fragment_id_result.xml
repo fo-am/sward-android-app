@@ -11,7 +11,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="@dimen/default_padding" />
 
     <TextView
         android:id="@+id/species_name"
@@ -32,7 +32,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="@dimen/default_padding" />
 
     <ImageView
         android:id="@+id/species_photo"
@@ -42,7 +42,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="@dimen/default_padding" />
 
     <Button
         android:id="@+id/species_info"
@@ -52,7 +52,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="@dimen/default_padding" />
 
     <Button
         android:id="@+id/id_again"

@@ -1,5 +1,8 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="big_padding">16dp</dimen>
+    <dimen name="default_padding">30dp</dimen>
     <dimen name="min_height">48dp</dimen>
+
+    <dimen name="species_selector_width">180dp</dimen>
+    <dimen name="species_selector_margin">10dp</dimen>
+
 </resources>

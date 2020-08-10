@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_field.*
+import kotlinx.android.synthetic.main.activity_field.toolbar
+import kotlinx.android.synthetic.main.activity_new_field.*
 
 class FieldActivity : SwardActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setContentView(R.layout.activity_field)
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_field)
+        setSupportActionBar(toolbar)
 
         val fieldId = intent.getLongExtra("FIELD_ID",0)
 /*

@@ -20,7 +20,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="30dp"
@@ -28,79 +28,99 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
-            android:id="@+id/field_date_layout"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@id/field_survey"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/field_date_sown_text"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:text="@string/field_date_sown" />
-
-            <TextView
-                android:id="@+id/field_date_sown"
+            <LinearLayout
+                android:id="@+id/field_date_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/field_date_sown" />
+
+                <TextView
+                    android:id="@+id/field_date_sown"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
+
+            <Button
+                android:id="@+id/field_survey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/field_survey"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
+
+            <Button
+                android:id="@+id/field_results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/field_results"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/field_biodiversity"/>
+
+            <am.fo.swardapp.drawing.SwardCanvas
+                android:id="@+id/field_canvas_view"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/field_notes" />
+
+            <EditText
+                android:id="@+id/field_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/field_notes_hint"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:minLines="5"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
+
+            <Button
+                android:id="@+id/field_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:text="@string/field_delete"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/field_survey"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/field_survey"
-            app:layout_constraintBottom_toTopOf="@+id/field_results"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/field_date_layout" />
-
-        <Button
-            android:id="@+id/field_results"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/field_results"
-            app:layout_constraintBottom_toTopOf="@+id/field_biodiversity_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/field_survey" />
-
-        <TextView
-            android:id="@+id/field_biodiversity_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/field_biodiversity"
-            app:layout_constraintBottom_toTopOf="@id/field_canvas_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/field_results" />
-
-        <am.fo.swardapp.drawing.SwardCanvas
-            android:id="@+id/field_canvas_view"
-            android:layout_width="0dp"
-            android:layout_height="300dp"
-            app:layout_constraintBottom_toTopOf="@+id/field_delete"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/field_biodiversity_text" />
-
-        <Button
-            android:id="@+id/field_delete"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:text="@string/field_delete"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/field_canvas_view" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

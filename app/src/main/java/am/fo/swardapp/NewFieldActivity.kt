@@ -9,16 +9,19 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.*
+import kotlinx.android.synthetic.main.activity_identification.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 import kotlinx.android.synthetic.main.activity_new_field.*
+import kotlinx.android.synthetic.main.activity_new_field.toolbar
 
 class NewFieldActivity : SwardActivity() {
 
     public override fun onCreate(savedInstanceState: Bundle?) {
-        setContentView(R.layout.activity_new_field)
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_new_field)
+        setSupportActionBar(toolbar)
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
@@ -82,7 +85,7 @@ class NewFieldActivity : SwardActivity() {
                     if (id == 0) {
                         Log.i("sward", "new_field: no widget found for sewn species: " + species)
                     } else {
-                        val v: Switch = findViewById(id)
+                        val v: ToggleButton = findViewById(id)
                         if (v.isChecked) {
                             sown.add(species)
                         }

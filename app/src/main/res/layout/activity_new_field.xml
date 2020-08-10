@@ -32,30 +32,37 @@
             android:paddingLeft="30dp"
             android:paddingRight="30dp">
 
-            <EditText
-                android:id="@+id/new_field_name"
-                style="@style/SwardButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:gravity="start|center_vertical"
-                android:hint="@string/hint_field"
-                android:importantForAutofill="no"
-                android:inputType="textAutoComplete"
-                android:paddingLeft="10dp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="30dp" />
-
             <LinearLayout
-                android:id="@+id/date_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/new_field_date_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_name" />
+
+                <EditText
+                    android:id="@+id/new_field_name"
+                    style="@style/SwardButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:importantForAutofill="no"
+                    android:inputType="textAutoComplete"
+                    android:paddingLeft="10dp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="@string/field_date_sown" />
@@ -72,16 +79,14 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
             <LinearLayout
-                android:id="@+id/soil_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/new_field_soil_type_text"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="@string/field_soil_type" />
@@ -96,7 +101,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -107,18 +112,23 @@
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-                <fragment
-                    android:id="@+id/fragment2"
-                    android:name="am.fo.swardapp.species_fragments.SpeciesSelectorFragment"
+                android:layout_height="220dp">
+                <LinearLayout
+                    android:id="@+id/species_list"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <fragment
+                        android:id="@+id/fragment"
+                        android:name="am.fo.swardapp.species_fragments.SpeciesSelectorFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
             </HorizontalScrollView>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/default_padding" />
 
             <EditText
                 android:id="@+id/new_field_notes"
@@ -138,6 +148,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_field_save" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
 
         </LinearLayout>
     </ScrollView>

@@ -3,6 +3,8 @@ package am.fo.swardapp
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import kotlinx.android.synthetic.main.activity_identification.*
+import kotlinx.android.synthetic.main.activity_identification.toolbar
+import kotlinx.android.synthetic.main.activity_new_field.*
 
 class IdentificationActivity : SwardActivity() {
 

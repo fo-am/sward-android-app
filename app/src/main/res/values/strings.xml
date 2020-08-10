@@ -13,7 +13,7 @@
     <string name="field_date_sown">Date sown</string>
     <string name="field_soil_type">Soil type</string>
     <string name="field_notes">Notes</string>
-    <string name="field_notes_hint">Add your notes here…</string>
+    <string name="field_notes_hint">Add your notes about this field here…</string>
     <string-array name="soil_types">
         <item>Sandy/Shallow</item>
         <item>Medium/Shallow</item>
@@ -32,6 +32,7 @@
 
     <string name="title_activity_new_field">ADD FIELD</string>
     <string name="hint_field">Field name…</string>
+    <string name="field_name">Field name</string>
     <string name="button_field_save">Save</string>
     <string name="species_sown">Species sown</string>
     <string name="empty_field_not_saved">Field not saved because it is empty.</string>

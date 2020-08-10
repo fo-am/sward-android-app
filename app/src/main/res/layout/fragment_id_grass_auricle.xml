@@ -31,7 +31,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="@dimen/default_padding" />
 
     <Button
         android:id="@+id/one"
@@ -43,7 +43,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="@dimen/default_padding" />
 
     <Button
         android:id="@+id/two"

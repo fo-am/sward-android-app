@@ -1,18 +1,17 @@
 package am.fo.swardapp.survey_fragments
 
+import am.fo.swardapp.R
+import am.fo.swardapp.SwardFragment
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import am.fo.swardapp.R
-import android.util.Log
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_survey_howto.*
 import kotlinx.android.synthetic.main.fragment_survey_main.*
 
-class SurveyMainFragment : Fragment() {
+class SurveyMainFragment : SwardFragment() {
     private var fieldId: Long? = null
     private var surveyId: Long? = null
     private var sampleNum: Int? = null
@@ -39,9 +38,9 @@ class SurveyMainFragment : Fragment() {
         sampleNum?.let { sampleNum ->
             Log.i("sward", "sampleNum: " + sampleNum)
             survey_main.text =
-                String.format(resources.getString(R.string.survey_main), 10 - sampleNum);
+                String.format(resources.getString(R.string.survey_main), 10 - sampleNum)
             sample_button.text =
-                String.format(resources.getString(R.string.survey_sample_button), sampleNum);
+                String.format(resources.getString(R.string.survey_sample_button), sampleNum)
             sample_button.setOnClickListener {
                 val bundle = bundleOf(
                     "field_id" to fieldId,

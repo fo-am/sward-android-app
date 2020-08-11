@@ -2,17 +2,16 @@ package am.fo.swardapp.species_fragments
 
 import am.fo.swardapp.R
 import am.fo.swardapp.SpeciesInfoActivity
+import am.fo.swardapp.SwardFragment
 import am.fo.swardapp.data.SpeciesDesc
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_species_list.*
 
-class SpeciesListFragment : Fragment() {
+class SpeciesListFragment : SwardFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

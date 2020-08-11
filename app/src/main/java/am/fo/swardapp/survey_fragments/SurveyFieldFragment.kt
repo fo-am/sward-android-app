@@ -1,18 +1,18 @@
 package am.fo.swardapp.survey_fragments
 
 import am.fo.swardapp.FieldListAdapter
+import am.fo.swardapp.R
+import am.fo.swardapp.SwardActivity
+import am.fo.swardapp.SwardFragment
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import am.fo.swardapp.R
-import am.fo.swardapp.SwardActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_farm.*
 
-class SurveyFieldFragment : Fragment() {
+class SurveyFieldFragment : SwardFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +29,7 @@ class SurveyFieldFragment : Fragment() {
         fields_recycler_view.layoutManager = LinearLayoutManager(context!!)
 
         val sa: SwardActivity = activity as SwardActivity
-        sa.swardViewModel.allFields.observe(this, Observer { fields ->
+        sa.swardViewModel.allFields.observe(viewLifecycleOwner, Observer { fields ->
             // Update the cached copy of the words in the adapter.
             fields?.let { adapter.setFields(it) }
         })

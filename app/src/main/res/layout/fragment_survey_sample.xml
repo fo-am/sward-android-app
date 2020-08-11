@@ -31,7 +31,7 @@
             android:orientation="vertical">
 
             <fragment
-                android:id="@+id/fragment"
+                android:id="@+id/selector_fragment"
                 android:name="am.fo.swardapp.species_fragments.SpeciesSelectorFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

@@ -1,20 +1,20 @@
 package am.fo.swardapp.survey_fragments
 
+import am.fo.swardapp.R
+import am.fo.swardapp.SwardFragment
+import am.fo.swardapp.data.Survey
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import am.fo.swardapp.R
-import am.fo.swardapp.SwardActivity
-import am.fo.swardapp.data.Survey
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_survey_howto.*
-import java.time.Instant
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-class SurveyHowtoFragment : Fragment() {
+class SurveyHowtoFragment : SwardFragment() {
     private var fieldId: Long? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +35,7 @@ class SurveyHowtoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         start_survey.setOnClickListener {
-            val sa = activity as SwardActivity
-            sa.swardViewModel.insertSurvey(Survey(Instant.now().toString(),fieldId!!)).
+            swardViewModel.insertSurvey(Survey(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),fieldId!!)).
                 observe(viewLifecycleOwner, Observer { surveyId ->
                     val bundle = bundleOf(
                         "field_id" to fieldId,

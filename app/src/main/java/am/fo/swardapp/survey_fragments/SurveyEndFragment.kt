@@ -1,17 +1,16 @@
 package am.fo.swardapp.survey_fragments
 
 import am.fo.swardapp.FieldActivity
+import am.fo.swardapp.R
+import am.fo.swardapp.SwardFragment
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import am.fo.swardapp.R
-import android.content.Intent
 import kotlinx.android.synthetic.main.fragment_survey_end.*
 
-class SurveyEndFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+class SurveyEndFragment : SwardFragment() {
     private var fieldId: Long? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

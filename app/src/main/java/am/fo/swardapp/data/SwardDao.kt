@@ -19,8 +19,8 @@ interface SwardDao {
     fun getSurveys(fieldId: Long): LiveData<List<Survey>>
 
     @Transaction
-    @Query("SELECT * from survey_table Where surveyId=:surveyId")
-    fun getSurveyAndRecordedSpecies(surveyId: Long): LiveData<SurveyAndRecords>
+    @Query("SELECT * from survey_table Where fieldId=:fieldId")
+    fun getSurveysAndRecords(fieldId: Long): LiveData<List<SurveyAndRecords>>
 
     @Transaction
     @Query("SELECT * from field_table Where fieldId=:fieldId")

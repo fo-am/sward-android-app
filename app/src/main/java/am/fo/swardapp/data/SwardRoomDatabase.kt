@@ -1,7 +1,9 @@
 package am.fo.swardapp.data
 
 import android.content.Context
-import androidx.room.*
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
@@ -26,10 +28,16 @@ abstract class SwardRoomDatabase : RoomDatabase() {
                     val swardDao = database.swardDao()
 
                     // Add sample fields
-                    var fieldId = swardDao.insertField(Field("Top field", "", 0, ""))
+                    val fieldId = swardDao.insertField(Field("Top field", "", 0, ""))
                     swardDao.insertSown(Sown(fieldId,"grass_cocksfoot"))
-                    var surveyId = swardDao.insertSurvey(Survey("xyz",fieldId))
+                    swardDao.insertSown(Sown(fieldId,"grass_timothy"))
+                    swardDao.insertSown(Sown(fieldId,"herb_sheepsburnet"))
+                    swardDao.insertSown(Sown(fieldId,"legume_sainfoin"))
+                    val surveyId = swardDao.insertSurvey(Survey("2020-08-10",fieldId))
                     swardDao.insertRecord(Record(surveyId,"grass_cocksfoot",1))
+                    swardDao.insertRecord(Record(surveyId,"herb_sheepsburnet",1))
+                    swardDao.insertRecord(Record(surveyId,"legume_sainfoin",1))
+                    swardDao.insertRecord(Record(surveyId,"grass_cocksfoot",2))
 
                     swardDao.insertField(Field("Marshy field", "", 0, ""))
 
@@ -40,11 +48,11 @@ abstract class SwardRoomDatabase : RoomDatabase() {
 
         override fun onOpen(db: SupportSQLiteDatabase) {
             super.onOpen(db)
-            INSTANCE?.let { database ->
+            /*INSTANCE?.let { database ->
                 scope.launch {
                     val swardDao = database.swardDao()
                 }
-            }
+            }*/
         }
     }
 

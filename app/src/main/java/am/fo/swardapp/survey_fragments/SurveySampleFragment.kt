@@ -1,25 +1,21 @@
 package am.fo.swardapp.survey_fragments
 
+import am.fo.swardapp.R
+import am.fo.swardapp.SwardFragment
+import am.fo.swardapp.data.Record
+import am.fo.swardapp.data.Sown
+import am.fo.swardapp.species_fragments.SpeciesSelectorFragment
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import am.fo.swardapp.R
-import am.fo.swardapp.SpeciesInfoActivity
-import am.fo.swardapp.SwardActivity
-import am.fo.swardapp.data.Record
-import am.fo.swardapp.data.Sown
-import am.fo.swardapp.data.SpeciesDesc
-import android.content.Intent
-import android.util.Log
 import android.widget.ToggleButton
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_survey_sample.*
 
-class SurveySampleFragment : Fragment() {
+class SurveySampleFragment : SwardFragment() {
     private var fieldId: Long? = null
     private var surveyId: Long? = null
     private var sampleNum: Int? = null
@@ -44,32 +40,13 @@ class SurveySampleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sa = activity as SwardActivity
+        val sf = selector_fragment as SpeciesSelectorFragment
+        sf.hideAll()
 
-        // deactivate all species toggle button
-        SpeciesDesc.speciesList.forEach { species ->
-            val id = getResources().getIdentifier(species, "id", context!!.packageName)
-            if (id==0) {
-                Log.i("sward","no widget found for species: "+species)
-            } else {
-                val v: View = view.findViewById(id)
-                v.visibility = View.GONE
-            }
-        }
         // reactivate the sown ones
-        sa.swardViewModel.getSown(fieldId!!).observe(viewLifecycleOwner, Observer { sownList: List<Sown> ->
+        swardViewModel.getSown(fieldId!!).observe(viewLifecycleOwner, Observer { sownList: List<Sown> ->
             sownList.forEach { sown ->
-                // find widget for this species
-                val id = getResources().getIdentifier(sown.species, "id", context!!.packageName)
-                if (id == 0) {
-                    Log.i(
-                        "sward",
-                        "survey_sample: no widget found for sewn species: " + sown.species
-                    )
-                } else {
-                    val v: View = view.findViewById(id)
-                    v.visibility = View.VISIBLE
-                }
+                sf.show(sown.species)
             }
         })
 
@@ -87,20 +64,12 @@ class SurveySampleFragment : Fragment() {
             }
             save.setOnClickListener {
                 // check the sown species for this field
-                sa.swardViewModel.getSown(fieldId!!).observe(viewLifecycleOwner, Observer { sownList ->
+                swardViewModel.getSown(fieldId!!).observe(viewLifecycleOwner, Observer { sownList ->
                     sownList.forEach { sown ->
-                        // find widget for this species
-                        val id = getResources().getIdentifier(sown.species,"id", context!!.packageName)
-                        if (id == 0) {
-                            Log.i(
-                                "sward",
-                                "survey_sample: no widget found for sewn species: " + sown.species
-                            )
-                        } else {
-                            val v: ToggleButton = view.findViewById(id)
-                            if (v.isChecked) {
+                        val v = sf.getSpeciesView(sown.species) as ToggleButton
+                        if (v.isChecked) {
                                 // add a record for this species
-                                sa.swardViewModel.insertRecord(
+                                swardViewModel.insertRecord(
                                     Record(
                                         surveyId!!,
                                         sown.species,
@@ -109,7 +78,7 @@ class SurveySampleFragment : Fragment() {
                                 )
                             }
                         }
-                    }
+                    })
 
                     if (sampleNum < 9) {
                         // next sample
@@ -130,10 +99,9 @@ class SurveySampleFragment : Fragment() {
                             bundle
                         )
                     }
-                })
+                }
             }
         }
-    }
 
     companion object {
         @JvmStatic

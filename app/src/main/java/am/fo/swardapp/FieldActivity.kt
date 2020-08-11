@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_field.*
-import kotlinx.android.synthetic.main.activity_field.toolbar
-import kotlinx.android.synthetic.main.activity_new_field.*
 
 class FieldActivity : SwardActivity() {
 
@@ -15,6 +13,11 @@ class FieldActivity : SwardActivity() {
         setSupportActionBar(toolbar)
 
         val fieldId = intent.getLongExtra("FIELD_ID",0)
+
+        swardViewModel.getSurveysAndRecords(fieldId).observe (this, Observer { surveys ->
+            field_canvas_view.addData(surveys)
+        })
+
 /*
         swardViewModel.getFieldAndSownSpecies(fieldId).observe(this, Observer { fieldAndSown ->
             fieldAndSown?.let {
@@ -26,17 +29,11 @@ class FieldActivity : SwardActivity() {
             }
         })
     */
-        swardViewModel.getFieldWithSurveysAndSpecies(fieldId).observe(this, Observer { fieldAndSurveys ->
-            fieldAndSurveys?.let {
-                toolbar.setTitle(fieldAndSurveys.field.name)
-                Log.i("sward",fieldAndSurveys.field.name)
-                field_date_sown.setText(fieldAndSurveys.field.dateSown)
-                fieldAndSurveys.surveysAndRecords.forEach { surveyAndRecords ->
-                    Log.i("sward", "survey: "+ surveyAndRecords.survey.time)
-                    surveyAndRecords.records.forEach { species ->
-                        Log.i("sward", "recorded species: "+species.species)
-                    }
-                }
+        swardViewModel.getField(fieldId).observe(this, Observer { field ->
+            field?.let {
+                toolbar.setTitle(field.name)
+                Log.i("sward",field.name)
+                field_date_sown.setText(field.dateSown)
             }
         })
 

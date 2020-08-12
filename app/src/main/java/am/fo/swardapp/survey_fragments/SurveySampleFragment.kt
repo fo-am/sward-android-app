@@ -40,7 +40,7 @@ class SurveySampleFragment : SwardFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sf = selector_fragment as SpeciesSelectorFragment
+        val sf = childFragmentManager.findFragmentById(R.id.selector_fragment) as SpeciesSelectorFragment
         sf.hideAll()
 
         // reactivate the sown ones

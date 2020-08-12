@@ -41,6 +41,7 @@ class SwardCanvas @JvmOverloads constructor(context: Context,
             renderList.add(RenderItem(it.survey.time,biodiversity.size))
         }
         renderList.sortBy { it.date }
+        invalidate()
     }
 
     // Called when the view should render its content.

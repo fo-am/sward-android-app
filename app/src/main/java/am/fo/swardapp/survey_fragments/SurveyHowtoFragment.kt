@@ -11,8 +11,8 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_survey_howto.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.*
 
 class SurveyHowtoFragment : SwardFragment() {
     private var fieldId: Long? = null
@@ -35,7 +35,11 @@ class SurveyHowtoFragment : SwardFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         start_survey.setOnClickListener {
-            swardViewModel.insertSurvey(Survey(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),fieldId!!)).
+
+            val c = Calendar.getInstance().getTime();
+            val df = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+
+            swardViewModel.insertSurvey(Survey(df.format(c),fieldId!!)).
                 observe(viewLifecycleOwner, Observer { surveyId ->
                     val bundle = bundleOf(
                         "field_id" to fieldId,

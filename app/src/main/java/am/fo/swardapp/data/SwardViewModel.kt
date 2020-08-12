@@ -19,7 +19,7 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getField(field_id: Long) : LiveData<Field> = repository.getField(field_id)
     fun getSown(fieldId: Long) : LiveData<List<Sown>> = repository.getSown(fieldId)
-    fun getSurveysAndRecords(fieldId: Long) : LiveData<List<SurveyAndRecords>> = repository.getSurveysAndRecords(fieldId)
+    fun getSurveysAndRecords(fieldId: Long, limit: Int) : LiveData<List<SurveyAndRecords>> = repository.getSurveysAndRecords(fieldId, limit)
 
     init {
         val swardDao = SwardRoomDatabase.getDatabase(application,viewModelScope).swardDao()

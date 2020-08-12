@@ -31,6 +31,7 @@
     <string name="field_results">Detailed results</string>
     <string name="field_biodiversity">Field biodiversity</string>
     <string name="field_delete">Delete field</string>
+    <string name="field_canvas_y_axis">Number of species in field</string>
 
     <string name="title_activity_new_field">ADD FIELD</string>
     <string name="hint_field">Field name…</string>

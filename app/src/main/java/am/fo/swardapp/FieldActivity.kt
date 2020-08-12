@@ -14,7 +14,7 @@ class FieldActivity : SwardActivity() {
 
         val fieldId = intent.getLongExtra("FIELD_ID",0)
 
-        swardViewModel.getSurveysAndRecords(fieldId).observe (this, Observer { surveys ->
+        swardViewModel.getSurveysAndRecords(fieldId,15).observe (this, Observer { surveys ->
             field_canvas_view.addData(surveys)
         })
 

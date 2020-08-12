@@ -32,6 +32,10 @@
     <string name="field_biodiversity">Field biodiversity</string>
     <string name="field_delete">Delete field</string>
     <string name="field_canvas_y_axis">Number of species in field</string>
+    <string name="field_delete_title">Delete field</string>
+    <string name="field_delete_body">Are you sure you want to delete this field?</string>
+    <string name="field_delete_yes">Yes</string>
+    <string name="field_delete_no">No</string>
 
     <string name="title_activity_new_field">ADD FIELD</string>
     <string name="hint_field">Field name…</string>

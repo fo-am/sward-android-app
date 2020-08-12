@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/field_biodiversity"/>
 
-            <am.fo.swardapp.drawing.SwardCanvas
+            <am.fo.swardapp.drawing.SwardBiodiversityCanvas
                 android:id="@+id/field_canvas_view"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>

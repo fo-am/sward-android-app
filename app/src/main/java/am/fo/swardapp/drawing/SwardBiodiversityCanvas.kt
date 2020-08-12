@@ -8,10 +8,11 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.content.ContextCompat
 
-class SwardCanvas @JvmOverloads constructor(context: Context,
-                              attrs: AttributeSet? = null,
-                              defStyleAttr: Int = 0)
+class SwardBiodiversityCanvas @JvmOverloads constructor(context: Context,
+                                                        attrs: AttributeSet? = null,
+                                                        defStyleAttr: Int = 0)
     : View(context, attrs, defStyleAttr) {
 
     data class RenderItem(val date: String, val biodiversity: Int)
@@ -20,7 +21,7 @@ class SwardCanvas @JvmOverloads constructor(context: Context,
 
     private val barPaint = Paint().apply {
         isAntiAlias = true
-        color = Color.GRAY
+        color = ContextCompat.getColor(context,R.color.colorPopupBackground)
         style = Paint.Style.FILL
     }
 

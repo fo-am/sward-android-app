@@ -9,6 +9,7 @@
     <color name="colorText">#14281d</color>
     <color name="colorMenuBackground">#7b8441</color>
     <color name="colorMenuText">#FFFFFF</color>
+    <color name="colorPopupBackground">#b7bed4</color>
 
     <color name="buttonLabel">#FFFFFF</color>
 

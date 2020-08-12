@@ -18,6 +18,9 @@ class SwardRepository(private val swardDao: SwardDao) {
     fun getSown(fieldId: Long): LiveData<List<Sown>> =
         swardDao.getSown(fieldId)
 
+    // blocking call
+    fun getSurveys(fieldId: Long): List<Survey> = swardDao.getSurveys(fieldId)
+
     fun getSurveysAndRecords(fieldId: Long, limit: Int): LiveData<List<SurveyAndRecords>> =
         swardDao.getSurveysAndRecords(fieldId, limit)
 
@@ -25,5 +28,10 @@ class SwardRepository(private val swardDao: SwardDao) {
     suspend fun insertSurvey(survey: Survey) = swardDao.insertSurvey(survey)
     suspend fun insertSown(sown: Sown) = swardDao.insertSown(sown)
     suspend fun insertRecord(record: Record) = swardDao.insertRecord(record)
+
+    suspend fun deleteAllFields() = swardDao.deleteAllFields()
+    suspend fun deleteField(fieldId: Long) = swardDao.deleteField(fieldId)
+    suspend fun deleteSurveys(fieldId: Long) = swardDao.deleteSurveys(fieldId)
+    suspend fun deleteRecords(surveyId: Long) = swardDao.deleteRecords(surveyId)
 
 }

@@ -48,4 +48,16 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
     fun insertRecord(record: Record) = viewModelScope.launch(Dispatchers.IO) {
         repository.insertRecord(record)
     }
+
+    fun deleteField(fieldId: Long) = viewModelScope.launch(Dispatchers.IO) {
+        // delete all survey records for this field
+        repository.getSurveys(fieldId).forEach {
+            repository.deleteRecords(it.surveyId)
+        }
+        // delete all the surveys
+        repository.deleteSurveys(fieldId)
+        // delete the actual field
+        repository.deleteField(fieldId)
+    }
+
 }

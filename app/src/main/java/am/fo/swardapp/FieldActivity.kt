@@ -1,7 +1,9 @@
 package am.fo.swardapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_field.*
 
@@ -18,17 +20,6 @@ class FieldActivity : SwardActivity() {
             field_canvas_view.addData(surveys)
         })
 
-/*
-        swardViewModel.getFieldAndSownSpecies(fieldId).observe(this, Observer { fieldAndSown ->
-            fieldAndSown?.let {
-                toolbar.setTitle(fieldAndSown.field.name)
-                field_date_sown.setText(fieldAndSown.field.dateSown)
-                fieldAndSown.sownSpecies.forEach { sownSpecies ->
-                    Log.i("sward",sownSpecies.species)
-                }
-            }
-        })
-    */
         swardViewModel.getField(fieldId).observe(this, Observer { field ->
             field?.let {
                 toolbar.setTitle(field.name)
@@ -36,6 +27,27 @@ class FieldActivity : SwardActivity() {
                 field_date_sown.setText(field.dateSown)
             }
         })
+
+        field_survey.setOnClickListener {
+            Intent(this, SurveyActivity::class.java).let {
+                it.putExtra("FIELD_ID", fieldId)
+                this.startActivity(it)
+            }
+        }
+
+        field_delete.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle(getString(R.string.field_delete))
+            builder.setMessage(getString(R.string.field_delete_body))
+            builder.setPositiveButton(getString(R.string.field_delete_yes)) { dialog, which ->
+                swardViewModel.deleteField(fieldId)
+                startActivity(Intent(this, FarmActivity::class.java))
+            }
+            builder.setNegativeButton(getString(R.string.field_delete_no)) { dialog, which ->
+                // don't need to to anything...
+            }
+            builder.show()
+        }
 
 
     }

@@ -16,7 +16,7 @@ interface SwardDao {
     fun getSown(fieldId: Long): LiveData<List<Sown>>
 
     @Query("SELECT * from survey_table Where fieldId=:fieldId")
-    fun getSurveys(fieldId: Long): LiveData<List<Survey>>
+    fun getSurveys(fieldId: Long): List<Survey>
 
     @Transaction
     @Query("SELECT * from survey_table Where fieldId=:fieldId order by time desc limit :limit")
@@ -35,8 +35,13 @@ interface SwardDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertRecord(recorded: Record): Long
 
-
     @Query("DELETE FROM field_table")
     suspend fun deleteAllFields()
+    @Query("DELETE FROM field_table where fieldId=:fieldId")
+    suspend fun deleteField(fieldId: Long)
+    @Query("DELETE FROM survey_table where fieldId=:fieldId")
+    suspend fun deleteSurveys(fieldId: Long)
+    @Query("DELETE FROM record_table where surveyId=:surveyId")
+    suspend fun deleteRecords(surveyId: Long)
 }
 

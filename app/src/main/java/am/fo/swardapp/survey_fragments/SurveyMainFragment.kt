@@ -3,7 +3,6 @@ package am.fo.swardapp.survey_fragments
 import am.fo.swardapp.R
 import am.fo.swardapp.SwardFragment
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,9 +35,12 @@ class SurveyMainFragment : SwardFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sampleNum?.let { sampleNum ->
-            Log.i("sward", "sampleNum: " + sampleNum)
             survey_main.text =
                 String.format(resources.getString(R.string.survey_main), 10 - sampleNum)
+            w_image.setImageResource(getResources().getIdentifier(
+                "example_w_"+sampleNum.toString(),
+                "drawable",
+                context!!.packageName))
             sample_button.text =
                 String.format(resources.getString(R.string.survey_sample_button), sampleNum)
             sample_button.setOnClickListener {

@@ -6,6 +6,7 @@ import am.fo.swardapp.data.Record
 import am.fo.swardapp.data.Sown
 import am.fo.swardapp.species_fragments.SpeciesSelectorFragment
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,15 +41,21 @@ class SurveySampleFragment : SwardFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sf = childFragmentManager.findFragmentById(R.id.selector_fragment) as SpeciesSelectorFragment
+        val sf =
+            childFragmentManager.findFragmentById(R.id.selector_fragment) as SpeciesSelectorFragment
         sf.hideAll()
 
+        // note: we probably don't need to continually get the sown species for this field as it won't change
+        // (although this is super safe - as we could conceivably make it editable in the lifecylce of these fragments
+        // - but perhaps store in activity instead?)
+
         // reactivate the sown ones
-        swardViewModel.getSown(fieldId!!).observe(viewLifecycleOwner, Observer { sownList: List<Sown> ->
-            sownList.forEach { sown ->
-                sf.show(sown.species)
-            }
-        })
+        swardViewModel.getSown(fieldId!!)
+            .observe(viewLifecycleOwner, Observer { sownList: List<Sown> ->
+                sownList.forEach { sown ->
+                    sf.show(sown.species)
+                }
+            })
 
         sampleNum?.let { sampleNum ->
             cancel.setOnClickListener {
@@ -68,17 +75,17 @@ class SurveySampleFragment : SwardFragment() {
                     sownList.forEach { sown ->
                         val v = sf.getSpeciesView(sown.species) as ToggleButton
                         if (v.isChecked) {
-                                // add a record for this species
-                                swardViewModel.insertRecord(
-                                    Record(
-                                        surveyId!!,
-                                        sown.species,
-                                        sampleNum
-                                    )
+                            // add a record for this species
+                            Log.i("sward", "adding record for survey id: " + surveyId)
+                            swardViewModel.insertRecord(
+                                Record(
+                                    surveyId!!,
+                                    sown.species,
+                                    sampleNum
                                 )
-                            }
+                            )
                         }
-                    })
+                    }
 
                     if (sampleNum < 9) {
                         // next sample
@@ -99,9 +106,10 @@ class SurveySampleFragment : SwardFragment() {
                             bundle
                         )
                     }
-                }
+                })
             }
         }
+    }
 
     companion object {
         @JvmStatic

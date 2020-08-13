@@ -4,6 +4,7 @@ import am.fo.swardapp.R
 import am.fo.swardapp.SwardFragment
 import am.fo.swardapp.data.Survey
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,6 +42,7 @@ class SurveyHowtoFragment : SwardFragment() {
 
             swardViewModel.insertSurvey(Survey(df.format(c),fieldId!!)).
                 observe(viewLifecycleOwner, Observer { surveyId ->
+                    Log.i("sward","made new survey ID is:"+surveyId)
                     val bundle = bundleOf(
                         "field_id" to fieldId,
                         "survey_id" to surveyId

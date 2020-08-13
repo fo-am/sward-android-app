@@ -23,14 +23,14 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
 
             <LinearLayout
                 android:id="@+id/field_date_layout"
@@ -58,7 +58,7 @@
                 android:id="@+id/field_survey"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/field_survey"/>
+                android:text="@string/field_survey" />
 
             <Space
                 android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                 android:id="@+id/field_results"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/field_results"/>
+                android:text="@string/field_results" />
 
             <Space
                 android:layout_width="match_parent"
@@ -77,12 +77,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/field_biodiversity"/>
+                android:text="@string/field_biodiversity" />
 
             <am.fo.swardapp.drawing.SwardBiodiversityCanvas
                 android:id="@+id/field_canvas_view"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"/>
+                android:layout_height="300dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -115,7 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
-                android:text="@string/field_delete"/>
+                android:text="@string/field_delete" />
 
             <Space
                 android:layout_width="match_parent"

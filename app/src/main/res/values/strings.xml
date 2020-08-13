@@ -44,6 +44,9 @@
     <string name="species_sown">Species sown</string>
     <string name="empty_field_not_saved">Field not saved because it is empty.</string>
 
+    <string name="title_activity_field_detail">FIELD DETAILS</string>
+    <string name="field_detail_about">Each species lists is one that was sown. Each bar shows the number of species out of 9 in each survey that was found.</string>
+
     <string name="title_activity_about">ABOUT</string>
     <string name="about_text">All about the wonderful app.....</string>
 
@@ -193,5 +196,5 @@
     <string name="_stem_cap"></string>
     <string name="_leaf_cap"></string>
     <string name="_flower_cap"></string>
-   
+
 </resources>

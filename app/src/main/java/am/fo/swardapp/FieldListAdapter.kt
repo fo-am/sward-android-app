@@ -1,7 +1,6 @@
 package am.fo.swardapp
 
 import am.fo.swardapp.data.Field
-import am.fo.swardapp.survey_fragments.SurveyHowtoFragment
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 

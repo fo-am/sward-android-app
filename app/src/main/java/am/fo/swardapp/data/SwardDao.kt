@@ -15,12 +15,7 @@ interface SwardDao {
     @Query("SELECT * from sown_table Where fieldId=:fieldId")
     fun getSown(fieldId: Long): LiveData<List<Sown>>
 
-    @Query("SELECT * from survey_table Where fieldId=:fieldId")
-    fun getSurveys(fieldId: Long): List<Survey>
 
-    @Transaction
-    @Query("SELECT * from survey_table Where fieldId=:fieldId order by time desc limit :limit")
-    fun getSurveysAndRecords(fieldId: Long, limit: Int): LiveData<List<SurveyAndRecords>>
 
     @Transaction
     @Query("SELECT * from field_table Where fieldId=:fieldId")
@@ -43,5 +38,14 @@ interface SwardDao {
     suspend fun deleteSurveys(fieldId: Long)
     @Query("DELETE FROM record_table where surveyId=:surveyId")
     suspend fun deleteRecords(surveyId: Long)
+
+    // blocking versions
+    @Transaction
+    @Query("SELECT * from survey_table Where fieldId=:fieldId order by time desc limit :limit")
+    fun syncGetSurveysAndRecords(fieldId: Long, limit: Int): List<SurveyAndRecords>
+    @Query("SELECT * from survey_table Where fieldId=:fieldId")
+    fun syncGetSurveys(fieldId: Long): List<Survey>
+    @Query("SELECT * from record_table Where surveyId=:surveyId")
+    fun syncGetRecords(surveyId: Long): List<Record>
 }
 

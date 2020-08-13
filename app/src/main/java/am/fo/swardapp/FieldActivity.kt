@@ -16,7 +16,7 @@ class FieldActivity : SwardActivity() {
 
         val fieldId = intent.getLongExtra("FIELD_ID",0)
 
-        swardViewModel.getSurveysAndRecords(fieldId,15).observe (this, Observer { surveys ->
+        swardViewModel.getBiodiversity(fieldId,15).observe (this, Observer { surveys ->
             field_canvas_view.addData(surveys)
         })
 
@@ -30,6 +30,13 @@ class FieldActivity : SwardActivity() {
 
         field_survey.setOnClickListener {
             Intent(this, SurveyActivity::class.java).let {
+                it.putExtra("FIELD_ID", fieldId)
+                this.startActivity(it)
+            }
+        }
+
+        field_results.setOnClickListener {
+            Intent(this, FieldDetailActivity::class.java).let {
                 it.putExtra("FIELD_ID", fieldId)
                 this.startActivity(it)
             }

@@ -1,7 +1,7 @@
 package am.fo.swardapp.drawing
 
 import am.fo.swardapp.R
-import am.fo.swardapp.data.SurveyAndRecords
+import am.fo.swardapp.data.SwardViewModel
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
@@ -15,8 +15,7 @@ class SwardBiodiversityCanvas @JvmOverloads constructor(context: Context,
                                                         defStyleAttr: Int = 0)
     : View(context, attrs, defStyleAttr) {
 
-    data class RenderItem(val date: String, val biodiversity: Int)
-    var renderList = mutableListOf<RenderItem>()
+    var renderList = listOf<SwardViewModel.BiodiversityItem>()
     var maxBiodiversity = 0
 
     private val barPaint = Paint().apply {
@@ -39,18 +38,8 @@ class SwardBiodiversityCanvas @JvmOverloads constructor(context: Context,
         textSize = 40.0f
     }
 
-    fun addData(surveyAndRecords: List<SurveyAndRecords>) {
-        renderList.clear()
-        maxBiodiversity=0
-        surveyAndRecords.forEach {
-            val biodiversity = mutableSetOf<String>()
-            it.records.forEach {
-                biodiversity.add(it.species)
-            }
-            if (biodiversity.size>maxBiodiversity) maxBiodiversity=biodiversity.size
-            renderList.add(RenderItem(it.survey.time,biodiversity.size))
-        }
-        renderList.sortBy { it.date }
+    fun addData(surveyAndRecords: List<SwardViewModel.BiodiversityItem>) {
+        renderList=surveyAndRecords
         invalidate()
     }
 

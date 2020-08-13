@@ -1,6 +1,9 @@
 package am.fo.swardapp.data
 
-import androidx.room.*
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.Relation
 
 @Entity(tableName="field_table")
 data class Field(val name: String,
@@ -62,3 +65,5 @@ data class FieldWithSurveysAndRecords (
     )
     val surveysAndRecords: List<SurveyAndRecords>
 )
+
+

@@ -16,10 +16,8 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
     val allFields: LiveData<List<Field>>
-
     fun getField(field_id: Long) : LiveData<Field> = repository.getField(field_id)
     fun getSown(fieldId: Long) : LiveData<List<Sown>> = repository.getSown(fieldId)
-    fun getSurveysAndRecords(fieldId: Long, limit: Int) : LiveData<List<SurveyAndRecords>> = repository.getSurveysAndRecords(fieldId, limit)
 
     init {
         val swardDao = SwardRoomDatabase.getDatabase(application,viewModelScope).swardDao()
@@ -51,13 +49,78 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
 
     fun deleteField(fieldId: Long) = viewModelScope.launch(Dispatchers.IO) {
         // delete all survey records for this field
-        repository.getSurveys(fieldId).forEach {
+        repository.syncGetSurveys(fieldId).forEach {
             repository.deleteRecords(it.surveyId)
         }
         // delete all the surveys
         repository.deleteSurveys(fieldId)
         // delete the actual field
         repository.deleteField(fieldId)
+    }
+
+    // data processing - general idea is to do as much of it here as possible, outside the UI thread
+    data class BiodiversityItem(val date: String, val biodiversity: Int)
+
+    // diversity of each survey for this field
+    // where diversity is the number of distinct species across the survey
+    fun getBiodiversity(fieldId: Long, limit: Int): LiveData<List<BiodiversityItem>> {
+        val liveData = MutableLiveData<List<BiodiversityItem>>()
+        viewModelScope.launch(Dispatchers.IO) {
+            val ret = mutableListOf<BiodiversityItem>()
+            repository.syncGetSurveysAndRecords(fieldId, limit).forEach {
+                val biodiversity = mutableSetOf<String>()
+                it.records.forEach {
+                    biodiversity.add(it.species)
+                }
+                ret.add(
+                    BiodiversityItem(
+                        it.survey.time,
+                        biodiversity.size
+                    )
+                )
+            }
+            ret.sortBy { it.date }
+            liveData.postValue(ret)
+        }
+        return liveData
+    }
+
+    // for the detailed field view, we need to more or less display the inverse of
+    // what has been recorded - the counts of species for each survey
+    data class SpeciesSurveyCount(val survey: Survey, val count: Int)
+
+    fun getSpeciesAndSurveyCounts(fieldId: Long): LiveData<Map<String,List<SpeciesSurveyCount>>> {
+        val liveData = MutableLiveData<Map<String,List<SpeciesSurveyCount>>>()
+        viewModelScope.launch(Dispatchers.IO) {
+            // doing this off the main UI thread like a good person!
+            var ret = mutableMapOf<String,MutableList<SpeciesSurveyCount>>()
+
+            repository.syncGetSurveys(fieldId).forEach { survey ->
+                // count each species for this survey
+                var diversity = mutableMapOf<String,Int>()
+                repository.syncGetRecords(survey.surveyId).forEach { record ->
+                    if (diversity.containsKey(record.species)) {
+                        diversity[record.species]?.let {
+                            diversity[record.species]=it+1
+                        }
+                    } else {
+                        diversity[record.species]=1
+                    }
+                }
+
+                // add this survey to the main list
+                for (speciesCount in diversity) {
+                    val ssc = SpeciesSurveyCount(survey,speciesCount.value)
+                    // if it doesn't exist make a list
+                    if (!ret.containsKey(speciesCount.key)) {
+                        ret[speciesCount.key]=mutableListOf()
+                    }
+                    ret[speciesCount.key]!!.add(ssc)
+                }
+            }
+            liveData.postValue(ret)
+        }
+        return liveData
     }
 
 }

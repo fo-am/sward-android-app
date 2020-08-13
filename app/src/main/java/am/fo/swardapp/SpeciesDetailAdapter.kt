@@ -1,7 +1,11 @@
 package am.fo.swardapp
 
+import am.fo.swardapp.data.SpeciesDesc.Companion.createSpeciesDesc
 import am.fo.swardapp.data.SwardViewModel.SpeciesSurveyCount
+import am.fo.swardapp.drawing.SpeciesCountCanvas
 import android.content.Context
+import android.content.res.Resources
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +36,10 @@ class SpeciesDetailAdapter internal constructor (
     override fun onBindViewHolder(holder: SpeciesListViewHolder, position: Int) {
         val species = speciesSurveyCounts.keys.toList()[position]
         val surveys: List<SpeciesSurveyCount> = speciesSurveyCounts[species]!!
-        holder.speciesName.text = species
+        val density = Resources.getSystem().getDisplayMetrics().density
+
+        holder.speciesName.setText(createSpeciesDesc(species).name)
+        holder.surveyList.removeAllViews()
 
         for (speciesSurveyCount in surveys) {
             val surveyLayout = LinearLayout(context)
@@ -41,6 +48,7 @@ class SpeciesDetailAdapter internal constructor (
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
+            surveyLayout.gravity = Gravity.CENTER_HORIZONTAL
 
             val surveyName = TextView(context)
             surveyName.text=speciesSurveyCount.survey.time
@@ -48,13 +56,17 @@ class SpeciesDetailAdapter internal constructor (
 
             val s = Space(context)
             s.layoutParams = LinearLayout.LayoutParams(
-                10,
-                LinearLayout.LayoutParams.WRAP_CONTENT
+                (10*density).toInt(),
+                LinearLayout.LayoutParams.MATCH_PARENT
             )
             surveyLayout.addView(s)
 
-            val surveyCount = TextView(context)
-            surveyCount.text=speciesSurveyCount.count.toString()
+            val surveyCount = SpeciesCountCanvas(context)
+            surveyCount.layoutParams = LinearLayout.LayoutParams(
+                (15*9*density).toInt(),
+                (15*density).toInt()
+            )
+            surveyCount.count=speciesSurveyCount.count
             surveyLayout.addView(surveyCount)
 
             holder.surveyList.addView(surveyLayout)

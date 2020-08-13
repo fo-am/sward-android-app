@@ -10,9 +10,9 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
 
-class SwardBiodiversityCanvas @JvmOverloads constructor(context: Context,
-                                                        attrs: AttributeSet? = null,
-                                                        defStyleAttr: Int = 0)
+class BiodiversityCanvas @JvmOverloads constructor(context: Context,
+                                                   attrs: AttributeSet? = null,
+                                                   defStyleAttr: Int = 0)
     : View(context, attrs, defStyleAttr) {
 
     var renderList = listOf<SwardViewModel.BiodiversityItem>()

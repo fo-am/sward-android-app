@@ -1,3 +1,20 @@
+/*
+   Sward App Copyright (C) 2020 FoAM Kernow
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as
+   published by the Free Software Foundation, either version 3 of the
+   License, or (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 package am.fo.swardapp
 
 import am.fo.swardapp.data.SwardExport
@@ -7,7 +24,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
@@ -42,8 +58,8 @@ class DownloadActivity : SwardActivity() {
     }
 
     fun export() {
-        val fileLocation = File(Environment.getExternalStorageDirectory().getAbsolutePath(), exportFilename)
-        val filePath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/"+exportFilename
+        val fileLocation = File(getExternalFilesDir(null)!!.getAbsolutePath(), exportFilename)
+        val filePath = getExternalFilesDir(null)!!.getAbsolutePath()+"/"+exportFilename
         val fileURI = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".fileprovider", fileLocation)
 
         swardViewModel.getExportData().observe(this, Observer {
@@ -53,7 +69,7 @@ class DownloadActivity : SwardActivity() {
                     putExtra(Intent.EXTRA_TEXT, getString(R.string.export_body))
                     putExtra(Intent.EXTRA_STREAM, fileURI)
                 }
-                emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 emailIntent.type = "text/plain"
                 startActivity(emailIntent)
             }).export()
@@ -65,11 +81,11 @@ class DownloadActivity : SwardActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             permissions.forEach {
                 if (ActivityCompat.checkSelfPermission(context, it) != PackageManager.PERMISSION_GRANTED) {
-                    return false;
+                    return false
                 }
             }
         }
-        return true;
+        return true
     }
 
     override fun onRequestPermissionsResult(
@@ -85,7 +101,7 @@ class DownloadActivity : SwardActivity() {
                 }
             }
             else -> {
-                Toast.makeText(this,getString(R.string.permission_fail),Toast.LENGTH_LONG).show();
+                Toast.makeText(this,getString(R.string.permission_fail),Toast.LENGTH_LONG).show()
             }
         }
     }

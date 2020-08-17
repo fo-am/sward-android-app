@@ -71,6 +71,17 @@
     <string name="survey_end">Survey complete!</string>
     <string name="survey_view_button">View field results</string>
 
+    <string name="title_activity_download">DOWNLOAD YOUR DATA</string>
+    <string name="download_text">Enter an email address to send all data on your farm to yourself or someone else."</string>
+    <string name="download_address">Email address</string>
+    <string name="download_citsci">Reserchers at Duchy College are interested in your date to understand how multi-species swards perform. Tick this box if you are happy to automatically send them your data anonymously for research purposes only.</string>
+    <string name="download_consent">I consent to sharing my farm data for research</string>
+    <string name="download_send">Send data</string>
+
+    <string name="export_subject">Your farm data from the Sward app</string>
+    <string name="export_body">Your farm data is attached in a csv spreadsheet, which you can open in excel or open office.</string>
+    <string name="permission_fail">The app was not allowed to write in your storage</string>
+
     <string name="id_first_text">Would you like to ID a grass or a legume?</string>
     <string name="id_first_one">Grass</string>
     <string name="id_first_two">Legume</string>
@@ -189,4 +200,4 @@
     <string name="grass_meadowfoxtail_flower_cap">Tassel-like, cylindrical, up to 13cm long, yellow-green, covered in silver hairs.</string>
 
 
-</resources>
+    </resources>

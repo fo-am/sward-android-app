@@ -35,4 +35,5 @@ class SwardRepository(private val swardDao: SwardDao) {
     fun syncGetRecords(surveyId: Long): List<Record> = swardDao.syncGetRecords(surveyId)
     fun syncGetSurveysAndRecords(fieldId: Long, limit: Int): List<SurveyAndRecords> =
         swardDao.syncGetSurveysAndRecords(fieldId, limit)
+    fun syncGetExportData(): List<FieldWithSurveysAndRecords> = swardDao.syncGetExportData()
 }

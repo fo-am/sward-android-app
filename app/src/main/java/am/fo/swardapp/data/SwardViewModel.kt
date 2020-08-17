@@ -16,6 +16,7 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
     val allFields: LiveData<List<Field>>
+
     fun getField(field_id: Long) : LiveData<Field> = repository.getField(field_id)
     fun getSown(fieldId: Long) : LiveData<List<Sown>> = repository.getSown(fieldId)
 
@@ -119,6 +120,14 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
                 }
             }
             liveData.postValue(ret)
+        }
+        return liveData
+    }
+
+    fun getExportData(): LiveData<List<FieldWithSurveysAndRecords>> {
+        val liveData = MutableLiveData<List<FieldWithSurveysAndRecords>>()
+        viewModelScope.launch(Dispatchers.IO) {
+            liveData.postValue(repository.syncGetExportData())
         }
         return liveData
     }

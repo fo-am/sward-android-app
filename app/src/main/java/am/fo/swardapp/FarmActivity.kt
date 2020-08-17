@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import kotlinx.android.synthetic.main.activity_farm.*
-import kotlinx.android.synthetic.main.activity_farm.toolbar
 
 class FarmActivity : SwardActivity() {
 
@@ -31,6 +29,10 @@ class FarmActivity : SwardActivity() {
         new_field_button.setOnClickListener {
             val intent = Intent(this@FarmActivity, NewFieldActivity::class.java)
             startActivityForResult(intent, newFieldActivityRequestCode)
+        }
+
+        download_data_button.setOnClickListener {
+            startActivity(Intent(this, DownloadActivity::class.java))
         }
 
     }

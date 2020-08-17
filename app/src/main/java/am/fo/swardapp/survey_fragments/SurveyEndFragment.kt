@@ -1,5 +1,6 @@
 package am.fo.swardapp.survey_fragments
 
+import am.fo.swardapp.DownloadActivity
 import am.fo.swardapp.FieldActivity
 import am.fo.swardapp.R
 import am.fo.swardapp.SwardFragment
@@ -33,8 +34,12 @@ class SurveyEndFragment : SwardFragment() {
         view_results.setOnClickListener {
             Intent(context, FieldActivity::class.java).let {
                 it.putExtra("FIELD_ID", fieldId)
-                context!!.startActivity(it)
+                requireContext().startActivity(it)
             }
+        }
+
+        download_data.setOnClickListener {
+            startActivity(Intent(context, DownloadActivity::class.java))
         }
     }
 

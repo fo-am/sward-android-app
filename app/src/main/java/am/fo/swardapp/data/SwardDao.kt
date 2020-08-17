@@ -15,8 +15,6 @@ interface SwardDao {
     @Query("SELECT * from sown_table Where fieldId=:fieldId")
     fun getSown(fieldId: Long): LiveData<List<Sown>>
 
-
-
     @Transaction
     @Query("SELECT * from field_table Where fieldId=:fieldId")
     fun getFieldWithSurveysAndSpecies(fieldId: Long): LiveData<FieldWithSurveysAndRecords>
@@ -47,5 +45,7 @@ interface SwardDao {
     fun syncGetSurveys(fieldId: Long): List<Survey>
     @Query("SELECT * from record_table Where surveyId=:surveyId")
     fun syncGetRecords(surveyId: Long): List<Record>
+    @Query("SELECT * from field_table")
+    fun syncGetExportData(): List<FieldWithSurveysAndRecords>
 }
 

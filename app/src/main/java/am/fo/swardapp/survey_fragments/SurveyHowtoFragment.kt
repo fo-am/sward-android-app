@@ -37,8 +37,8 @@ class SurveyHowtoFragment : SwardFragment() {
         super.onViewCreated(view, savedInstanceState)
         start_survey.setOnClickListener {
 
-            val c = Calendar.getInstance().getTime();
-            val df = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            val c = Calendar.getInstance().getTime()
+            val df = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
             swardViewModel.insertSurvey(Survey(df.format(c),fieldId!!)).
                 observe(viewLifecycleOwner, Observer { surveyId ->

@@ -43,7 +43,7 @@ class SpeciesDetailAdapter internal constructor (
 
         for (speciesSurveyCount in surveys) {
             val surveyLayout = LinearLayout(context)
-            surveyLayout.setOrientation(LinearLayout.HORIZONTAL);
+            surveyLayout.setOrientation(LinearLayout.HORIZONTAL)
             surveyLayout.layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT

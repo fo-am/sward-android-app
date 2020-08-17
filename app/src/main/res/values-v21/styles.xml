@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SwardThemeOverlay_Toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <!-- color used by navigation icon and overflow icon -->
+        <item name="colorOnPrimary">@color/colorText</item>
+        <item name="titleTextColor">@color/colorText</item>
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:popupTheme">@style/SwardPopupMenuStyle</item>
+        <!-- <item name="android:src"></item> -->
+    </style>
+</resources>

@@ -180,21 +180,13 @@
 
     <string name="grass_meadowfescue_plant_cap">Up to 80cm, loose tufts (sometimes forms clumps), variable green</string>
     <string name="grass_meadowfescue_flower_cap">Tinged reddish/brown.</string>
-    <string name="grass_meadowfescue_stem_cap"></string>
     <string name="grass_meadowfescue_leaf_cap">The leaf blades are ribbed on the upper side and more glossy on the underside. The leaves clasp the stem by long sheaths</string>
     <string name="grass_meadowfescue_stemsheath_annotated_cap">Short, stubby ligule – barely visible (1mm). Small auricles with no hairs.</string>
 
     <string name="grass_meadowfoxtail_plant_cap">Up to 120cm, whitish-green, erect tufts.</string>
     <string name="grass_meadowfoxtail_stemsheath_annotated_cap">No auricles, ligule typically short (1–4mm), ligule tatty.</string>
-    <string name="grass_meadowfoxtail_stem_cap"></string>
     <string name="grass_meadowfoxtail_leaf_cap">The basal (bottom) leaf sheath is often black or brown, the leaves are hairless.</string>
     <string name="grass_meadowfoxtail_flower_cap">Tassel-like, cylindrical, up to 13cm long, yellow-green, covered in silver hairs.</string>
 
-
-    <string name="_plant_cap"></string>
-    <string name="_stemsheath_annotated_cap"></string>
-    <string name="_stem_cap"></string>
-    <string name="_leaf_cap"></string>
-    <string name="_flower_cap"></string>
 
 </resources>

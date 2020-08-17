@@ -3,14 +3,11 @@ package am.fo.swardapp
 import am.fo.swardapp.data.SpeciesDesc
 import am.fo.swardapp.data.SpeciesDesc.Companion.createSpeciesDesc
 import am.fo.swardapp.species_fragments.SpeciesPhotoFragment
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import kotlinx.android.synthetic.main.activity_identification.*
 import kotlinx.android.synthetic.main.activity_species_info.*
-import kotlinx.android.synthetic.main.activity_species_info.toolbar
 
 class SpeciesInfoActivity : SwardActivity() {
     lateinit var speciesDesc: SpeciesDesc

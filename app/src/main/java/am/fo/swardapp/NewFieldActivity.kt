@@ -8,13 +8,12 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
-import android.widget.*
-import kotlinx.android.synthetic.main.activity_identification.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.ToggleButton
+import kotlinx.android.synthetic.main.activity_new_field.*
 import java.text.SimpleDateFormat
 import java.util.*
-
-import kotlinx.android.synthetic.main.activity_new_field.*
-import kotlinx.android.synthetic.main.activity_new_field.toolbar
 
 class NewFieldActivity : SwardActivity() {
 

@@ -1,18 +1,7 @@
 package am.fo.swardapp
 
-import am.fo.swardapp.data.SpeciesDesc
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.Space
-import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_identification.*
-import kotlinx.android.synthetic.main.activity_identification.toolbar
-import kotlinx.android.synthetic.main.activity_species.*
 
 class SpeciesActivity : SwardActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

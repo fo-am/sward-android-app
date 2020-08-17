@@ -9,10 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities=arrayOf(Field::class,
-    Sown::class,
-    Survey::class,
-    Record::class), version = 3, exportSchema = false)
+@Database(entities= [Field::class, Sown::class, Survey::class, Record::class], version = 3, exportSchema = false)
 abstract class SwardRoomDatabase : RoomDatabase() {
 
     abstract fun swardDao(): SwardDao

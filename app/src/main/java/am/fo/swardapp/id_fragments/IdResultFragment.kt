@@ -1,19 +1,17 @@
 package am.fo.swardapp.id_fragments
 
 import am.fo.swardapp.IdentificationActivity
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import am.fo.swardapp.R
-import am.fo.swardapp.SpeciesActivity
 import am.fo.swardapp.SpeciesInfoActivity
 import am.fo.swardapp.data.SpeciesDesc
 import am.fo.swardapp.data.SpeciesDesc.Companion.createSpeciesDesc
 import android.content.Intent
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_id_result.*
-import kotlinx.android.synthetic.main.fragment_id_result.view.*
 
 class IdResultFragment : Fragment() {
     private var answer: String? = null

@@ -40,7 +40,7 @@ abstract class SwardRoomDatabase : RoomDatabase() {
             INSTANCE?.let { database ->
                 scope.launch {
                     val swardDao = database.swardDao()
-
+/*
                     // Add sample fields
                     val fieldId = swardDao.insertField(Field("Top field", "", 0, ""))
                     swardDao.insertSown(Sown(fieldId,"grass_cocksfoot"))
@@ -54,7 +54,7 @@ abstract class SwardRoomDatabase : RoomDatabase() {
                     swardDao.insertRecord(Record(surveyId,"grass_cocksfoot",2))
 
                     swardDao.insertField(Field("Marshy field", "", 0, ""))
-
+*/
 
                 }
             }
@@ -111,7 +111,7 @@ abstract class SwardRoomDatabase : RoomDatabase() {
                         SwardRoomDatabase::class.java,
                         "sward_database")
                     //.addMigrations(MIGRATION_1_2)
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration() // TODO: remove
                     .addCallback(SwardDatabaseCallback(scope))
                     .build()
                 INSTANCE = instance

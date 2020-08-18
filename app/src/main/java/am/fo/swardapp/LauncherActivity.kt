@@ -26,7 +26,7 @@ class LauncherActivity : SwardActivity() {
         super.onCreate(savedInstanceState)
         setTitle(R.string.title_activity_launcher)
 
-        version_name.setText(getPackageManager().getPackageInfo(getPackageName(), 0).versionName)
+        version_name.text = packageManager.getPackageInfo(packageName, 0).versionName
 
     }
 }

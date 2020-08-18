@@ -77,22 +77,23 @@
             tools:layout_editor_absoluteX="30dp">
 
             <Button
-                android:id="@+id/send_button"
+                android:id="@+id/cancel_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/download_send" />
+                android:text="@string/cancel" />
 
             <Space
                 android:layout_width="@dimen/default_padding"
                 android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/cancel_button"
+                android:id="@+id/send_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/cancel" />
+                android:text="@string/download_send" />
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

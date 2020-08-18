@@ -12,6 +12,7 @@
     <string name="title_activity_farm">MY FARM</string>
     <string name="farm_new_field">Add new field</string>
     <string name="farm_fields">Your fields</string>
+    <string name="no_fields">No fields yet.</string>
     <string name="farm_download_data">Download data</string>
 
     <string name="field_date_sown">Date sown</string>
@@ -67,7 +68,8 @@
     <string name="survey_howto_3">Surveys can be completed between March and October. If you only have time for one annual survey, this should be done between May and July.</string>
     <string name="survey_image_desc">Diagram showing a W shaped path through a field.</string>
     <string name="survey_start">Start survey</string>
-    <string name="survey_main">You have %d samples to do. Work through the survey until the list is complete.</string>
+    <string name="survey_main_plural">You have %d samples to do. Work through the survey until the list is complete.</string>
+    <string name="survey_main_single">You have %d sample to do. Work through the survey until the list is complete.</string>
     <string name="survey_sample_button">Do sample %d</string>
     <string name="survey_sample">Tap to select the species you can see within 1m of where you are standing.</string>
     <string name="survey_end">Survey complete!</string>

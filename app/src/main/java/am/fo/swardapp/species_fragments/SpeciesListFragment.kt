@@ -42,13 +42,13 @@ class SpeciesListFragment : SwardFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         SpeciesDesc.speciesList.forEach { species ->
-            val id = getResources().getIdentifier(species, "id", requireContext().packageName)
+            val id = resources.getIdentifier(species, "id", requireContext().packageName)
             if (id==0) {
-                Log.i("sward","no widget found for species: "+species)
+                Log.i("sward", "no widget found for species: $species")
             } else {
                 val v: View = view.findViewById(id)
                 v.setOnClickListener {
-                    Intent(getActivity(), SpeciesInfoActivity::class.java).let {
+                    Intent(activity, SpeciesInfoActivity::class.java).let {
                         it.putExtra("SPECIES", species)
                         startActivity(it)
                     }

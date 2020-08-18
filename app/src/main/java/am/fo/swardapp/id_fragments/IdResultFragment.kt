@@ -60,14 +60,14 @@ class IdResultFragment : Fragment() {
         }
 
         species_info.setOnClickListener {
-            Intent(getActivity(), SpeciesInfoActivity::class.java).let {
+            Intent(activity, SpeciesInfoActivity::class.java).let {
                 it.putExtra("SPECIES", answer)
                 startActivity(it)
             }
         }
 
         id_again.setOnClickListener {
-            val i = Intent(getActivity(),IdentificationActivity::class.java)
+            val i = Intent(activity, IdentificationActivity::class.java)
             // stop going round and round by clearing the previous id activity
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(i)

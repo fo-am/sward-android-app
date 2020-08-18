@@ -39,9 +39,9 @@ class FieldActivity : SwardActivity() {
 
         swardViewModel.getField(fieldId).observe(this, Observer { field ->
             field?.let {
-                toolbar.setTitle(field.name)
+                toolbar.title = field.name
                 Log.i("sward",field.name)
-                field_date_sown.setText(field.dateSown)
+                field_date_sown.text = field.dateSown
             }
         })
 

@@ -93,7 +93,7 @@ class SurveySampleFragment : SwardFragment() {
                         val v = sf.getSpeciesView(sown.species) as ToggleButton
                         if (v.isChecked) {
                             // add a record for this species
-                            Log.i("sward", "adding record for survey id: " + surveyId)
+                            Log.i("sward", "adding record for survey id: $surveyId")
                             swardViewModel.insertRecord(
                                 Record(
                                     surveyId!!,

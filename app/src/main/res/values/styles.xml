@@ -28,7 +28,7 @@
         <item name="colorOnPrimary">@color/colorText</item>
         <item name="titleTextColor">@color/colorText</item>
         <item name="android:background">@color/colorBackground</item>
-        <item name="android:popupTheme">@style/SwardPopupMenuStyle</item>
+       <!-- <item name="android:popupTheme">@style/SwardPopupMenuStyle</item> -->
         <!-- <item name="android:src"></item> -->
     </style>
 

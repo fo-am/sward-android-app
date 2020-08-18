@@ -91,14 +91,14 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
         val liveData = MutableLiveData<List<BiodiversityItem>>()
         viewModelScope.launch(Dispatchers.IO) {
             val ret = mutableListOf<BiodiversityItem>()
-            repository.syncGetSurveysAndRecords(fieldId, limit).forEach {
+            repository.syncGetSurveysAndRecords(fieldId, limit).forEach { surveyAndRecords ->
                 val biodiversity = mutableSetOf<String>()
-                it.records.forEach {
+                surveyAndRecords.records.forEach {
                     biodiversity.add(it.species)
                 }
                 ret.add(
                     BiodiversityItem(
-                        it.survey.time,
+                        surveyAndRecords.survey.time,
                         biodiversity.size
                     )
                 )

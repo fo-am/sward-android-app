@@ -54,12 +54,12 @@ class SurveyHowtoFragment : SwardFragment() {
         super.onViewCreated(view, savedInstanceState)
         start_survey.setOnClickListener {
 
-            val c = Calendar.getInstance().getTime()
+            val c = Calendar.getInstance().time
             val df = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
             swardViewModel.insertSurvey(Survey(df.format(c),fieldId!!)).
                 observe(viewLifecycleOwner, Observer { surveyId ->
-                    Log.i("sward","made new survey ID is:"+surveyId)
+                    Log.i("sward", "made new survey ID is:$surveyId")
                     val bundle = bundleOf(
                         "field_id" to fieldId,
                         "survey_id" to surveyId

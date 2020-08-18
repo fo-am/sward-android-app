@@ -52,10 +52,16 @@ class SurveyMainFragment : SwardFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sampleNum?.let { sampleNum ->
-            survey_main.text =
-                String.format(resources.getString(R.string.survey_main), 10 - sampleNum)
-            w_image.setImageResource(getResources().getIdentifier(
-                "example_w_"+sampleNum.toString(),
+            if (sampleNum<9) {
+                survey_main.text =
+                    String.format(resources.getString(R.string.survey_main_plural), 10 - sampleNum)
+            } else {
+                survey_main.text =
+                    String.format(resources.getString(R.string.survey_main_single), 10 - sampleNum)
+            }
+            w_image.setImageResource(
+                resources.getIdentifier(
+                    "example_w_$sampleNum",
                 "drawable",
                 requireContext().packageName))
             sample_button.text =

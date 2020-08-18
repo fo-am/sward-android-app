@@ -53,6 +53,6 @@ class SpeciesInfoActivity : SwardActivity() {
 
     private inner class ScreenSlidePagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
         override fun getItemCount(): Int = speciesDesc.imgs.size
-        override fun createFragment(position: Int): Fragment = SpeciesPhotoFragment(speciesDesc.imgs.get(position))
+        override fun createFragment(position: Int): Fragment = SpeciesPhotoFragment(speciesDesc.imgs[position])
     }
 }

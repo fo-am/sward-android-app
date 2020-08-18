@@ -52,42 +52,44 @@ class SpeciesDetailAdapter internal constructor (
 
     override fun onBindViewHolder(holder: SpeciesListViewHolder, position: Int) {
         val species = speciesSurveyCounts.keys.toList()[position]
-        val surveys: List<SpeciesSurveyCount> = speciesSurveyCounts[species]!!
-        val density = Resources.getSystem().getDisplayMetrics().density
+        val surveys: List<SpeciesSurveyCount>? = speciesSurveyCounts[species]
+        val density = Resources.getSystem().displayMetrics.density
 
         holder.speciesName.setText(createSpeciesDesc(species).name)
         holder.surveyList.removeAllViews()
 
-        for (speciesSurveyCount in surveys) {
-            val surveyLayout = LinearLayout(context)
-            surveyLayout.setOrientation(LinearLayout.HORIZONTAL)
-            surveyLayout.layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            surveyLayout.gravity = Gravity.CENTER_HORIZONTAL
+        surveys?.let { surveys ->
+            for (speciesSurveyCount in surveys) {
+                val surveyLayout = LinearLayout(context)
+                surveyLayout.orientation = LinearLayout.HORIZONTAL
+                surveyLayout.layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+                surveyLayout.gravity = Gravity.CENTER_HORIZONTAL
 
-            val surveyName = TextView(context)
-            surveyName.text=speciesSurveyCount.survey.time
-            surveyLayout.addView(surveyName)
+                val surveyName = TextView(context)
+                surveyName.text = speciesSurveyCount.survey.time
+                surveyLayout.addView(surveyName)
 
-            val s = Space(context)
-            s.layoutParams = LinearLayout.LayoutParams(
-                (10*density).toInt(),
-                LinearLayout.LayoutParams.MATCH_PARENT
-            )
-            surveyLayout.addView(s)
+                val s = Space(context)
+                s.layoutParams = LinearLayout.LayoutParams(
+                    (10 * density).toInt(),
+                    LinearLayout.LayoutParams.MATCH_PARENT
+                )
+                surveyLayout.addView(s)
 
-            val surveyCount = SpeciesCountCanvas(context)
-            surveyCount.layoutParams = LinearLayout.LayoutParams(
-                (15*9*density).toInt(),
-                (15*density).toInt()
-            )
-            surveyCount.count=speciesSurveyCount.count
-            surveyLayout.addView(surveyCount)
+                val surveyCount = SpeciesCountCanvas(context)
+                surveyCount.layoutParams = LinearLayout.LayoutParams(
+                    (15 * 9 * density).toInt(),
+                    (15 * density).toInt()
+                )
+                surveyCount.count = speciesSurveyCount.count
+                surveyLayout.addView(surveyCount)
 
-            holder.surveyList.addView(surveyLayout)
+                holder.surveyList.addView(surveyLayout)
 
+            }
         }
     }
 

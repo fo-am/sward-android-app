@@ -37,10 +37,10 @@ class SpeciesSelectorFragment : SwardFragment() {
     }
 
     fun getSpeciesView(species: String): View {
-        val id = getResources().getIdentifier(species, "id", requireContext().packageName)
+        val id = resources.getIdentifier(species, "id", requireContext().packageName)
         if (id == 0) {
-            Log.i("sward", "no widget found for species: " + species)
-            error("no widget found for species: " + species)
+            Log.i("sward", "no widget found for species: $species")
+            error("no widget found for species: $species")
         }
         return requireView().findViewById<View>(id)
     }

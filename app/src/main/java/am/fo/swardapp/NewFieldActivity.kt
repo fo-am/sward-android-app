@@ -97,9 +97,9 @@ class NewFieldActivity : SwardActivity() {
                 val sown = mutableListOf<String>()
                 // scan over species widgets, inserting them for this field where required
                 SpeciesDesc.speciesList.forEach { species ->
-                    val id = getResources().getIdentifier(species, "id", packageName)
+                    val id = resources.getIdentifier(species, "id", packageName)
                     if (id == 0) {
-                        Log.i("sward", "new_field: no widget found for sewn species: " + species)
+                        Log.i("sward", "new_field: no widget found for sewn species: $species")
                     } else {
                         val v: ToggleButton = findViewById(id)
                         if (v.isChecked) {

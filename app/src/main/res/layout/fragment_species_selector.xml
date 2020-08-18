@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/selector_toggle_button_container"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/selector_toggle_button_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
     tools:context=".species_fragments.SpeciesSelectorFragment">
 
@@ -13,9 +13,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/grass_cocksfoot_button"
+        android:paddingBottom="10dp"
         android:text="@string/grass_cocksfoot" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/grass_meadowfescue"
@@ -23,9 +26,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/grass_meadowfescue_button"
+        android:paddingBottom="10dp"
         android:text="@string/grass_meadowfescue" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/grass_meadowfoxtail"
@@ -33,9 +39,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/grass_meadowfoxtail_button"
+        android:paddingBottom="10dp"
         android:text="@string/grass_meadowfoxtail" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/grass_perennialryegrass"
@@ -43,9 +52,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/grass_perennialryegrass_button"
+        android:paddingBottom="10dp"
         android:text="@string/grass_perennialryegrass" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/grass_tallfescue"
@@ -53,9 +65,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/grass_tallfescue_button"
+        android:paddingBottom="10dp"
         android:text="@string/grass_tallfescue" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/grass_timothy"
@@ -63,9 +78,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/grass_timothy_button"
+        android:paddingBottom="10dp"
         android:text="@string/grass_timothy" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/herb_chicory"
@@ -73,9 +91,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/herb_chicory_button"
+        android:paddingBottom="10dp"
         android:text="@string/herb_chicory" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/herb_ribwort"
@@ -83,9 +104,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/herb_ribwort_button"
+        android:paddingBottom="10dp"
         android:text="@string/herb_ribwort" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/herb_sheepsburnet"
@@ -93,9 +117,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/herb_sheepsburnet_button"
+        android:paddingBottom="10dp"
         android:text="@string/herb_sheepsburnet" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/herb_sheepsparsley"
@@ -103,9 +130,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/herb_sheepsparsley_button"
+        android:paddingBottom="10dp"
         android:text="@string/herb_sheepsparsley" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/herb_yarrow"
@@ -113,9 +143,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/herb_yarrow_button"
+        android:paddingBottom="10dp"
         android:text="@string/herb_yarrow" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/legume_alsike"
@@ -123,9 +156,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/legume_alsike_button"
+        android:paddingBottom="10dp"
         android:text="@string/legume_alsike" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/legume_birdsfoottrefoil"
@@ -133,9 +169,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/legume_birdsfoottrefoil_button"
+        android:paddingBottom="10dp"
         android:text="@string/legume_birdsfoottrefoil" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/legume_lucern"
@@ -143,9 +182,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/legume_lucerne_button"
+        android:paddingBottom="10dp"
         android:text="@string/legume_lucern" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/legume_redclover"
@@ -153,9 +195,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/legume_redclover_button"
+        android:paddingBottom="10dp"
         android:text="@string/legume_redclover" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/legume_sainfoin"
@@ -163,9 +208,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/legume_sainfoin_button"
+        android:paddingBottom="10dp"
         android:text="@string/legume_sainfoin" />
 
-    <Space android:layout_width="@dimen/species_selector_margin" android:layout_height="match_parent" />
+    <Space
+        android:layout_width="@dimen/species_selector_margin"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/legume_whiteclover"
@@ -173,6 +221,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/legume_whiteclover_button"
+        android:paddingBottom="10dp"
         android:text="@string/legume_whiteclover" />
 
-    </LinearLayout>
+</LinearLayout>

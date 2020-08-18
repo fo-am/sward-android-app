@@ -7,6 +7,8 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
 
+    <string name="duchy_email">nebogeo@gmail.com</string>
+
     <string name="title_activity_farm">MY FARM</string>
     <string name="farm_new_field">Add new field</string>
     <string name="farm_fields">Your fields</string>

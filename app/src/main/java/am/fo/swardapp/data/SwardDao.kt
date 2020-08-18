@@ -25,6 +25,9 @@ interface SwardDao {
     @Query("SELECT * from field_table ORDER BY name ASC")
     fun getFields(): LiveData<List<Field>>
 
+    @Query("SELECT * from settings_table")
+    fun getSettings(): LiveData<Settings>
+
     @Query("SELECT * from field_table Where fieldId=:fieldId")
     fun getField(fieldId: Long): LiveData<Field>
 
@@ -45,6 +48,20 @@ interface SwardDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertRecord(recorded: Record): Long
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertSettings(settings: Settings): Long
+
+    @Update
+    suspend fun updateSettings(settings: Settings)
+
+    @Transaction
+    suspend fun setSettings(settings: Settings) {
+        val id = insertSettings(settings)
+        if (id == -1L) {
+            updateSettings(settings)
+        }
+    }
+
     @Query("DELETE FROM field_table")
     suspend fun deleteAllFields()
     @Query("DELETE FROM field_table where fieldId=:fieldId")
@@ -58,10 +75,16 @@ interface SwardDao {
     @Transaction
     @Query("SELECT * from survey_table Where fieldId=:fieldId order by time desc limit :limit")
     fun syncGetSurveysAndRecords(fieldId: Long, limit: Int): List<SurveyAndRecords>
+
+    @Transaction
     @Query("SELECT * from survey_table Where fieldId=:fieldId")
     fun syncGetSurveys(fieldId: Long): List<Survey>
+
+    @Transaction
     @Query("SELECT * from record_table Where surveyId=:surveyId")
     fun syncGetRecords(surveyId: Long): List<Record>
+
+    @Transaction
     @Query("SELECT * from field_table")
     fun syncGetExportData(): List<FieldWithSurveysAndRecords>
 }

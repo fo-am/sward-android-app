@@ -17,6 +17,7 @@
 
 package am.fo.swardapp
 
+import am.fo.swardapp.data.Settings
 import am.fo.swardapp.data.SwardExport
 import android.Manifest
 import android.content.Context
@@ -41,8 +42,27 @@ class DownloadActivity : SwardActivity() {
         setContentView(R.layout.activity_download)
         setSupportActionBar(toolbar)
 
+        swardViewModel.settings.observe(this, Observer {
+            it?.let {
+                email_address.setText(it.email)
+            }
+        })
 
+/*        email_address.addTextChangedListener(object : TextWatcher {
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(e: Editable?) {
+                e?.let {
+                    swardViewModel.setSettings(Settings(1, it.toString()))
+                }
+            }
+        })
+*/
         send_button.setOnClickListener {
+
+            swardViewModel.setSettings(Settings(1, email_address.text.toString()))
 
             if (Build.VERSION.SDK_INT >= 23) {
                 val PERMISSIONS = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -63,14 +83,26 @@ class DownloadActivity : SwardActivity() {
         val fileURI = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".fileprovider", fileLocation)
 
         swardViewModel.getExportData().observe(this, Observer {
-            SwardExport(it, filePath, thunk = {
-                val emailIntent = Intent(Intent.ACTION_SEND).apply {
-                    putExtra(Intent.EXTRA_SUBJECT, getString(R.string.export_subject))
-                    putExtra(Intent.EXTRA_TEXT, getString(R.string.export_body))
-                    putExtra(Intent.EXTRA_STREAM, fileURI)
+            SwardExport(it, filePath, resources, thunk = {
+                val emailIntent = Intent(Intent.ACTION_SEND)
+
+                // get the current email address if it exists
+                swardViewModel.settings.observe(this, Observer {
+                    it?.let {
+                        emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(it.email))
+                    }
+                })
+
+                // are they happy to share the data?
+                if (download_consent.isChecked()) {
+                    emailIntent.putExtra(Intent.EXTRA_CC, arrayOf(getString(R.string.duchy_email)))
                 }
+
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.export_subject))
+                emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.export_body))
+                emailIntent.putExtra(Intent.EXTRA_STREAM, fileURI)
                 emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                emailIntent.type = "text/plain"
+                emailIntent.type = "message/rfc822"
                 startActivity(emailIntent)
             }).export()
         })

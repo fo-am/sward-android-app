@@ -24,7 +24,7 @@
         <activity
             android:name=".IdentificationActivity"
             android:label="@string/title_activity_identification"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SpeciesActivity"
             android:label="@string/title_species"

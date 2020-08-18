@@ -17,23 +17,25 @@
 
 package am.fo.swardapp.data
 
+import am.fo.swardapp.R
+import android.content.res.Resources
 import com.github.doyaaaaaken.kotlincsv.dsl.csvWriter
 
-class SwardExport(val data: List<FieldWithSurveysAndRecords>, val fileName: String, val thunk: () -> Unit ) {
+class SwardExport(val data: List<FieldWithSurveysAndRecords>, val fileName: String, val resources: Resources, val thunk: () -> Unit ) {
     fun export() {
         csvWriter().open(fileName) {
             // Header
             writeRow(
                 listOf(
-                    "[Field ID]",
-                    "[Field name]",
-                    "[Field date sown]",
-                    "[Field soil type]",
-                    "[Field notes]",
-                    "[Survey ID]",
-                    "[Survey time]",
-                    "[Record sample]",
-                    "[Record species]"
+                    "\"Field ID\"",
+                    "\"Field name\"",
+                    "\"Field date sown\"",
+                    "\"Field soil type\"",
+                    "\"Field notes\"",
+                    "\"Survey ID\"",
+                    "\"Survey time\"",
+                    "\"Record sample\"",
+                    "\"Record species\""
                 )
             )
             data.forEach { field ->
@@ -44,7 +46,7 @@ class SwardExport(val data: List<FieldWithSurveysAndRecords>, val fileName: Stri
                                 field.field.fieldId,
                                 field.field.name,
                                 field.field.dateSown,
-                                field.field.soilType,
+                                resources.getStringArray(R.array.soil_types)[field.field.soilType],
                                 field.field.notes,
                                 surveyAndRecords.survey.surveyId,
                                 surveyAndRecords.survey.time,

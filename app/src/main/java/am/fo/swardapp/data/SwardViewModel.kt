@@ -33,6 +33,7 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
     val allFields: LiveData<List<Field>>
+    val settings: LiveData<Settings>
 
     fun getField(field_id: Long) : LiveData<Field> = repository.getField(field_id)
     fun getSown(fieldId: Long) : LiveData<List<Sown>> = repository.getSown(fieldId)
@@ -41,6 +42,7 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
         val swardDao = SwardRoomDatabase.getDatabase(application,viewModelScope).swardDao()
         repository = SwardRepository(swardDao)
         allFields = repository.allFields
+        settings = repository.settings
     }
 
     /**
@@ -51,6 +53,10 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
         sown.forEach { species ->
             repository.insertSown(Sown(fieldId,species))
         }
+    }
+
+    fun setSettings(settings: Settings) = viewModelScope.launch(Dispatchers.IO) {
+        repository.setSettings(settings)
     }
 
     fun insertSurvey(survey: Survey): LiveData<Long> {

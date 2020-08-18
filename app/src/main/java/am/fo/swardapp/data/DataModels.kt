@@ -83,4 +83,7 @@ data class FieldWithSurveysAndRecords (
     val surveysAndRecords: List<SurveyAndRecords>
 )
 
+@Entity(tableName="settings_table")
+data class Settings(@PrimaryKey var settingsId:Long = 0, val email: String)
+
 

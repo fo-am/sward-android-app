@@ -29,13 +29,14 @@ class SwardRepository(private val swardDao: SwardDao) {
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
     val allFields: LiveData<List<Field>> = swardDao.getFields()
+    val settings: LiveData<Settings> = swardDao.getSettings()
 
     fun getField(fieldId: Long): LiveData<Field> = swardDao.getField(fieldId)
 
     fun getSown(fieldId: Long): LiveData<List<Sown>> =
         swardDao.getSown(fieldId)
 
-
+    suspend fun setSettings(settings: Settings) = swardDao.setSettings(settings)
 
     suspend fun insertField(field: Field): Long = swardDao.insertField(field)
     suspend fun insertSurvey(survey: Survey): Long = swardDao.insertSurvey(survey)

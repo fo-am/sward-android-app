@@ -106,7 +106,7 @@
 
     <string name="id_legume_stolons_text">Is the plant upright, or creeping along the ground, and does it have stolons (horizontal stems with roots along their length)? Try following a flowering stem to the soil with your fingers and gently pull it up.</string>
     <string name="id_legume_stolons_one">Plant is upright (no stolons).</string>
-    <string name="id_legume_stolons_two">Plant is creeping, their are roots (stolons) along the uprooted stem.</string>
+    <string name="id_legume_stolons_two">Plant is creeping, there are roots (stolons) along the uprooted stem.</string>
     <string name="id_legume_stolons_three">I am not sure (the next question will use less reliable features).</string>
 
     <string name="id_legume_crescent_text">Do the leaves have crescent shaped marks?</string>

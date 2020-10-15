@@ -39,5 +39,8 @@ class SpeciesPhotoFragment(val image: DescImg) : SwardFragment() {
         super.onViewCreated(view, savedInstanceState)
         img.setImageResource(image.img)
         caption.setText(image.caption)
+        if (image.credit!=-1) {
+            photo_credit.setText(image.credit)
+        }
     }
 }

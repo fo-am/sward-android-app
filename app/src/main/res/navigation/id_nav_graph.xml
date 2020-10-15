@@ -54,7 +54,7 @@
             app:destination="@id/idResultFragment" >
             <argument
                 android:name="answer"
-                android:defaultValue="legume_lucern" />
+                android:defaultValue="legume_lucerne" />
         </action>
     </fragment>
     <fragment

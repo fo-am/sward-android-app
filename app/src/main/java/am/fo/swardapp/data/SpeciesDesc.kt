@@ -19,7 +19,7 @@ package am.fo.swardapp.data
 
 import am.fo.swardapp.R
 
-data class DescImg(val img: Int, val caption: Int)
+data class DescImg(val img: Int, val caption: Int, val credit: Int=-1)
 
 // single place to get resources for each species
 class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val imgs: Array<DescImg> ) {
@@ -29,7 +29,7 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
         // to make it easier to add species later on (and perhaps to have them stored in the database if required)
         val speciesList = arrayOf("grass_cocksfoot","grass_meadowfescue","grass_meadowfoxtail","grass_perennialryegrass",
             "grass_tallfescue","grass_timothy","herb_chicory","herb_ribwort","herb_sheepsburnet","herb_sheepsparsley",
-            "herb_yarrow","legume_alsike","legume_birdsfoottrefoil","legume_lucern","legume_redclover","legume_sainfoin",
+            "herb_yarrow","legume_alsike","legume_birdsfoottrefoil","legume_lucerne","legume_redclover","legume_sainfoin",
             "legume_whiteclover")
 
         fun createSpeciesDesc(id: String?) =
@@ -42,7 +42,7 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                         DescImg(R.drawable.grass_cocksfoot_plant,R.string.grass_cocksfoot_plant_cap),
                         DescImg(R.drawable.grass_cocksfoot_flower,R.string.grass_cocksfoot_flower_cap),
                         DescImg(R.drawable.grass_cocksfoot_stem,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.grass_cocksfoot_stemsheath_annotated,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.grass_cocksfoot_stemsheath_annotated,R.string.grass_cocksfoot_stemsheath_cap)
                     )
                 )
                 "grass_meadowfescue" -> SpeciesDesc(
@@ -52,7 +52,7 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     arrayOf(
                         DescImg(R.drawable.grass_meadowfescue_plant,R.string.grass_meadowfescue_plant_cap),
                         DescImg(R.drawable.grass_meadowfescue_flower,R.string.grass_meadowfescue_flower_cap),
-                        DescImg(R.drawable.grass_meadowfescue_stemsheath_annotated,R.string.grass_meadowfescue_stemsheath_annotated_cap)
+                        DescImg(R.drawable.grass_meadowfescue_stemsheath_annotated,R.string.grass_meadowfescue_stemsheath_cap)
                     )
                 )
                 "grass_meadowfoxtail" -> SpeciesDesc(
@@ -60,9 +60,9 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.grass_meadowfoxtail_lat,
                     R.drawable.grass_meadowfoxtail_plant,
                     arrayOf(
-                        DescImg(R.drawable.grass_meadowfoxtail_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.grass_meadowfoxtail_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.grass_meadowfoxtail_stemsheath_annotated,R.string.grass_cocksfoot_stem_cap)
+                        DescImg(R.drawable.grass_meadowfoxtail_plant,R.string.grass_meadowfoxtail_plant_cap),
+                        DescImg(R.drawable.grass_meadowfoxtail_flower,R.string.grass_meadowfoxtail_flower_cap,R.string.credit_meadow_foxtail_flower),
+                        DescImg(R.drawable.grass_meadowfoxtail_stemsheath_annotated,R.string.grass_meadowfoxtail_stemsheath_cap,R.string.credit_meadow_foxtail_stem)
                     )
                 )
                 "grass_perennialryegrass" -> SpeciesDesc(
@@ -70,9 +70,9 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.grass_perennialryegrass_lat,
                     R.drawable.grass_perennialryegrass_plant,
                     arrayOf(
-                        DescImg(R.drawable.grass_perennialryegrass_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.grass_perennialryegrass_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.grass_perennialryegrass_stemsheath_annotated,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.grass_perennialryegrass_plant,R.string.grass_perennial_ryegrass_plant_cap),
+                        DescImg(R.drawable.grass_perennialryegrass_flower,R.string.grass_perennial_ryegrass_flower_cap),
+                        DescImg(R.drawable.grass_perennialryegrass_stemsheath_annotated,R.string.grass_perennial_ryegrass_stemsheath_cap,R.string.credit_perennial_ryegrass_stem)
                     )
                 )
                 "grass_tallfescue" -> SpeciesDesc(
@@ -80,9 +80,9 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.grass_tallfescue_lat,
                     R.drawable.grass_tallfescue_plant,
                     arrayOf(
-                        DescImg(R.drawable.grass_tallfescue_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.grass_tallfescue_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.grass_tallfescue_stemsheath_annotated,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.grass_tallfescue_plant,R.string.grass_tallfescue_plant_cap),
+                        DescImg(R.drawable.grass_tallfescue_flower,R.string.grass_tallfescue_flower_cap),
+                        DescImg(R.drawable.grass_tallfescue_stemsheath_annotated,R.string.grass_tallfescue_stemsheath_cap,R.string.credit_tallfescue_stem_1)
                     )
                 )
                 "grass_timothy" -> SpeciesDesc(
@@ -90,9 +90,9 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.grass_timothy_lat,
                     R.drawable.grass_timothy_plant,
                     arrayOf(
-                        DescImg(R.drawable.grass_timothy_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.grass_timothy_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.grass_timothy_stemsheath_annotated,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.grass_timothy_plant,R.string.grass_timothy_plant_cap),
+                        DescImg(R.drawable.grass_timothy_flower,R.string.grass_timothy_flower_cap),
+                        DescImg(R.drawable.grass_timothy_stemsheath_annotated,R.string.grass_timothy_stemsheath_cap,R.string.credit_timothy_stemsheath)
                     )
                 )
                 "herb_chicory" -> SpeciesDesc(
@@ -100,10 +100,10 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.herb_chicory_lat,
                     R.drawable.herb_chicory_plant,
                     arrayOf(
-                        DescImg(R.drawable.herb_chicory_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.herb_chicory_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.herb_chicory_leaf,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.herb_chicory_seedling,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.herb_chicory_plant,R.string.herb_chicory_plant_cap),
+                        DescImg(R.drawable.herb_chicory_flower,R.string.herb_chicory_flower_cap),
+                        DescImg(R.drawable.herb_chicory_leaf,R.string.herb_chicory_leaf_cap),
+                        DescImg(R.drawable.herb_chicory_seedling,R.string.herb_chicory_seedling_cap)
                     )
                 )
                 "herb_ribwort" -> SpeciesDesc(
@@ -111,10 +111,10 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.herb_ribwort_lat,
                     R.drawable.herb_ribwort_plant,
                     arrayOf(
-                        DescImg(R.drawable.herb_ribwort_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.herb_ribwort_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.herb_ribwort_leaf,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.herb_ribwort_seedling,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.herb_ribwort_plant,R.string.herb_ribwort_plant_cap),
+                        DescImg(R.drawable.herb_ribwort_flower,R.string.herb_ribwort_flower_cap),
+                        DescImg(R.drawable.herb_ribwort_leaf,R.string.herb_ribwort_leaf_cap),
+                        DescImg(R.drawable.herb_ribwort_seedling,R.string.herb_ribwort_seedling_cap)
                     )
                 )
                 "herb_sheepsburnet" -> SpeciesDesc(
@@ -122,10 +122,10 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.herb_sheepsburnet_lat,
                     R.drawable.herb_sheepsburnet_plant,
                     arrayOf(
-                        DescImg(R.drawable.herb_sheepsburnet_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.herb_sheepsburnet_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.herb_sheepsburnet_leaf,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.herb_sheepsburnet_seedling,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.herb_sheepsburnet_plant,R.string.herb_sheepsburnet_plant_cap),
+                        DescImg(R.drawable.herb_sheepsburnet_flower,R.string.herb_sheepsburnet_flower_cap),
+                        DescImg(R.drawable.herb_sheepsburnet_leaf,R.string.herb_sheepsburnet_leaf_cap),
+                        DescImg(R.drawable.herb_sheepsburnet_seedling,R.string.herb_sheepsburnet_seedling_cap)
                     )
                 )
                 "herb_sheepsparsley" -> SpeciesDesc(
@@ -133,10 +133,10 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.herb_sheepsparsley_lat,
                     R.drawable.herb_sheepsparsley_plant,
                     arrayOf(
-                        DescImg(R.drawable.herb_sheepsparsley_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.herb_sheepsparsley_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.herb_sheepsparsley_leaf,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.herb_sheepsparsley_seedling,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.herb_sheepsparsley_plant,R.string.herb_sheepsparsley_plant_cap),
+                        DescImg(R.drawable.herb_sheepsparsley_flower,R.string.herb_sheepsparsley_flower_cap,R.string.credit_sheepsparsley_flower),
+                        DescImg(R.drawable.herb_sheepsparsley_leaf,R.string.herb_sheepsparsley_leaf_cap),
+                        DescImg(R.drawable.herb_sheepsparsley_seedling,R.string.herb_sheepsparsley_seedling_cap)
                     )
                 )
                 "herb_yarrow" -> SpeciesDesc(
@@ -144,10 +144,10 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.herb_yarrow_lat,
                     R.drawable.herb_yarrow_plant,
                     arrayOf(
-                        DescImg(R.drawable.herb_yarrow_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.herb_yarrow_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.herb_yarrow_leaf,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.herb_yarrow_seedling,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.herb_yarrow_plant,R.string.herb_yarrow_plant_cap),
+                        DescImg(R.drawable.herb_yarrow_flower,R.string.herb_yarrow_flower_cap),
+                        DescImg(R.drawable.herb_yarrow_leaf,R.string.herb_yarrow_leaf_cap),
+                        DescImg(R.drawable.herb_yarrow_seedling,R.string.herb_yarrow_seedling_cap,R.string.credit_yarrow_seedling)
                     )
                 )
                 "legume_alsike" -> SpeciesDesc(
@@ -155,9 +155,9 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.legume_alsike_lat,
                     R.drawable.legume_alsike_leaf,
                     arrayOf(
-                        DescImg(R.drawable.legume_alsike_leaf,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.legume_alsike_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.legume_alsike_seedling,R.string.grass_cocksfoot_stem_cap)
+                        DescImg(R.drawable.legume_alsike_leaf,R.string.legume_alsike_leaf_cap),
+                        DescImg(R.drawable.legume_alsike_flower,R.string.legume_alsike_flower_cap),
+                        DescImg(R.drawable.legume_alsike_seedling,R.string.legume_alsike_seedling_cap)
                     )
                 )
                 "legume_birdsfoottrefoil" -> SpeciesDesc(
@@ -165,21 +165,21 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.legume_birdsfootrefoil_lat,
                     R.drawable.legume_birdsfoottrefoil_plant,
                     arrayOf(
-                        DescImg(R.drawable.legume_birdsfoottrefoil_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.legume_birdsfoottrefoil_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.legume_birdsfoottrefoil_leaf,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.legume_birdsfoottrefoil_seedling,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.legume_birdsfoottrefoil_plant,R.string.legume_birdsfoottrefoil_plant_cap),
+                        DescImg(R.drawable.legume_birdsfoottrefoil_flower,R.string.legume_birdsfoottrefoil_flower_cap),
+                        DescImg(R.drawable.legume_birdsfoottrefoil_leaf,R.string.legume_birdsfoottrefoil_leaf_cap),
+                        DescImg(R.drawable.legume_birdsfoottrefoil_seedling,R.string.legume_birdsfoottrefoil_seedling_cap,R.string.credit_birdsfoottrefoil_seedling)
                     )
                 )
-                "legume_lucern" -> SpeciesDesc(
-                    R.string.legume_lucern,
-                    R.string.legume_lucern_lat,
+                "legume_lucerne" -> SpeciesDesc(
+                    R.string.legume_lucerne,
+                    R.string.legume_lucerne_lat,
                     R.drawable.legume_lucerne_plant,
                     arrayOf(
-                        DescImg(R.drawable.legume_lucerne_plant,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.legume_lucerne_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.legume_lucerne_leaf_annotated,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.legume_lucerne_seedling,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.legume_lucerne_plant,R.string.legume_lucerne_plant_cap),
+                        DescImg(R.drawable.legume_lucerne_flower,R.string.legume_lucerne_flower_cap,R.string.credit_lucerne_flower),
+                        DescImg(R.drawable.legume_lucerne_leaf_annotated,R.string.legume_lucerne_leaf_cap),
+                        DescImg(R.drawable.legume_lucerne_seedling,R.string.legume_lucerne_seedling_cap)
                     )
                 )
                 "legume_redclover" -> SpeciesDesc(
@@ -187,10 +187,10 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.legume_redclover_lat,
                     R.drawable.legume_redclover_leaf_1,
                     arrayOf(
-                        DescImg(R.drawable.legume_redclover_leaf_1,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.legume_redclover_leaf_2,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.legume_redclover_flower,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.legume_redclover_seedling_annotated,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.legume_redclover_leaf_1,R.string.legume_redclover_leaf_cap),
+                        DescImg(R.drawable.legume_redclover_leaf_2,R.string.legume_redclover_leaf_cap),
+                        DescImg(R.drawable.legume_redclover_flower,R.string.legume_redclover_flower_cap),
+                        DescImg(R.drawable.legume_redclover_seedling_annotated,R.string.legume_redclover_seedling_cap)
                     )
                 )
                 "legume_sainfoin" -> SpeciesDesc(
@@ -198,9 +198,9 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.legume_sainfoin_lat,
                     R.drawable.legume_sainfoin_leaf,
                     arrayOf(
-                        DescImg(R.drawable.legume_sainfoin_leaf,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.legume_sainfoin_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.legume_sainfoin_seedling_annotated,R.string.grass_cocksfoot_stem_cap)
+                        DescImg(R.drawable.legume_sainfoin_leaf,R.string.legume_sainfoin_leaf_cap),
+                        DescImg(R.drawable.legume_sainfoin_flower,R.string.legume_sainfoin_flower_cap,R.string.credit_sainfoin_flower),
+                        DescImg(R.drawable.legume_sainfoin_seedling_annotated,R.string.legume_sainfoin_seedling_cap)
                     )
                 )
                 "legume_whiteclover" -> SpeciesDesc(
@@ -208,9 +208,9 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.legume_whiteclover_lat,
                     R.drawable.legume_whiteclover_leaf,
                     arrayOf(
-                        DescImg(R.drawable.legume_whiteclover_leaf,R.string.grass_cocksfoot_plant_cap),
-                        DescImg(R.drawable.legume_whiteclover_flower,R.string.grass_cocksfoot_flower_cap),
-                        DescImg(R.drawable.legume_whiteclover_seedling_annotated,R.string.grass_cocksfoot_stem_cap)
+                        DescImg(R.drawable.legume_whiteclover_leaf,R.string.legume_whiteclover_leaf_cap),
+                        DescImg(R.drawable.legume_whiteclover_flower,R.string.legume_whiteclover_flower_cap),
+                        DescImg(R.drawable.legume_whiteclover_seedling_annotated,R.string.legume_whiteclover_seedling_cap)
                     )
                 )
                 else -> SpeciesDesc(
@@ -221,7 +221,7 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                         DescImg(R.drawable.grass_cocksfoot_plant,R.string.grass_cocksfoot_plant_cap),
                         DescImg(R.drawable.grass_cocksfoot_flower,R.string.grass_cocksfoot_flower_cap),
                         DescImg(R.drawable.grass_cocksfoot_stem,R.string.grass_cocksfoot_stem_cap),
-                        DescImg(R.drawable.grass_cocksfoot_stemsheath_annotated,R.string.grass_cocksfoot_stemsheath_annotated_cap)
+                        DescImg(R.drawable.grass_cocksfoot_stemsheath_annotated,R.string.grass_cocksfoot_stemsheath_cap)
                     )
                 )
 

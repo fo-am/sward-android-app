@@ -177,13 +177,13 @@
         android:layout_height="match_parent" />
 
     <ToggleButton
-        android:id="@+id/legume_lucern"
+        android:id="@+id/legume_lucerne"
         android:layout_width="@dimen/species_selector_width"
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:drawableTop="@drawable/legume_lucerne_button"
         android:paddingBottom="10dp"
-        android:text="@string/legume_lucern" />
+        android:text="@string/legume_lucerne" />
 
     <Space
         android:layout_width="@dimen/species_selector_margin"

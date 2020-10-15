@@ -48,7 +48,7 @@
     <string name="empty_field_not_saved">Field not saved because it is empty.</string>
 
     <string name="title_activity_field_detail">FIELD DETAILS</string>
-    <string name="field_detail_about">Each species lists is one that was sown. Each bar shows the number of species out of 9 in each survey that was found.</string>
+    <string name="field_detail_about">Each species listed is one that was sown. Each bar shows the number of species out of 9 in each survey that was found.</string>
 
     <string name="title_activity_about">ABOUT</string>
     <string name="about_text">All about the wonderful app.....</string>
@@ -78,9 +78,10 @@
     <string name="title_activity_download">DOWNLOAD YOUR DATA</string>
     <string name="download_text">Enter an email address to send all data on your farm to yourself or someone else."</string>
     <string name="download_address">Email address</string>
-    <string name="download_citsci">Researchers at Duchy College are interested in your date to understand how multi-species swards perform. Tick this box if you are happy to automatically send them your data anonymously for research purposes only.</string>
     <string name="download_consent">I consent to sharing my farm data for research</string>
     <string name="download_send">Send data</string>
+
+    <string name="download_citsci">Researchers at Duchy College are interested in your data to understand how multi-species swards perform. Tick this box if you are happy to automatically send them your data for research purposes only.</string>
 
     <string name="export_subject">Your farm data from the Sward app</string>
     <string name="export_body">Your farm data is attached in a csv spreadsheet, which you can open in excel or open office.</string>
@@ -162,7 +163,7 @@
     <string name="herb_yarrow">Yarrow</string>
     <string name="legume_alsike">Alsike Clover</string>
     <string name="legume_birdsfoottrefoil">Bird\'s Foot Trefoil</string>
-    <string name="legume_lucern">Lucern</string>
+    <string name="legume_lucerne">Lucerne</string>
     <string name="legume_redclover">Red Clover</string>
     <string name="legume_sainfoin">Sainfoin</string>
     <string name="legume_whiteclover">White clover</string>
@@ -180,7 +181,7 @@
     <string name="herb_yarrow_lat">Achillea millefolium</string>
     <string name="legume_alsike_lat">Trifolium hybridum</string>
     <string name="legume_birdsfootrefoil_lat">Lotus corniculatus</string>
-    <string name="legume_lucern_lat">Medicago sativa</string>
+    <string name="legume_lucerne_lat">Medicago sativa</string>
     <string name="legume_redclover_lat">Trifolium pratense</string>
     <string name="legume_sainfoin_lat">Onobrychis viciifolia</string>
     <string name="legume_whiteclover_lat">Trifolium repens</string>
@@ -191,17 +192,96 @@
     <string name="grass_cocksfoot_flower_cap">One-sided, clumped flower head.</string>
     <string name="grass_cocksfoot_stem_cap">Base of stem is flattened.</string>
     <string name="grass_cocksfoot_leaf_cap">Long flat leaves (2–14mm wide) that narrow to a point. Each leaf has a prominent keel (like the keel on a boat)</string>
-    <string name="grass_cocksfoot_stemsheath_annotated_cap">No auricles, ligule generally long (2–12mm), ligule has torn, jagged edges.</string>
+    <string name="grass_cocksfoot_stemsheath_cap">No auricles, ligule generally long (2–12mm), ligule has torn, jagged edges.</string>
 
     <string name="grass_meadowfescue_plant_cap">Up to 80cm, loose tufts (sometimes forms clumps), variable green</string>
     <string name="grass_meadowfescue_flower_cap">Tinged reddish/brown.</string>
     <string name="grass_meadowfescue_leaf_cap">The leaf blades are ribbed on the upper side and more glossy on the underside. The leaves clasp the stem by long sheaths</string>
-    <string name="grass_meadowfescue_stemsheath_annotated_cap">Short, stubby ligule – barely visible (1mm). Small auricles with no hairs.</string>
+    <string name="grass_meadowfescue_stemsheath_cap">Short, stubby ligule – barely visible (1mm). Small auricles with no hairs.</string>
 
     <string name="grass_meadowfoxtail_plant_cap">Up to 120cm, whitish-green, erect tufts.</string>
-    <string name="grass_meadowfoxtail_stemsheath_annotated_cap">No auricles, ligule typically short (1–4mm), ligule tatty.</string>
+    <string name="grass_meadowfoxtail_stemsheath_cap">No auricles, ligule typically short (1–4mm), ligule tatty.</string>
     <string name="grass_meadowfoxtail_leaf_cap">The basal (bottom) leaf sheath is often black or brown, the leaves are hairless.</string>
     <string name="grass_meadowfoxtail_flower_cap">Tassel-like, cylindrical, up to 13cm long, yellow-green, covered in silver hairs.</string>
 
+    <string name="grass_perennial_ryegrass_plant_cap">Up to 100cm, dark green and glossy, dense tufts.</string>
+    <string name="grass_perennial_ryegrass_stemsheath_cap">Long auricles clasping the stem. Short ligule (1–2mm) that is hard to see.</string>
+    <string name="grass_perennial_ryegrass_leaf_cap">The underside of the leaf is smooth and glossy, with the top side being slightly rougher, both are hairless. The younger leaves are folded in the sheath before they extend.</string>
+    <string name="grass_perennial_ryegrass_flower_cap">Spikelets attached to stem in alternating pattern, no awns, unbranched.</string>
+
+    <string name="grass_tallfescue_plant_cap">Up to 200cm, loose tufts, dark green</string>
+    <string name="grass_tallfescue_stemsheath_cap">No auricles, ligule up to 6mm long with notched edges and pointed tip.</string>
+    <string name="grass_tallfescue_leaf_cap">The leaves are long, hairless with rough edges and a characteristic twist or whorl to each leaf. They are rolled in the bud.</string>
+    <string name="grass_tallfescue_flower_cap">Tassel-like, cylindrical, up to 15cm long, green to grey-purple, no silver hairs.</string>
+
+    <string name="grass_timothy_plant_cap">Up to 150cm, light grey-green, erect tufts.</string>
+    <string name="grass_timothy_stemsheath_cap">No auricles, ligule up to 6mm long with notched edges and pointed tip.</string>
+    <string name="grass_timothy_leaf_cap">The leaves are long, hairless with rough edges and a characteristic twist or whorl to each leaf. They are rolled in the bud.</string>
+    <string name="grass_timothy_flower_cap">Tassel-like, cylindrical, up to 15cm long, green to grey-purple, no silver hairs.</string>
+
+    <string name="herb_chicory_plant_cap">Rosette – leaves sprout from base.</string>
+    <string name="herb_chicory_seedling_cap">Seedling at 2 weeks – pale, oval leaves.</string>
+    <string name="herb_chicory_leaf_cap">Narrow oval, often hairy, often toothed, often pale green.</string>
+    <string name="herb_chicory_flower_cap">Bright blue.</string>
+
+    <string name="herb_ribwort_plant_cap">Rosette – leaves sprout from base.</string>
+    <string name="herb_ribwort_seedling_cap">Seedling at 2 weeks – grass-like leaves.</string>
+    <string name="herb_ribwort_leaf_cap">Narrow, ribbed, oval.</string>
+    <string name="herb_ribwort_flower_cap">Brown, oval.</string>
+
+    <string name="herb_sheepsburnet_plant_cap">Rosette – leaves sprout from base.</string>
+    <string name="herb_sheepsburnet_seedling_cap">Seedling at 2 weeks – first true leaves are pale and toothed.</string>
+    <string name="herb_sheepsburnet_leaf_cap">Toothed leaflets arranged in pairs up the stam, dark green with pale underside.</string>
+    <string name="herb_sheepsburnet_flower_cap">Knobbly green-red clusters.</string>
+
+    <string name="herb_sheepsparsley_plant_cap">Rosette – leaves sprout from base.</string>
+    <string name="herb_sheepsparsley_seedling_cap">Young plant.</string>
+    <string name="herb_sheepsparsley_leaf_cap">Feathery, garden parsley-like.</string>
+    <string name="herb_sheepsparsley_flower_cap">Rarely flowers, tiny yellow clusters.</string>
+
+    <string name="herb_yarrow_plant_cap">Rosette – leaves sprout from base.</string>
+    <string name="herb_yarrow_seedling_cap">Young plant.</string>
+    <string name="herb_yarrow_leaf_cap">Feathery, dark green, strong smell when rubbed.</string>
+    <string name="herb_yarrow_flower_cap">Flat-topped, crem-white clusters.</string>
+
+    <string name="legume_birdsfoottrefoil_plant_cap">\'Leggy\’, sprawling.</string>
+    <string name="legume_birdsfoottrefoil_seedling_cap">Seedling – first true leaf has 5 leaflets</string>
+    <string name="legume_birdsfoottrefoil_leaf_cap">5 leaflets – 3 in a typical ‘clover’ shape and 2 clasping the stem.</string>
+    <string name="legume_birdsfoottrefoil_flower_cap">Yellow cluster, often tinged red.</string>
+
+    <string name="legume_alsike_seedling_cap">Seedling at 2 weeks – hairless, with no white marks on leaf.</string>
+    <string name="legume_alsike_leaf_cap">3 leaflets, hairless, no white crescent marks.</string>
+    <string name="legume_alsike_flower_cap">Pale pink, spherical head.</string>
+
+    <string name="legume_lucerne_plant_cap">Upright, bushy.</string>
+    <string name="legume_lucerne_seedling_cap">Seedling at 2 weeks – first true leaf has 1 heart or kidney shaped leaf.</string>
+    <string name="legume_lucerne_leaf_cap">3 oval leaflets, top leaflet has short stalk, underside of leaf is hairy.</string>
+    <string name="legume_lucerne_flower_cap">White, purple, or yellow clusters.</string>
+
+    <string name="legume_redclover_seedling_cap">Seedling at 2 weeks – hairs on leaf already visible.</string>
+    <string name="legume_redclover_leaf_cap">3 leaflets, hairy, sometimes white crescent marks. Hairs are most obvious on leaf underside.</string>
+    <string name="legume_redclover_flower_cap">Reddish-pink, spherical head.</string>
+
+    <string name="legume_sainfoin_seedling_cap">Seedling at 2 weeks – first true leaf has 1–3 long oval leaflets.</string>
+    <string name="legume_sainfoin_leaf_cap">Multiple oval leaflets arranged in pairs</string>
+    <string name="legume_sainfoin_flower_cap">Pink with purple veins, cone shaped head.</string>
+
+    <string name="legume_whiteclover_seedling_cap">Seedling at 2 weeks – white crescent marks already visible.</string>
+    <string name="legume_whiteclover_leaf_cap">3 leaflets, hairless, often white crescent marks</string>
+    <string name="legume_whiteclover_flower_cap">Cream or pinkish-white, spherical head.</string>
+
+    <string name="credit_sainfoin_flower">Jonny Todd</string>
+    <string name="credit_birdsfoottrefoil_seedling">Krzysztof Ziarnek</string>
+    <string name="credit_sheepsparsley_flower">Dartrider</string>
+    <string name="credit_yarrow_seedling">Krzysztof Ziarnek, Kenraiz</string>
+    <string name="credit_lucerne_flower">Lefnaer</string>
+    <string name="credit_timothy_stemsheath">Rasbak</string>
+    <string name="credit_tallfescue_stem_1">Lavin</string>
+    <string name="credit_tallfescue_stem_2">Lavin</string>
+    <string name="credit_perennial_ryegrass_stem">Rasbak</string>
+    <string name="credit_meadow_foxtail_flower">Fir</string>
+    <string name="credit_meadow_foxtail_stem2">Lefnaer</string>
+    <string name="credit_meadow_foxtail_stem">Matt Lavin</string>
+    <string name="credit_meadow_foxtail_flower2">T. Voekler</string>
 
     </resources>

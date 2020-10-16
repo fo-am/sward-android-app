@@ -75,6 +75,7 @@ class DownloadActivity : SwardActivity() {
             } else {
                 export(email)
             }
+            finish()
         }
 
         cancel_button.setOnClickListener {

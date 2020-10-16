@@ -52,6 +52,9 @@ interface SwardDao {
     suspend fun insertSettings(settings: Settings): Long
 
     @Update
+    suspend fun updateField(field: Field)
+
+    @Update
     suspend fun updateSettings(settings: Settings)
 
     @Transaction

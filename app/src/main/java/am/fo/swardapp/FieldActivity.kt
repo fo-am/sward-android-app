@@ -17,12 +17,16 @@
 
 package am.fo.swardapp
 
+import am.fo.swardapp.data.DateWrangler
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_field.*
+import java.util.*
 
 class FieldActivity : SwardActivity() {
 
@@ -37,11 +41,50 @@ class FieldActivity : SwardActivity() {
             field_canvas_view.addData(surveys)
         })
 
+        val cal = Calendar.getInstance()
+
+        val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            cal.set(Calendar.YEAR, year)
+            cal.set(Calendar.MONTH, monthOfYear)
+            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            edit_field_date.text = DateWrangler.timeAsView(cal.time)
+        }
+
+        edit_field_date.setOnClickListener {
+            DatePickerDialog(this, dateSetListener,
+                cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH),
+                cal.get(Calendar.DAY_OF_MONTH)).show()
+        }
+
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.soil_types,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            edit_field_soil_type.adapter = adapter
+        }
+
         swardViewModel.getField(fieldId).observe(this, Observer { field ->
             field?.let {
                 toolbar.title = field.name
                 Log.i("sward",field.name)
-                field_date_sown.text = field.dateSown
+                edit_field_name.setText(field.name)
+                edit_field_date.text = DateWrangler.dateInternalToView(field.dateSown)
+                edit_field_soil_type.setSelection(field.soilType)
+
+                save.setOnClickListener {
+                    field.name=edit_field_name.text.toString()
+                    field.dateSown=DateWrangler.dateViewToInternal(edit_field_date.text.toString())
+                    field.soilType=edit_field_soil_type.selectedItemPosition
+                    //field.new_field_notes.text.toString()
+                    swardViewModel.updateField(field)
+                    finish()
+                }
+
             }
         })
 
@@ -72,6 +115,9 @@ class FieldActivity : SwardActivity() {
             }
             builder.show()
         }
+
+        cancel.setOnClickListener { finish() }
+
 
 
     }

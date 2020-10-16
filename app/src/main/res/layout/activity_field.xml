@@ -21,8 +21,10 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_anchorGravity="center"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -33,22 +35,26 @@
             android:paddingRight="30dp">
 
             <LinearLayout
-                android:id="@+id/field_date_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/default_padding"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/field_date_sown" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_name" />
 
-                <TextView
-                    android:id="@+id/field_date_sown"
+                <EditText
+                    android:id="@+id/edit_field_name"
+                    style="@style/SwardButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/field_name"
+                    android:importantForAutofill="no"
+                    android:inputType="textAutoComplete"
+                    android:paddingLeft="10dp" />
             </LinearLayout>
 
             <Space
@@ -89,13 +95,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/default_padding" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_date_sown" />
+
+                <TextView
+                    android:id="@+id/edit_field_date"
+                    style="@style/SwardButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|left|center_vertical"
+                    android:paddingLeft="10dp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_soil_type" />
+
+                <Spinner
+                    android:id="@+id/edit_field_soil_type"
+                    style="@style/SwardButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/field_notes" />
 
             <EditText
-                android:id="@+id/field_notes"
+                android:id="@+id/edit_field_notes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -118,10 +166,36 @@
                 android:layout_marginBottom="32dp"
                 android:text="@string/field_delete" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cancel" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/save" />
+
+            </LinearLayout>
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/default_padding" />
 
         </LinearLayout>
     </ScrollView>
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

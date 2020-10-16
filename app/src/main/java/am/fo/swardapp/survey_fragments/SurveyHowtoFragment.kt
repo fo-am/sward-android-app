@@ -19,6 +19,7 @@ package am.fo.swardapp.survey_fragments
 
 import am.fo.swardapp.R
 import am.fo.swardapp.SwardFragment
+import am.fo.swardapp.data.DateWrangler
 import am.fo.swardapp.data.Survey
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -30,7 +31,6 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_survey_howto.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 class SurveyHowtoFragment : SwardFragment() {
@@ -54,7 +54,7 @@ class SurveyHowtoFragment : SwardFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        new_survey_date.text = SimpleDateFormat("dd.MM.yyyy",Locale.UK).format(System.currentTimeMillis())
+        new_survey_date.text = DateWrangler.nowAsView()
         val cal = Calendar.getInstance()
         val date_text = new_survey_date
 
@@ -62,10 +62,7 @@ class SurveyHowtoFragment : SwardFragment() {
             cal.set(Calendar.YEAR, year)
             cal.set(Calendar.MONTH, monthOfYear)
             cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-
-            val myFormat = "dd.MM.yyyy" // mention the format you need
-            val sdf = SimpleDateFormat(myFormat, Locale.UK)
-            date_text.text = sdf.format(cal.time)
+            date_text.text = DateWrangler.timeAsView(cal.time)
         }
 
         new_survey_date.setOnClickListener {
@@ -76,20 +73,18 @@ class SurveyHowtoFragment : SwardFragment() {
         }
 
         start_survey.setOnClickListener {
-
-            /*val c = Calendar.getInstance().time
-            val df = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())*/
-
-            swardViewModel.insertSurvey(Survey(date_text.text as String,fieldId!!)).
-                observe(viewLifecycleOwner, Observer { surveyId ->
+            swardViewModel.insertSurvey(Survey(DateWrangler.dateViewToInternal(DateWrangler.dateViewToInternal(date_text.text as String)), fieldId!!))
+                .observe(viewLifecycleOwner, Observer { surveyId ->
                     Log.i("sward", "made new survey ID is:$surveyId")
                     val bundle = bundleOf(
                         "field_id" to fieldId,
                         "survey_id" to surveyId
                     )
-                findNavController().navigate(R.id.action_surveyHowtoFragment_to_surveyMainFragment, bundle)
-            })
-
+                    findNavController().navigate(
+                        R.id.action_surveyHowtoFragment_to_surveyMainFragment,
+                        bundle
+                    )
+                })
         }
     }
 

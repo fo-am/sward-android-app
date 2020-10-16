@@ -18,6 +18,7 @@
 package am.fo.swardapp.drawing
 
 import am.fo.swardapp.R
+import am.fo.swardapp.data.DateWrangler
 import am.fo.swardapp.data.SwardViewModel
 import android.content.Context
 import android.graphics.Canvas
@@ -100,7 +101,7 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
                 c.save()
                 c.translate(x-60*sx,(y+230)*sy)
                 c.rotate(-70.0f ,0.0f ,0.0f)
-                c.drawText(it.date, 0f, 0f, textPaint)
+                c.drawText(DateWrangler.dateInternalToView(it.date), 0f, 0f, textPaint)
                 c.restore()
 
                 c.drawRect(x*sx,(y-it.biodiversity*bioScale)*sy,(x+35)*sx,y*sy,barPaint)

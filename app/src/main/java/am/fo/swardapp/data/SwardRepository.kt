@@ -39,6 +39,7 @@ class SwardRepository(private val swardDao: SwardDao) {
     suspend fun setSettings(settings: Settings) = swardDao.setSettings(settings)
 
     suspend fun insertField(field: Field): Long = swardDao.insertField(field)
+    suspend fun updateField(field: Field) = swardDao.updateField(field)
     suspend fun insertSurvey(survey: Survey): Long = swardDao.insertSurvey(survey)
     suspend fun insertSown(sown: Sown) = swardDao.insertSown(sown)
     suspend fun insertRecord(record: Record) = swardDao.insertRecord(record)

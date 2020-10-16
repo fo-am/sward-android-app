@@ -17,6 +17,7 @@
 
 package am.fo.swardapp
 
+import am.fo.swardapp.data.DateWrangler
 import am.fo.swardapp.data.Field
 import am.fo.swardapp.data.SpeciesDesc
 import android.app.Activity
@@ -24,12 +25,9 @@ import android.app.DatePickerDialog
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ToggleButton
 import kotlinx.android.synthetic.main.activity_new_field.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 class NewFieldActivity : SwardActivity() {
@@ -51,7 +49,7 @@ class NewFieldActivity : SwardActivity() {
             new_field_soil_type.adapter = adapter
         }
 
-        new_field_soil_type.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+       /* new_field_soil_type.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
                 // An item was selected. You can retrieve the selected item using
                 // parent.getItemAtPosition(pos)
@@ -60,19 +58,16 @@ class NewFieldActivity : SwardActivity() {
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // Another interface callback
             }
-        }
+        } */
 
-        new_field_date.text = SimpleDateFormat("dd.MM.yyyy",Locale.UK).format(System.currentTimeMillis())
+        new_field_date.text = DateWrangler.nowAsView()
         val cal = Calendar.getInstance()
 
         val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
             cal.set(Calendar.YEAR, year)
             cal.set(Calendar.MONTH, monthOfYear)
             cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-
-            val myFormat = "dd.MM.yyyy" // mention the format you need
-            val sdf = SimpleDateFormat(myFormat, Locale.UK)
-            new_field_date.text = sdf.format(cal.time)
+            new_field_date.text = DateWrangler.timeAsView(cal.time)
         }
 
         new_field_date.setOnClickListener {
@@ -89,7 +84,7 @@ class NewFieldActivity : SwardActivity() {
 
                 val field = Field(
                     new_field_name.text.toString(),
-                    new_field_date.text.toString(),
+                    DateWrangler.dateViewToInternal(new_field_date.text.toString()),
                     new_field_soil_type.selectedItemPosition, // maybe switch to id lookup??
                     new_field_notes.text.toString()
                 )

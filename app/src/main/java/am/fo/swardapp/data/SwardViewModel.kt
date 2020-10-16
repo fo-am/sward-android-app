@@ -55,6 +55,10 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun updateField(field: Field) = viewModelScope.launch(Dispatchers.IO) {
+        repository.updateField(field)
+    }
+
     fun setSettings(settings: Settings) = viewModelScope.launch(Dispatchers.IO) {
         repository.setSettings(settings)
     }

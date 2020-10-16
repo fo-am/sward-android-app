@@ -20,6 +20,7 @@ package am.fo.swardapp.survey_fragments
 import am.fo.swardapp.R
 import am.fo.swardapp.SwardFragment
 import am.fo.swardapp.data.Survey
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -52,12 +53,34 @@ class SurveyHowtoFragment : SwardFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        new_survey_date.text = SimpleDateFormat("dd.MM.yyyy",Locale.UK).format(System.currentTimeMillis())
+        val cal = Calendar.getInstance()
+        val date_text = new_survey_date
+
+        val dateSetListener = DatePickerDialog.OnDateSetListener { dateView, year, monthOfYear, dayOfMonth ->
+            cal.set(Calendar.YEAR, year)
+            cal.set(Calendar.MONTH, monthOfYear)
+            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+            val myFormat = "dd.MM.yyyy" // mention the format you need
+            val sdf = SimpleDateFormat(myFormat, Locale.UK)
+            date_text.text = sdf.format(cal.time)
+        }
+
+        new_survey_date.setOnClickListener {
+            DatePickerDialog(requireContext(), dateSetListener,
+                cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH),
+                cal.get(Calendar.DAY_OF_MONTH)).show()
+        }
+
         start_survey.setOnClickListener {
 
-            val c = Calendar.getInstance().time
-            val df = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            /*val c = Calendar.getInstance().time
+            val df = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())*/
 
-            swardViewModel.insertSurvey(Survey(df.format(c),fieldId!!)).
+            swardViewModel.insertSurvey(Survey(date_text.text as String,fieldId!!)).
                 observe(viewLifecycleOwner, Observer { surveyId ->
                     Log.i("sward", "made new survey ID is:$surveyId")
                     val bundle = bundleOf(

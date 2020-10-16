@@ -61,10 +61,8 @@ class DownloadActivity : SwardActivity() {
         })
 */
         send_button.setOnClickListener {
-
             val email = email_address.text.toString()
             swardViewModel.setSettings(Settings(1, email))
-
             if (Build.VERSION.SDK_INT >= 23) {
                 val permissions = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 if (!hasPermissions(this, permissions)) {

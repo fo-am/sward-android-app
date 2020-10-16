@@ -73,7 +73,7 @@ class SurveyHowtoFragment : SwardFragment() {
         }
 
         start_survey.setOnClickListener {
-            swardViewModel.insertSurvey(Survey(DateWrangler.dateViewToInternal(DateWrangler.dateViewToInternal(date_text.text as String)), fieldId!!))
+            swardViewModel.insertSurvey(Survey(DateWrangler.dateViewToInternal(date_text.text as String), fieldId!!))
                 .observe(viewLifecycleOwner, Observer { surveyId ->
                     Log.i("sward", "made new survey ID is:$surveyId")
                     val bundle = bundleOf(

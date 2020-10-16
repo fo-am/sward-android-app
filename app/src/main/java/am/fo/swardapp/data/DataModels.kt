@@ -24,9 +24,9 @@ import androidx.room.Relation
 
 @Entity(tableName="field_table")
 data class Field(
-    var name: String,
-    var dateSown: String,
-    var soilType: Int,
+    val name: String,
+    val dateSown: String,
+    val soilType: Int,
     val notes: String) {
     @PrimaryKey(autoGenerate = true)
     var fieldId:Long = 0

@@ -18,6 +18,7 @@
 package am.fo.swardapp
 
 import am.fo.swardapp.data.DateWrangler
+import am.fo.swardapp.data.Field
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
@@ -75,18 +76,22 @@ class FieldActivity : SwardActivity() {
                 edit_field_name.setText(field.name)
                 edit_field_date.text = DateWrangler.dateInternalToView(field.dateSown)
                 edit_field_soil_type.setSelection(field.soilType)
-
-                save.setOnClickListener {
-                    field.name=edit_field_name.text.toString()
-                    field.dateSown=DateWrangler.dateViewToInternal(edit_field_date.text.toString())
-                    field.soilType=edit_field_soil_type.selectedItemPosition
-                    //field.new_field_notes.text.toString()
-                    swardViewModel.updateField(field)
-                    finish()
-                }
-
+                edit_field_notes.setText(field.notes)
             }
         })
+
+        save.setOnClickListener {
+            val field = Field(
+                edit_field_name.text.toString(),
+                DateWrangler.dateViewToInternal(edit_field_date.text.toString()),
+                edit_field_soil_type.selectedItemPosition,
+                edit_field_notes.text.toString()
+            )
+            field.fieldId = fieldId
+            //field.new_field_notes.text.toString()
+            swardViewModel.updateField(field)
+            finish()
+        }
 
         field_survey.setOnClickListener {
             Intent(this, SurveyActivity::class.java).let {

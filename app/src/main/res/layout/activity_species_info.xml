@@ -63,6 +63,14 @@
 
             </androidx.viewpager2.widget.ViewPager2>
 
+            <LinearLayout
+                android:id="@+id/slider_dots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal" />
+
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"

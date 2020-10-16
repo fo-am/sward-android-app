@@ -270,6 +270,8 @@
     <string name="legume_whiteclover_leaf_cap">3 leaflets, hairless, often white crescent marks</string>
     <string name="legume_whiteclover_flower_cap">Cream or pinkish-white, spherical head.</string>
 
+    <string name="credit">Image credit: %s</string>
+
     <string name="credit_sainfoin_flower">Jonny Todd</string>
     <string name="credit_birdsfoottrefoil_seedling">Krzysztof Ziarnek</string>
     <string name="credit_sheepsparsley_flower">Dartrider</string>

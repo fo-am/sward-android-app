@@ -21,9 +21,14 @@ import am.fo.swardapp.data.SpeciesDesc
 import am.fo.swardapp.data.SpeciesDesc.Companion.createSpeciesDesc
 import am.fo.swardapp.species_fragments.SpeciesPhotoFragment
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_species_info.*
 
 class SpeciesInfoActivity : SwardActivity() {
@@ -41,6 +46,80 @@ class SpeciesInfoActivity : SwardActivity() {
 
         val pagerAdapter = ScreenSlidePagerAdapter(this)
         species_images.adapter = pagerAdapter
+
+
+        // add the slider dots to indicate this is swipable
+        val dotscount = pagerAdapter.itemCount
+        val dots = arrayOfNulls<ImageView>(dotscount)
+
+        for (i in 0 until dotscount) {
+            dots[i] = ImageView(this)
+            dots[i]!!.setImageDrawable(
+                ContextCompat.getDrawable(this,
+                    R.drawable.non_active_dot))
+            val params = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            params.setMargins(8, 0, 8, 0)
+            slider_dots.addView(dots[i], params)
+        }
+        dots[0]?.setImageDrawable(
+            ContextCompat.getDrawable(
+                this, R.drawable.active_dot)
+        )
+
+        // set up the viewpager to resize itself by the current view inside it
+        species_images.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+
+                // update dots
+                for (i in 0 until dotscount) {
+                    dots[i]?.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            baseContext,R.drawable.non_active_dot)
+                    )
+                }
+                dots[position]?.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        baseContext,R.drawable.active_dot)
+                )
+
+                val view:View? = supportFragmentManager.findFragmentByTag("f" + position)!!.view;
+                view?.let { view ->
+                    view.post {
+                        val wMeasureSpec =
+                            View.MeasureSpec.makeMeasureSpec(
+                                view.width,
+                                View.MeasureSpec.EXACTLY
+                            )
+                        val hMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+                        view.measure(wMeasureSpec, hMeasureSpec)
+                        // only get bigger, never smaller
+                        if (species_images.measuredHeight < view.measuredHeight) {
+                            species_images.layoutParams =
+                            (species_images.layoutParams as LinearLayout.LayoutParams)
+                                .also { lp -> lp.height = view.measuredHeight }
+
+// animate - looks a bit worse
+/*
+                            val anim = ValueAnimator.ofInt(species_images.measuredHeight, view.measuredHeight)
+                            anim.addUpdateListener { valueAnimator ->
+                                val v = valueAnimator.getAnimatedValue() as Int
+                                val layoutParams = view.getLayoutParams()
+                                layoutParams.height = v
+                                view.setLayoutParams(layoutParams)
+                            }
+                            anim.setDuration(500)
+                            anim.start();
+*/
+
+                        }
+                    }
+                }
+            }
+        })
     }
 
     override fun onBackPressed() {
@@ -55,4 +134,6 @@ class SpeciesInfoActivity : SwardActivity() {
         override fun getItemCount(): Int = speciesDesc.imgs.size
         override fun createFragment(position: Int): Fragment = SpeciesPhotoFragment(speciesDesc.imgs[position])
     }
+
+
 }

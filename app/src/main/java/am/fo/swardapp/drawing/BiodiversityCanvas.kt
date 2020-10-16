@@ -56,6 +56,13 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
         textSize = 40.0f
     }
 
+    private val smallTextPaint = Paint().apply {
+        isAntiAlias = true
+        color = Color.BLACK
+        style = Paint.Style.FILL
+        textSize = 30.0f
+    }
+
     fun addData(surveyAndRecords: List<SwardViewModel.BiodiversityItem>) {
         renderList=surveyAndRecords
         invalidate()
@@ -99,9 +106,9 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
                 val y = yzero
 
                 c.save()
-                c.translate(x-60*sx,(y+230)*sy)
+                c.translate(x-50*sx,(y+210)*sy)
                 c.rotate(-70.0f ,0.0f ,0.0f)
-                c.drawText(DateWrangler.dateInternalToView(it.date), 0f, 0f, textPaint)
+                c.drawText(DateWrangler.dateInternalToView(it.date), 0f, 0f, smallTextPaint)
                 c.restore()
 
                 c.drawRect(x*sx,(y-it.biodiversity*bioScale)*sy,(x+35)*sx,y*sy,barPaint)

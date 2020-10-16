@@ -76,6 +76,10 @@ class DownloadActivity : SwardActivity() {
                 export(email)
             }
         }
+
+        cancel_button.setOnClickListener {
+            finish()
+        }
     }
 
     fun export(email: String) {

@@ -80,7 +80,6 @@
     <string name="download_address">Email address</string>
     <string name="download_consent">I consent to sharing my farm data for research</string>
     <string name="download_send">Send data</string>
-
     <string name="download_citsci">Researchers at Duchy College are interested in your data to understand how multi-species swards perform. Tick this box if you are happy to automatically send them your data for research purposes only.</string>
 
     <string name="export_subject">Your farm data from the Sward app</string>

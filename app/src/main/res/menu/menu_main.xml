@@ -1,16 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="am.fo.swardapp.FarmActivity">
-    <item
-        android:id="@+id/action_farm"
-        android:title="@string/action_farm" />
     <item
         android:id="@+id/action_species"
         android:title="@string/action_species" />
     <item
         android:id="@+id/action_identification"
         android:title="@string/action_identification" />
+    <item
+        android:id="@+id/action_farm"
+        android:title="@string/action_farm" />
     <item
         android:id="@+id/action_survey"
         android:title="@string/action_survey" />

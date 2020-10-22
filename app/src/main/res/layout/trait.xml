@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:layout_editor_absoluteX="30dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteX="30dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/trait_top"
@@ -36,13 +36,13 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/more_chip"
-            android:theme="@style/Theme.MaterialComponents.Light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="More"
+            android:theme="@style/Theme.MaterialComponents.Light"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/thumb" />
+            app:layout_constraintRight_toLeftOf="@id/thumb"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

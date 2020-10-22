@@ -137,6 +137,7 @@ class SpeciesInfoActivity : SwardActivity() {
         val adapter = SpeciesInfoAdapter(this)
         trait_list.adapter = adapter
         trait_list.layoutManager = LinearLayoutManager(this)
+        //trait_list.setNestedScrollingEnabled(false)
         adapter.setSpeciesInfo(speciesInfo)
     }
 

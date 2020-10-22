@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,7 @@ class SpeciesInfoAdapter internal constructor (
     inner class SpeciesInfoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val traitName: TextView = itemView.findViewById(R.id.trait_name)
         val traitInfo: TextView = itemView.findViewById(R.id.more_info)
+        val thumbImg: ImageView = itemView.findViewById(R.id.thumb)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpeciesInfoAdapter.SpeciesInfoViewHolder {
@@ -39,6 +41,20 @@ class SpeciesInfoAdapter internal constructor (
         } else {
             res.getString(trait.popup)
         }
+
+
+
+        holder.thumbImg.setImageResource(when (trait.score) {
+            "?" -> R.drawable.thumb_q
+            "1" -> R.drawable.thumb_down
+            "2" -> R.drawable.thumb_mid
+            "3" -> R.drawable.thumb_up
+            "y" -> R.drawable.thumb_up
+            "n" -> R.drawable.thumb_down
+            else -> R.drawable.grass_cocksfoot_stemsheath_annotated
+        })
+
+
     }
 
     internal fun setSpeciesInfo(info: SpeciesInfo) {

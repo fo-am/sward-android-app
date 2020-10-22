@@ -47,6 +47,10 @@
                 android:name="am.fo.swardapp.species_fragments.SpeciesListFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_padding" />
         </LinearLayout>
     </ScrollView>
 

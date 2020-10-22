@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 
@@ -22,6 +23,9 @@ class SpeciesInfoAdapter internal constructor (
         val traitName: TextView = itemView.findViewById(R.id.trait_name)
         val traitInfo: TextView = itemView.findViewById(R.id.more_info)
         val thumbImg: ImageView = itemView.findViewById(R.id.thumb)
+        val traitButton: ConstraintLayout = itemView.findViewById(R.id.trait_top)
+        val traitInfoContainer: ConstraintLayout = itemView.findViewById(R.id.trait_info)
+        val traitTop: ConstraintLayout = itemView.findViewById(R.id.trait_top)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpeciesInfoAdapter.SpeciesInfoViewHolder {
@@ -35,14 +39,22 @@ class SpeciesInfoAdapter internal constructor (
         val name = "trait_${trait.name}"
         val id = res.getIdentifier(name, "string", context.packageName)
 
+        holder.traitTop.setBackgroundResource( when(trait.score) {
+            "1" -> R.drawable.button_thumb_down
+            "2" -> R.drawable.button_thumb_mid
+            "3" -> R.drawable.button_thumb_up
+            "y" -> R.drawable.button_thumb_up
+            "n" -> R.drawable.button_thumb_down
+            else -> R.drawable.button
+        })
+
         holder.traitName.text = res.getString(id)
         holder.traitInfo.text = if (trait.popup==0) {
             res.getString(R.string.trait_studies,trait.agree,trait.disagree)
         } else {
             res.getString(trait.popup)
         }
-
-
+        holder.traitInfoContainer.visibility = View.GONE
 
         holder.thumbImg.setImageResource(when (trait.score) {
             "?" -> R.drawable.thumb_q
@@ -54,6 +66,13 @@ class SpeciesInfoAdapter internal constructor (
             else -> R.drawable.grass_cocksfoot_stemsheath_annotated
         })
 
+        holder.traitButton.setOnClickListener {
+            if (holder.traitInfoContainer.visibility == View.VISIBLE) {
+                holder.traitInfoContainer.visibility = View.GONE
+            } else {
+                holder.traitInfoContainer.visibility = View.VISIBLE
+            }
+        }
 
     }
 

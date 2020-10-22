@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
     android:orientation="vertical"
     tools:layout_editor_absoluteX="30dp">
 
@@ -17,10 +18,10 @@
             android:id="@+id/trait_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_padding"
-            android:layout_marginLeft="@dimen/default_padding"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:text="Trait name"
-            android:textSize="10pt"
+            android:textSize="8pt"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,23 +35,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/thumb_mid" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/more_chip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="More"
-            android:theme="@style/Theme.MaterialComponents.Light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/thumb"
-            app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/trait_info"
-        style="@style/SwardButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/buttonLabel"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/more_info"

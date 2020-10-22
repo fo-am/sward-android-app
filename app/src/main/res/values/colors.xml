@@ -11,6 +11,10 @@
     <color name="colorMenuText">#FFFFFF</color>
     <color name="colorPopupBackground">#b7bed4</color>
 
+    <color name="thumb_up">#ddf5b6</color>
+    <color name="thumb_mid">#f0df93</color>
+    <color name="thumb_down">#ec9b91</color>
+
     <color name="buttonLabel">#FFFFFF</color>
 
 </resources>

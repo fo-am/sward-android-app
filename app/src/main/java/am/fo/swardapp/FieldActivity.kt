@@ -22,7 +22,6 @@ import am.fo.swardapp.data.Field
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
@@ -31,31 +30,37 @@ import java.util.*
 
 class FieldActivity : SwardActivity() {
 
+    private var fieldId: Long = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_field)
         setSupportActionBar(toolbar)
 
-        val fieldId = intent.getLongExtra("FIELD_ID",0)
+        fieldId = intent.getLongExtra("FIELD_ID", 0)
 
-        swardViewModel.getBiodiversity(fieldId,15).observe (this, Observer { surveys ->
+        // set up the widgets
+        swardViewModel.getBiodiversity(fieldId, 15).observe(this, Observer { surveys ->
             field_canvas_view.addData(surveys)
         })
 
         val cal = Calendar.getInstance()
 
-        val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-            cal.set(Calendar.YEAR, year)
-            cal.set(Calendar.MONTH, monthOfYear)
-            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-            edit_field_date.text = DateWrangler.timeAsView(cal.time)
-        }
+        val dateSetListener =
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                cal.set(Calendar.YEAR, year)
+                cal.set(Calendar.MONTH, monthOfYear)
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                edit_field_date.text = DateWrangler.timeAsView(cal.time)
+            }
 
         edit_field_date.setOnClickListener {
-            DatePickerDialog(this, dateSetListener,
+            DatePickerDialog(
+                this, dateSetListener,
                 cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH),
-                cal.get(Calendar.DAY_OF_MONTH)).show()
+                cal.get(Calendar.DAY_OF_MONTH)
+            ).show()
         }
 
         ArrayAdapter.createFromResource(
@@ -72,26 +77,12 @@ class FieldActivity : SwardActivity() {
         swardViewModel.getField(fieldId).observe(this, Observer { field ->
             field?.let {
                 toolbar.title = field.name
-                Log.i("sward",field.name)
                 edit_field_name.setText(field.name)
                 edit_field_date.text = DateWrangler.dateInternalToView(field.dateSown)
                 edit_field_soil_type.setSelection(field.soilType)
                 edit_field_notes.setText(field.notes)
             }
         })
-
-        save.setOnClickListener {
-            val field = Field(
-                edit_field_name.text.toString(),
-                DateWrangler.dateViewToInternal(edit_field_date.text.toString()),
-                edit_field_soil_type.selectedItemPosition,
-                edit_field_notes.text.toString()
-            )
-            field.fieldId = fieldId
-            //field.new_field_notes.text.toString()
-            swardViewModel.updateField(field)
-            finish()
-        }
 
         field_survey.setOnClickListener {
             Intent(this, SurveyActivity::class.java).let {
@@ -121,9 +112,20 @@ class FieldActivity : SwardActivity() {
             builder.show()
         }
 
-        cancel.setOnClickListener { finish() }
-
-
 
     }
+
+    // all exits go through the gift shop, it seems
+    override fun onPause() {
+        super.onPause()
+        val field = Field(
+            edit_field_name.text.toString(),
+            DateWrangler.dateViewToInternal(edit_field_date.text.toString()),
+            edit_field_soil_type.selectedItemPosition,
+            edit_field_notes.text.toString()
+        )
+        field.fieldId = fieldId
+        swardViewModel.updateField(field)
+    }
+
 }

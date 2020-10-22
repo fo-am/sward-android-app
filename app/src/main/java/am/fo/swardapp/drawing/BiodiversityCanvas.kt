@@ -106,7 +106,7 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
                 val y = yzero
 
                 c.save()
-                c.translate(x-50*sx,(y+210)*sy)
+                c.translate((x-30)*sx,(y+190)*sy)
                 c.rotate(-70.0f ,0.0f ,0.0f)
                 c.drawText(DateWrangler.dateInternalToView(it.date), 0f, 0f, smallTextPaint)
                 c.restore()

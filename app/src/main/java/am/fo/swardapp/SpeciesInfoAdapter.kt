@@ -50,11 +50,16 @@ class SpeciesInfoAdapter internal constructor (
 
         holder.traitName.text = res.getString(id)
         holder.traitInfo.text = if (trait.popup==0) {
-            res.getString(R.string.trait_studies,trait.agree,trait.disagree)
+            if (trait.agree==0 && trait.disagree==0) {
+                res.getString(R.string.trait_no_studies)
+            } else {
+                res.getString(R.string.trait_studies, trait.agree, trait.disagree)
+            }
         } else {
             res.getString(trait.popup)
         }
         holder.traitInfoContainer.visibility = View.GONE
+
 
         holder.thumbImg.setImageResource(when (trait.score) {
             "?" -> R.drawable.thumb_q

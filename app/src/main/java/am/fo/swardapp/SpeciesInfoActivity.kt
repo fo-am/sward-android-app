@@ -23,6 +23,8 @@ import am.fo.swardapp.data.SpeciesInfo
 import am.fo.swardapp.data.SpeciesInfo.Companion.createSpeciesInfo
 import am.fo.swardapp.species_fragments.SpeciesPhotoFragment
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -139,6 +141,11 @@ class SpeciesInfoActivity : SwardActivity() {
         trait_list.layoutManager = LinearLayoutManager(this)
         //trait_list.setNestedScrollingEnabled(false)
         adapter.setSpeciesInfo(speciesInfo)
+
+        traits_blurb.text = Html.fromHtml(getString(R.string.trait_list_blurb))
+        traits_blurb.movementMethod = LinkMovementMethod.getInstance()
+        //traits_blurb.linksClickable = true
+        traits_blurb.isClickable = true
     }
 
    /* override fun onBackPressed() {

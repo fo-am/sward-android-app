@@ -145,8 +145,10 @@
 
     <string name="title_activity_species_info">SPECIES INFO</string>
 
+    <string name="trait_list_title">Species traits</string>
+    <string name="trait_list_blurb"><![CDATA[Click traits for more information, or <a href="www.multi-species-swards/litreview">visit this page</a> to find out more]]></string>
     <string name="trait_studies">For the literature up to 2020, %d studies agreed, %d studies disagreed.</string>
-    <string name="trait_link"><![CDATA[<a href="www.multi-species-swards/litreview">Click here for more info</a>]]></string>
+    <string name="trait_no_studies">There is no evidence, more research is needed.</string>
 
     <string name="trait_protein">High protein</string>
     <string name="trait_digestibility">High digestibility</string>

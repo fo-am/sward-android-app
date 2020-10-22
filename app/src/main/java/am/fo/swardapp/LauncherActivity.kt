@@ -25,8 +25,7 @@ class LauncherActivity : SwardActivity() {
         setContentView(R.layout.activity_launcher)
         super.onCreate(savedInstanceState)
         setTitle(R.string.title_activity_launcher)
-
         version_name.text = packageManager.getPackageInfo(packageName, 0).versionName
-
+        title_image.setImageResource(R.drawable.sward);
     }
 }

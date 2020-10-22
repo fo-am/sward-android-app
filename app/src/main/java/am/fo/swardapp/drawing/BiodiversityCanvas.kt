@@ -102,7 +102,7 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
             }
 
             renderList.forEach {
-                val x = xzero+count*50.0f
+                val x = 20+xzero+count*50.0f
                 val y = yzero
 
                 c.save()

@@ -19,6 +19,8 @@ package am.fo.swardapp
 
 import am.fo.swardapp.data.SpeciesDesc
 import am.fo.swardapp.data.SpeciesDesc.Companion.createSpeciesDesc
+import am.fo.swardapp.data.SpeciesInfo
+import am.fo.swardapp.data.SpeciesInfo.Companion.createSpeciesInfo
 import am.fo.swardapp.species_fragments.SpeciesPhotoFragment
 import android.os.Bundle
 import android.view.View
@@ -27,12 +29,14 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_species_info.*
 
 class SpeciesInfoActivity : SwardActivity() {
     lateinit var speciesDesc: SpeciesDesc
+    lateinit var speciesInfo: SpeciesInfo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,13 +44,14 @@ class SpeciesInfoActivity : SwardActivity() {
         setSupportActionBar(toolbar)
 
         speciesDesc = createSpeciesDesc(intent.getStringExtra("SPECIES"))
+        speciesInfo = createSpeciesInfo(intent.getStringExtra("SPECIES"))
 
         species_name.setText(speciesDesc.name)
         species_name_lat.setText(speciesDesc.lat)
 
+        // set up the images
         val pagerAdapter = ScreenSlidePagerAdapter(this)
         species_images.adapter = pagerAdapter
-
 
         // add the slider dots to indicate this is swipable
         val dotscount = pagerAdapter.itemCount
@@ -55,8 +60,11 @@ class SpeciesInfoActivity : SwardActivity() {
         for (i in 0 until dotscount) {
             dots[i] = ImageView(this)
             dots[i]!!.setImageDrawable(
-                ContextCompat.getDrawable(this,
-                    R.drawable.non_active_dot))
+                ContextCompat.getDrawable(
+                    this,
+                    R.drawable.non_active_dot
+                )
+            )
             val params = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -66,7 +74,8 @@ class SpeciesInfoActivity : SwardActivity() {
         }
         dots[0]?.setImageDrawable(
             ContextCompat.getDrawable(
-                this, R.drawable.active_dot)
+                this, R.drawable.active_dot
+            )
         )
 
         // set up the viewpager to resize itself by the current view inside it
@@ -78,15 +87,17 @@ class SpeciesInfoActivity : SwardActivity() {
                 for (i in 0 until dotscount) {
                     dots[i]?.setImageDrawable(
                         ContextCompat.getDrawable(
-                            baseContext,R.drawable.non_active_dot)
+                            baseContext, R.drawable.non_active_dot
+                        )
                     )
                 }
                 dots[position]?.setImageDrawable(
                     ContextCompat.getDrawable(
-                        baseContext,R.drawable.active_dot)
+                        baseContext, R.drawable.active_dot
+                    )
                 )
 
-                val view:View? = supportFragmentManager.findFragmentByTag("f" + position)!!.view;
+                val view: View? = supportFragmentManager.findFragmentByTag("f" + position)!!.view;
                 view?.let { view ->
                     view.post {
                         val wMeasureSpec =
@@ -94,13 +105,14 @@ class SpeciesInfoActivity : SwardActivity() {
                                 view.width,
                                 View.MeasureSpec.EXACTLY
                             )
-                        val hMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+                        val hMeasureSpec =
+                            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
                         view.measure(wMeasureSpec, hMeasureSpec)
                         // only get bigger, never smaller
                         if (species_images.measuredHeight < view.measuredHeight) {
                             species_images.layoutParams =
-                            (species_images.layoutParams as LinearLayout.LayoutParams)
-                                .also { lp -> lp.height = view.measuredHeight }
+                                (species_images.layoutParams as LinearLayout.LayoutParams)
+                                    .also { lp -> lp.height = view.measuredHeight }
 
 // animate - looks a bit worse
 /*
@@ -120,16 +132,22 @@ class SpeciesInfoActivity : SwardActivity() {
                 }
             }
         })
+
+        // set up the traits
+        val adapter = SpeciesInfoAdapter(this)
+        trait_list.adapter = adapter
+        trait_list.layoutManager = LinearLayoutManager(this)
+        adapter.setSpeciesInfo(speciesInfo)
     }
 
-    override fun onBackPressed() {
+   /* override fun onBackPressed() {
         if (species_images.currentItem == 0) {
             super.onBackPressed()
         } else {
             species_images.currentItem = species_images.currentItem - 1
         }
     }
-
+*/
     private inner class ScreenSlidePagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
         override fun getItemCount(): Int = speciesDesc.imgs.size
         override fun createFragment(position: Int): Fragment = SpeciesPhotoFragment(speciesDesc.imgs[position])

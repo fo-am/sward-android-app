@@ -144,6 +144,62 @@
     <string name="id_results_id_again">ID another plant</string>
 
     <string name="title_activity_species_info">SPECIES INFO</string>
+
+    <string name="trait_studies">For the literature up to 2020, %d studies agreed, %d studies disagreed.</string>
+    <string name="trait_link"><![CDATA[<a href="www.multi-species-swards/litreview">Click here for more info</a>]]></string>
+
+    <string name="trait_protein">High protein</string>
+    <string name="trait_digestibility">High digestibility</string>
+    <string name="trait_mineral">High mineral content</string>
+    <string name="trait_yield_cut">High relative yield (cut)</string>
+    <string name="trait_yield_grazed">High relative yield (grazed)</string>
+    <string name="trait_persistence">Long persistence (grazed)</string>
+    <string name="trait_tolerance">Tolerant to frequent cut/graze</string>
+    <string name="trait_anthelminthic">Anthelminthic properties</string>
+    <string name="trait_bloat">Bloat safe</string>
+    <string name="trait_drought">Drought tolerant</string>
+    <string name="trait_waterlogging">Waterlogging tolerant</string>
+    <string name="trait_fertility">Tolerant of low soil fertility</string>
+    <string name="trait_frost">Tolerant to hard frosts</string>
+
+
+    <string name="popup_birdsfoottrefoil_protein">7 studies partially agreed with score</string>
+    <string name="popup_lucerne_protein">12 studies partially agreed with score</string>
+    <string name="popup_sheepsburnet_protein">2 studies partially agreed with score</string>
+    <string name="popup_meadowfoxtail_protein">3 studies partially agreed with score</string>
+    <string name="popup_timothy_protein">3 studies partially agreed with score</string>
+
+    <string name="popup_sainfoin_digestibility">3 studies partially agreed with score</string>
+    <string name="popup_cocksfoot_digestibility">4 studies partially agreed with score</string>
+    <string name="popup_meadowfescue_digestibility">4 studies partially agreed with score</string>
+    <string name="popup_meadowfoxtail_digestibility">2 studies partially agreed with score</string>
+    <string name="popup_tallfescue_digestibility">8 studies partially agreed with score</string>
+    <string name="popup_timothy_digestibility">3 studies partially agreed with score</string>
+
+    <string name="popup_birdsfoottrefoil_mineral">Zinc (2 studies)</string>
+    <string name="popup_redclover_mineral">Copper (3 studies)</string>
+    <string name="popup_whiteclover_mineral">Copper (2 studies)</string>
+    <string name="popup_chicory_mineral">Calcium,  magnesium, zinc, copper, sulphur, iron and molybdenum (7 studies)</string>
+    <string name="popup_plantain_mineral">Sulphur and calcium (4 studies)</string>
+    <string name="popup_yarrow_mineral">Potassium, copper and manganese (4 studies)</string>
+    <string name="popup_cocksfoot_mineral">Manganese (3 studies)</string>
+
+    <string name="popup_tolerance">Likely to exhibit poor tolerance due to taproot</string>
+    <string name="popup_anthelminthic">Unlikely as lacks the relevant chemical compounds</string>
+
+    <string name="popup_alsike_fertility">Tolerant of acidic soil (pH 5.0) (1 study)</string>
+    <string name="popup_birdsfoottrefoil_fertility">Tolerant of acidic soil and low soil phosphorus (3 studies)</string>
+    <string name="popup_lucerne_fertility">Requires pH 6.5 -7.5 (4 studies)</string>
+    <string name="popup_redclover_fertility">Requires pH > 5 (2 studies)</string>
+    <string name="popup_sainfoin_fertility">Requires alkaline soil (pH 7.0 – 8.0) (3 studies)</string>
+    <string name="popup_whiteclover_fertility">Not tolerant of low soil fertility (2 studies)</string>
+    <string name="popup_plantain_fertility">Tolerant of low soil fertility (2 studies)</string>
+    <string name="popup_cocksfoot_fertility">Not tolerant of low soil fertility (2 studies)</string>
+    <string name="popup_ryegrass_fertility">Not tolerant of low soil fertility (2 studies)</string>
+    <string name="popup_timothy_fertility">Tolerant of low soil fertility (2 studies)</string>
+
+
+
     <string name="persistence">Persistence</string>
     <string name="productivity">Productivity</string>
     <string name="feedvalue">Feed value</string>

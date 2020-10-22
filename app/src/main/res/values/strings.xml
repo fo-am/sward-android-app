@@ -246,87 +246,87 @@
 
     <string name="species_not_found">Species not found!</string>
 
-    <string name="grass_cocksfoot_plant_cap">Up to 150cm, dark bluish-green, dense tufts (may form clumps)</string>
-    <string name="grass_cocksfoot_flower_cap">One-sided, clumped flower head.</string>
-    <string name="grass_cocksfoot_stem_cap">Base of stem is flattened.</string>
-    <string name="grass_cocksfoot_leaf_cap">Long flat leaves (2–14mm wide) that narrow to a point. Each leaf has a prominent keel (like the keel on a boat)</string>
-    <string name="grass_cocksfoot_stemsheath_cap">No auricles, ligule generally long (2–12mm), ligule has torn, jagged edges.</string>
+    <string name="grass_cocksfoot_plant_cap">Plant: Up to 150cm, dark bluish-green, dense tufts (may form clumps)</string>
+    <string name="grass_cocksfoot_flower_cap">Flower: One-sided, clumped flower head.</string>
+    <string name="grass_cocksfoot_stem_cap">Stem: Base of stem is flattened.</string>
+    <string name="grass_cocksfoot_leaf_cap">Leaf: Long flat leaves (2–14mm wide) that narrow to a point. Each leaf has a prominent keel (like the keel on a boat)</string>
+    <string name="grass_cocksfoot_stemsheath_cap">Stemsheath: No auricles, ligule generally long (2–12mm), ligule has torn, jagged edges.</string>
 
-    <string name="grass_meadowfescue_plant_cap">Up to 80cm, loose tufts (sometimes forms clumps), variable green</string>
-    <string name="grass_meadowfescue_flower_cap">Tinged reddish/brown.</string>
-    <string name="grass_meadowfescue_leaf_cap">The leaf blades are ribbed on the upper side and more glossy on the underside. The leaves clasp the stem by long sheaths</string>
-    <string name="grass_meadowfescue_stemsheath_cap">Short, stubby ligule – barely visible (1mm). Small auricles with no hairs.</string>
+    <string name="grass_meadowfescue_plant_cap">Plant: Up to 80cm, loose tufts (sometimes forms clumps), variable green</string>
+    <string name="grass_meadowfescue_flower_cap">Flower: Tinged reddish/brown.</string>
+    <string name="grass_meadowfescue_leaf_cap">Leaf: The leaf blades are ribbed on the upper side and more glossy on the underside. The leaves clasp the stem by long sheaths</string>
+    <string name="grass_meadowfescue_stemsheath_cap">Stemsheath: Short, stubby ligule – barely visible (1mm). Small auricles with no hairs.</string>
 
-    <string name="grass_meadowfoxtail_plant_cap">Up to 120cm, whitish-green, erect tufts.</string>
-    <string name="grass_meadowfoxtail_stemsheath_cap">No auricles, ligule typically short (1–4mm), ligule tatty.</string>
-    <string name="grass_meadowfoxtail_leaf_cap">The basal (bottom) leaf sheath is often black or brown, the leaves are hairless.</string>
-    <string name="grass_meadowfoxtail_flower_cap">Tassel-like, cylindrical, up to 13cm long, yellow-green, covered in silver hairs.</string>
+    <string name="grass_meadowfoxtail_plant_cap">Plant: Up to 120cm, whitish-green, erect tufts.</string>
+    <string name="grass_meadowfoxtail_stemsheath_cap">Stemsheath: No auricles, ligule typically short (1–4mm), ligule tatty.</string>
+    <string name="grass_meadowfoxtail_leaf_cap">Leaf: The basal (bottom) leaf sheath is often black or brown, the leaves are hairless.</string>
+    <string name="grass_meadowfoxtail_flower_cap">Flower: Tassel-like, cylindrical, up to 13cm long, yellow-green, covered in silver hairs.</string>
 
-    <string name="grass_perennial_ryegrass_plant_cap">Up to 100cm, dark green and glossy, dense tufts.</string>
-    <string name="grass_perennial_ryegrass_stemsheath_cap">Long auricles clasping the stem. Short ligule (1–2mm) that is hard to see.</string>
-    <string name="grass_perennial_ryegrass_leaf_cap">The underside of the leaf is smooth and glossy, with the top side being slightly rougher, both are hairless. The younger leaves are folded in the sheath before they extend.</string>
-    <string name="grass_perennial_ryegrass_flower_cap">Spikelets attached to stem in alternating pattern, no awns, unbranched.</string>
+    <string name="grass_perennial_ryegrass_plant_cap">Plant: Up to 100cm, dark green and glossy, dense tufts.</string>
+    <string name="grass_perennial_ryegrass_stemsheath_cap">Stemsheath: Long auricles clasping the stem. Short ligule (1–2mm) that is hard to see.</string>
+    <string name="grass_perennial_ryegrass_leaf_cap">Leaf: The underside of the leaf is smooth and glossy, with the top side being slightly rougher, both are hairless. The younger leaves are folded in the sheath before they extend.</string>
+    <string name="grass_perennial_ryegrass_flower_cap">Flower: Spikelets attached to stem in alternating pattern, no awns, unbranched.</string>
 
-    <string name="grass_tallfescue_plant_cap">Up to 200cm, loose tufts, dark green</string>
-    <string name="grass_tallfescue_stemsheath_cap">No auricles, ligule up to 6mm long with notched edges and pointed tip.</string>
-    <string name="grass_tallfescue_leaf_cap">The leaves are long, hairless with rough edges and a characteristic twist or whorl to each leaf. They are rolled in the bud.</string>
-    <string name="grass_tallfescue_flower_cap">Tassel-like, cylindrical, up to 15cm long, green to grey-purple, no silver hairs.</string>
+    <string name="grass_tallfescue_plant_cap">Plant: Up to 200cm, loose tufts, dark green</string>
+    <string name="grass_tallfescue_stemsheath_cap">Stemsheath: No auricles, ligule up to 6mm long with notched edges and pointed tip.</string>
+    <string name="grass_tallfescue_leaf_cap">Leaf: The leaves are long, hairless with rough edges and a characteristic twist or whorl to each leaf. They are rolled in the bud.</string>
+    <string name="grass_tallfescue_flower_cap">Flower: Tassel-like, cylindrical, up to 15cm long, green to grey-purple, no silver hairs.</string>
 
-    <string name="grass_timothy_plant_cap">Up to 150cm, light grey-green, erect tufts.</string>
-    <string name="grass_timothy_stemsheath_cap">No auricles, ligule up to 6mm long with notched edges and pointed tip.</string>
-    <string name="grass_timothy_leaf_cap">The leaves are long, hairless with rough edges and a characteristic twist or whorl to each leaf. They are rolled in the bud.</string>
-    <string name="grass_timothy_flower_cap">Tassel-like, cylindrical, up to 15cm long, green to grey-purple, no silver hairs.</string>
+    <string name="grass_timothy_plant_cap">Plant: Up to 150cm, light grey-green, erect tufts.</string>
+    <string name="grass_timothy_stemsheath_cap">Stemsheath: No auricles, ligule up to 6mm long with notched edges and pointed tip.</string>
+    <string name="grass_timothy_leaf_cap">Leaft: The leaves are long, hairless with rough edges and a characteristic twist or whorl to each leaf. They are rolled in the bud.</string>
+    <string name="grass_timothy_flower_cap">Flower: Tassel-like, cylindrical, up to 15cm long, green to grey-purple, no silver hairs.</string>
 
-    <string name="herb_chicory_plant_cap">Rosette – leaves sprout from base.</string>
-    <string name="herb_chicory_seedling_cap">Seedling at 2 weeks – pale, oval leaves.</string>
-    <string name="herb_chicory_leaf_cap">Narrow oval, often hairy, often toothed, often pale green.</string>
-    <string name="herb_chicory_flower_cap">Bright blue.</string>
+    <string name="herb_chicory_plant_cap">Plant: Rosette – leaves sprout from base.</string>
+    <string name="herb_chicory_seedling_cap">Seedling: At 2 weeks – pale, oval leaves.</string>
+    <string name="herb_chicory_leaf_cap">Leaf: Narrow oval, often hairy, often toothed, often pale green.</string>
+    <string name="herb_chicory_flower_cap">Flower: Bright blue.</string>
 
-    <string name="herb_ribwort_plant_cap">Rosette – leaves sprout from base.</string>
-    <string name="herb_ribwort_seedling_cap">Seedling at 2 weeks – grass-like leaves.</string>
-    <string name="herb_ribwort_leaf_cap">Narrow, ribbed, oval.</string>
-    <string name="herb_ribwort_flower_cap">Brown, oval.</string>
+    <string name="herb_ribwort_plant_cap">Plant: Rosette – leaves sprout from base.</string>
+    <string name="herb_ribwort_seedling_cap">Seedling: At 2 weeks – grass-like leaves.</string>
+    <string name="herb_ribwort_leaf_cap">Leaf: Narrow, ribbed, oval.</string>
+    <string name="herb_ribwort_flower_cap">Flower: Brown, oval.</string>
 
-    <string name="herb_sheepsburnet_plant_cap">Rosette – leaves sprout from base.</string>
-    <string name="herb_sheepsburnet_seedling_cap">Seedling at 2 weeks – first true leaves are pale and toothed.</string>
-    <string name="herb_sheepsburnet_leaf_cap">Toothed leaflets arranged in pairs up the stam, dark green with pale underside.</string>
-    <string name="herb_sheepsburnet_flower_cap">Knobbly green-red clusters.</string>
+    <string name="herb_sheepsburnet_plant_cap">Plant: Rosette – leaves sprout from base.</string>
+    <string name="herb_sheepsburnet_seedling_cap">Seedling: At 2 weeks – first true leaves are pale and toothed.</string>
+    <string name="herb_sheepsburnet_leaf_cap">Leaf: Toothed leaflets arranged in pairs up the stam, dark green with pale underside.</string>
+    <string name="herb_sheepsburnet_flower_cap">Flower: Knobbly green-red clusters.</string>
 
-    <string name="herb_sheepsparsley_plant_cap">Rosette – leaves sprout from base.</string>
-    <string name="herb_sheepsparsley_seedling_cap">Young plant.</string>
-    <string name="herb_sheepsparsley_leaf_cap">Feathery, garden parsley-like.</string>
-    <string name="herb_sheepsparsley_flower_cap">Rarely flowers, tiny yellow clusters.</string>
+    <string name="herb_sheepsparsley_plant_cap">Plant: Rosette – leaves sprout from base.</string>
+    <string name="herb_sheepsparsley_seedling_cap">Seedling: Young plant.</string>
+    <string name="herb_sheepsparsley_leaf_cap">Leaf: Feathery, garden parsley-like.</string>
+    <string name="herb_sheepsparsley_flower_cap">Flower: Rarely flowers, tiny yellow clusters.</string>
 
-    <string name="herb_yarrow_plant_cap">Rosette – leaves sprout from base.</string>
-    <string name="herb_yarrow_seedling_cap">Young plant.</string>
-    <string name="herb_yarrow_leaf_cap">Feathery, dark green, strong smell when rubbed.</string>
-    <string name="herb_yarrow_flower_cap">Flat-topped, crem-white clusters.</string>
+    <string name="herb_yarrow_plant_cap">Plant: Rosette – leaves sprout from base.</string>
+    <string name="herb_yarrow_seedling_cap">Seedling: Young plant.</string>
+    <string name="herb_yarrow_leaf_cap">Leaf: Feathery, dark green, strong smell when rubbed.</string>
+    <string name="herb_yarrow_flower_cap">Flower: Flat-topped, crem-white clusters.</string>
 
-    <string name="legume_birdsfoottrefoil_plant_cap">\'Leggy\’, sprawling.</string>
-    <string name="legume_birdsfoottrefoil_seedling_cap">Seedling – first true leaf has 5 leaflets</string>
-    <string name="legume_birdsfoottrefoil_leaf_cap">5 leaflets – 3 in a typical ‘clover’ shape and 2 clasping the stem.</string>
-    <string name="legume_birdsfoottrefoil_flower_cap">Yellow cluster, often tinged red.</string>
+    <string name="legume_birdsfoottrefoil_plant_cap">Plant: \'Leggy\’, sprawling.</string>
+    <string name="legume_birdsfoottrefoil_seedling_cap">Seedling: First true leaf has 5 leaflets</string>
+    <string name="legume_birdsfoottrefoil_leaf_cap">Leaf: 5 leaflets – 3 in a typical ‘clover’ shape and 2 clasping the stem.</string>
+    <string name="legume_birdsfoottrefoil_flower_cap">Flower: Yellow cluster, often tinged red.</string>
 
-    <string name="legume_alsike_seedling_cap">Seedling at 2 weeks – hairless, with no white marks on leaf.</string>
-    <string name="legume_alsike_leaf_cap">3 leaflets, hairless, no white crescent marks.</string>
-    <string name="legume_alsike_flower_cap">Pale pink, spherical head.</string>
+    <string name="legume_alsike_seedling_cap">Seedling: At 2 weeks – hairless, with no white marks on leaf.</string>
+    <string name="legume_alsike_leaf_cap">Leaf: 3 leaflets, hairless, no white crescent marks.</string>
+    <string name="legume_alsike_flower_cap">Flower: Pale pink, spherical head.</string>
 
-    <string name="legume_lucerne_plant_cap">Upright, bushy.</string>
-    <string name="legume_lucerne_seedling_cap">Seedling at 2 weeks – first true leaf has 1 heart or kidney shaped leaf.</string>
-    <string name="legume_lucerne_leaf_cap">3 oval leaflets, top leaflet has short stalk, underside of leaf is hairy.</string>
-    <string name="legume_lucerne_flower_cap">White, purple, or yellow clusters.</string>
+    <string name="legume_lucerne_plant_cap">Plant: Upright, bushy.</string>
+    <string name="legume_lucerne_seedling_cap">Seedling: At 2 weeks – first true leaf has 1 heart or kidney shaped leaf.</string>
+    <string name="legume_lucerne_leaf_cap">Leaf: 3 oval leaflets, top leaflet has short stalk, underside of leaf is hairy.</string>
+    <string name="legume_lucerne_flower_cap">Flower: White, purple, or yellow clusters.</string>
 
-    <string name="legume_redclover_seedling_cap">Seedling at 2 weeks – hairs on leaf already visible.</string>
-    <string name="legume_redclover_leaf_cap">3 leaflets, hairy, sometimes white crescent marks. Hairs are most obvious on leaf underside.</string>
-    <string name="legume_redclover_flower_cap">Reddish-pink, spherical head.</string>
+    <string name="legume_redclover_seedling_cap">Seedling: At 2 weeks – hairs on leaf already visible.</string>
+    <string name="legume_redclover_leaf_cap">Leaf: 3 leaflets, hairy, sometimes white crescent marks. Hairs are most obvious on leaf underside.</string>
+    <string name="legume_redclover_flower_cap">Flower: Reddish-pink, spherical head.</string>
 
-    <string name="legume_sainfoin_seedling_cap">Seedling at 2 weeks – first true leaf has 1–3 long oval leaflets.</string>
-    <string name="legume_sainfoin_leaf_cap">Multiple oval leaflets arranged in pairs</string>
-    <string name="legume_sainfoin_flower_cap">Pink with purple veins, cone shaped head.</string>
+    <string name="legume_sainfoin_seedling_cap">Seedling: At 2 weeks – first true leaf has 1–3 long oval leaflets.</string>
+    <string name="legume_sainfoin_leaf_cap">Leaf: Multiple oval leaflets arranged in pairs</string>
+    <string name="legume_sainfoin_flower_cap">Flower: Pink with purple veins, cone shaped head.</string>
 
-    <string name="legume_whiteclover_seedling_cap">Seedling at 2 weeks – white crescent marks already visible.</string>
-    <string name="legume_whiteclover_leaf_cap">3 leaflets, hairless, often white crescent marks</string>
-    <string name="legume_whiteclover_flower_cap">Cream or pinkish-white, spherical head.</string>
+    <string name="legume_whiteclover_seedling_cap">Seedling: At 2 weeks – white crescent marks already visible.</string>
+    <string name="legume_whiteclover_leaf_cap">Leaf: 3 leaflets, hairless, often white crescent marks</string>
+    <string name="legume_whiteclover_flower_cap">Flower: Cream or pinkish-white, spherical head.</string>
 
     <string name="credit">Image credit: %s</string>
 

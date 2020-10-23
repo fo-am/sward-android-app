@@ -35,7 +35,7 @@ class SpeciesInfoAdapter internal constructor (
 
     override fun onBindViewHolder(holder: SpeciesInfoViewHolder, position: Int) {
         val trait = speciesInfo.traits[position]
-        var res=context.resources
+        val res=context.resources
         val name = "trait_${trait.name}"
         val id = res.getIdentifier(name, "string", context.packageName)
 

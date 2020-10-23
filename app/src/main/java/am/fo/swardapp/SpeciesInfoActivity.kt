@@ -99,7 +99,7 @@ class SpeciesInfoActivity : SwardActivity() {
                     )
                 )
 
-                val view: View? = supportFragmentManager.findFragmentByTag("f" + position)!!.view;
+                val view: View? = supportFragmentManager.findFragmentByTag("f" + position)!!.view
                 view?.let { view ->
                     view.post {
                         val wMeasureSpec =

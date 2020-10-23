@@ -56,13 +56,13 @@ class SurveyHowtoFragment : SwardFragment() {
 
         new_survey_date.text = DateWrangler.nowAsView()
         val cal = Calendar.getInstance()
-        val date_text = new_survey_date
+        val dateText = new_survey_date
 
         val dateSetListener = DatePickerDialog.OnDateSetListener { dateView, year, monthOfYear, dayOfMonth ->
             cal.set(Calendar.YEAR, year)
             cal.set(Calendar.MONTH, monthOfYear)
             cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-            date_text.text = DateWrangler.timeAsView(cal.time)
+            dateText.text = DateWrangler.timeAsView(cal.time)
         }
 
         new_survey_date.setOnClickListener {
@@ -73,7 +73,7 @@ class SurveyHowtoFragment : SwardFragment() {
         }
 
         start_survey.setOnClickListener {
-            swardViewModel.insertSurvey(Survey(DateWrangler.dateViewToInternal(date_text.text as String), fieldId!!))
+            swardViewModel.insertSurvey(Survey(DateWrangler.dateViewToInternal(dateText.text as String), fieldId!!))
                 .observe(viewLifecycleOwner, Observer { surveyId ->
                     Log.i("sward", "made new survey ID is:$surveyId")
                     val bundle = bundleOf(

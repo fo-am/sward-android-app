@@ -40,7 +40,7 @@ class SpeciesPhotoFragment(val image: DescImg) : SwardFragment() {
         img.setImageResource(image.img)
         caption.setText(image.caption)
         if (image.credit!=-1) {
-            photo_credit.setText(getString(R.string.credit,getString(image.credit)));
+            photo_credit.text = getString(R.string.credit,getString(image.credit))
         }
     }
 }

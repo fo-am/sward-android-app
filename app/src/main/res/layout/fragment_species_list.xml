@@ -8,15 +8,15 @@
 
     <Button
         android:id="@+id/grass_cocksfoot"
+        style="@style/SwardImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/SwardImageButton"
         android:drawableRight="@drawable/grass_cocksfoot_button"
         android:text="@string/grass_cocksfoot" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/grass_meadowfescue"
@@ -28,7 +28,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/grass_meadowfoxtail"
@@ -40,7 +40,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/grass_perennialryegrass"
@@ -52,7 +52,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/grass_tallfescue"
@@ -64,7 +64,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/grass_timothy"
@@ -76,7 +76,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/herb_chicory"
@@ -88,7 +88,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/herb_ribwort"
@@ -100,7 +100,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/herb_sheepsburnet"
@@ -112,7 +112,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/herb_sheepsparsley"
@@ -124,7 +124,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/herb_yarrow"
@@ -136,7 +136,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/legume_alsike"
@@ -148,7 +148,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/legume_birdsfoottrefoil"
@@ -160,7 +160,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/legume_lucerne"
@@ -172,7 +172,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/legume_redclover"
@@ -184,7 +184,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/legume_sainfoin"
@@ -196,7 +196,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
+        android:layout_height="@dimen/small_padding" />
 
     <Button
         android:id="@+id/legume_whiteclover"

@@ -6,6 +6,7 @@
     <color name="colorBackground">#F1F2EB</color>
     <color name="colorButtonBackground">#FFFFFF</color>
     <color name="colorButtonBorder">#a3b18a</color>
+    <color name="colorButtonPressed">#daedb9</color>
     <color name="colorText">#14281d</color>
     <color name="colorMenuBackground">#7b8441</color>
     <color name="colorMenuText">#FFFFFF</color>

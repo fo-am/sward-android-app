@@ -147,6 +147,8 @@
 
     <string name="title_activity_species_info">SPECIES INFO</string>
 
+    <string name="swipable_text">Swipe left and right to see more images.</string>
+
     <string name="trait_list_title">Species traits</string>
     <string name="trait_list_blurb"><![CDATA[Click traits for more information, or <a href="www.multi-species-swards/litreview">visit this page</a> to find out more]]></string>
     <string name="trait_studies">For the literature up to 2020, %d %s agreed, %d %s disagreed.</string>

@@ -65,6 +65,15 @@
 
             </androidx.viewpager2.widget.ViewPager2>
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/swipable_text"
+                android:textSize="10sp" />
+
             <LinearLayout
                 android:id="@+id/slider_dots"
                 android:layout_width="match_parent"
@@ -81,6 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:gravity="center"
                 android:text="@string/trait_list_title"
                 android:textSize="10pt" />
 

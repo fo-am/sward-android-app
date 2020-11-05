@@ -25,6 +25,7 @@ import am.fo.swardapp.species_fragments.SpeciesPhotoFragment
 import android.os.Bundle
 import android.text.Html
 import android.text.method.LinkMovementMethod
+import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -142,10 +143,20 @@ class SpeciesInfoActivity : SwardActivity() {
         //trait_list.setNestedScrollingEnabled(false)
         adapter.setSpeciesInfo(speciesInfo)
 
-        traits_blurb.text = Html.fromHtml(getString(R.string.trait_list_blurb))
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            traits_blurb.setText(Html.fromHtml(getString(R.string.trait_list_blurb),Html.FROM_HTML_MODE_LEGACY))
+        } else {
+            traits_blurb.setText(Html.fromHtml(getString(R.string.trait_list_blurb)))
+        }
         traits_blurb.movementMethod = LinkMovementMethod.getInstance()
-        //traits_blurb.linksClickable = true
-        traits_blurb.isClickable = true
+
+        traits_scroll.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                return false
+            }
+        })
+
+
     }
 
    /* override fun onBackPressed() {

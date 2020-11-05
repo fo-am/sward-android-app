@@ -155,6 +155,7 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.legume_alsike_lat,
                     R.drawable.legume_alsike_leaf,
                     arrayOf(
+                        DescImg(R.drawable.legume_alsike_plant,R.string.legume_alsike_plant_cap),
                         DescImg(R.drawable.legume_alsike_leaf,R.string.legume_alsike_leaf_cap),
                         DescImg(R.drawable.legume_alsike_flower,R.string.legume_alsike_flower_cap),
                         DescImg(R.drawable.legume_alsike_seedling,R.string.legume_alsike_seedling_cap)
@@ -208,6 +209,7 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.legume_whiteclover_lat,
                     R.drawable.legume_whiteclover_leaf,
                     arrayOf(
+                        DescImg(R.drawable.legume_whiteclover_plant,R.string.legume_whiteclover_plant_cap),
                         DescImg(R.drawable.legume_whiteclover_leaf,R.string.legume_whiteclover_leaf_cap),
                         DescImg(R.drawable.legume_whiteclover_flower,R.string.legume_whiteclover_flower_cap),
                         DescImg(R.drawable.legume_whiteclover_seedling_annotated,R.string.legume_whiteclover_seedling_cap)

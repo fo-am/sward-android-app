@@ -101,7 +101,7 @@
     <string name="id_legume_leaflet_text">What is the leaflet on the end like?</string>
     <string name="id_legume_leaflet_one">The leaflet on the end has no "stalk"</string>
     <string name="id_legume_leaflet_two">The leaflet on the end has a "stalk"</string>
-stol
+
     <string name="id_legume_hairy_text">Are the leaves hairy? Try stroking the underside with your finger.</string>
     <string name="id_legume_hairy_one">Leaf is hairless, it feels smooth.</string>
     <string name="id_legume_hairy_two">Leaf is hairy, it feels rough.</string>

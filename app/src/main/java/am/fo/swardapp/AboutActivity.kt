@@ -18,6 +18,8 @@
 package am.fo.swardapp
 
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import kotlinx.android.synthetic.main.activity_about.*
 
 class AboutActivity : SwardActivity() {
@@ -26,6 +28,22 @@ class AboutActivity : SwardActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
         setSupportActionBar(toolbar)
+
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            about_1.setText(Html.fromHtml(getString(R.string.about_text),Html.FROM_HTML_MODE_LEGACY))
+            about_2.setText(Html.fromHtml(getString(R.string.about_2),Html.FROM_HTML_MODE_LEGACY))
+            about_3.setText(Html.fromHtml(getString(R.string.about_3),Html.FROM_HTML_MODE_LEGACY))
+        } else {
+            about_1.setText(Html.fromHtml(getString(R.string.about_text)))
+            about_2.setText(Html.fromHtml(getString(R.string.about_2)))
+            about_3.setText(Html.fromHtml(getString(R.string.about_3)))
+        }
+
+        about_1.movementMethod = LinkMovementMethod.getInstance()
+        about_2.movementMethod = LinkMovementMethod.getInstance()
+        about_3.movementMethod = LinkMovementMethod.getInstance()
+
     }
 
 }

@@ -27,6 +27,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -43,26 +44,17 @@
                 android:id="@+id/app_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="@string/app_title"
                 android:textSize="36sp" />
 
-
-            <TextView
-                android:id="@+id/version_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
 
             <TextView
                 android:id="@+id/strap_line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_strap"
-                android:textSize="10pt" />
+                android:textSize="8pt" />
 
 
         </LinearLayout>
@@ -74,6 +66,15 @@
             android:adjustViewBounds="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:srcCompat="@drawable/sward"
+            tools:layout_editor_absoluteX="30dp" />
+
+        <TextView
+            android:id="@+id/version_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@color/colorMenuText"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="30dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

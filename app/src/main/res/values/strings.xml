@@ -150,7 +150,7 @@
     <string name="trait_list_title">Species traits</string>
     <string name="trait_list_blurb"><![CDATA[Click traits for more information, or <a href="www.multi-species-swards/litreview">visit this page</a> to find out more]]></string>
     <string name="trait_studies">For the literature up to 2020, %d %s agreed, %d %s disagreed.</string>
-    <string name="trait_no_studies">There is no evidence, more research is needed.</string>
+    <string name="trait_no_studies">No evidence was found, more research is needed.</string>
 
     <plurals name="studies">
         <item quantity="one">study</item>

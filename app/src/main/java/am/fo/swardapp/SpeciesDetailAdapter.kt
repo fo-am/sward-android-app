@@ -17,6 +17,7 @@
 
 package am.fo.swardapp
 
+import am.fo.swardapp.data.DateWrangler
 import am.fo.swardapp.data.SpeciesDesc.Companion.createSpeciesDesc
 import am.fo.swardapp.data.SwardViewModel.SpeciesSurveyCount
 import am.fo.swardapp.drawing.SpeciesCountCanvas
@@ -69,7 +70,7 @@ class SpeciesDetailAdapter internal constructor (
                 surveyLayout.gravity = Gravity.CENTER_HORIZONTAL
 
                 val surveyName = TextView(context)
-                surveyName.text = speciesSurveyCount.survey.time
+                surveyName.text = DateWrangler.dateInternalToView(speciesSurveyCount.survey.time)
                 surveyLayout.addView(surveyName)
 
                 val s = Space(context)

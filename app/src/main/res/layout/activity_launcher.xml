@@ -53,6 +53,7 @@
                 android:id="@+id/strap_line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="100dp"
                 android:text="@string/app_strap"
                 android:textSize="8pt" />
 
@@ -61,12 +62,14 @@
 
         <ImageView
             android:id="@+id/title_image"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:srcCompat="@drawable/sward"
-            tools:layout_editor_absoluteX="30dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/sward" />
 
         <TextView
             android:id="@+id/version_name"

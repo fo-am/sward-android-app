@@ -17,7 +17,9 @@
 
 package am.fo.swardapp
 
+import android.content.res.Configuration
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_launcher.*
 
 class LauncherActivity : SwardActivity() {
@@ -27,5 +29,12 @@ class LauncherActivity : SwardActivity() {
         setTitle(R.string.title_activity_launcher)
         version_name.text = packageManager.getPackageInfo(packageName, 0).versionName
         title_image.setImageResource(R.drawable.sward)
+
+        // none of the layout modes quite work, so turn the title image off in landscape for now
+        val orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            title_image.visibility = View.GONE
+        }
+
     }
 }

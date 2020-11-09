@@ -35,8 +35,8 @@
             android:id="@+id/new_field_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_padding"
             android:text="@string/farm_new_field"
-            app:layout_constraintBottom_toTopOf="@id/fields_recycler_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,12 +44,14 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fields_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/default_padding"
             android:scrollbars="vertical"
-            app:layout_constraintBottom_toTopOf="@id/download_data_button"
+            app:layout_constraintBottom_toTopOf="@+id/download_data_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_field_button">
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -57,19 +59,20 @@
             android:id="@+id/download_data_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_padding"
             android:text="@string/farm_download_data"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fields_recycler_view" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@string/farm_fields"
-            app:layout_constraintBottom_toTopOf="@+id/fields_recycler_view"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_field_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

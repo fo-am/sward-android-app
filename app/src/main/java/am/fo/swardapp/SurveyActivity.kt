@@ -31,12 +31,16 @@ class SurveyActivity : SwardActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_survey)
         setSupportActionBar(toolbar)
-        val host = NavHostFragment.create(R.navigation.survey_nav_graph)
-        startFieldId = intent.getLongExtra("FIELD_ID", -1L)
 
-        supportFragmentManager.beginTransaction().replace(R.id.survey_fragment_container, host)
-            .setPrimaryNavigationFragment(host).commit()
+        // don't restart everything if there is saved data (e.g. from rotate screen)
+        if (savedInstanceState == null) {
+            val host = NavHostFragment.create(R.navigation.survey_nav_graph)
+            startFieldId = intent.getLongExtra("FIELD_ID", -1L)
 
+            supportFragmentManager.beginTransaction().replace(R.id.survey_fragment_container, host)
+                .setPrimaryNavigationFragment(host).commit()
+
+        }
     }
 
     override fun onStart() {

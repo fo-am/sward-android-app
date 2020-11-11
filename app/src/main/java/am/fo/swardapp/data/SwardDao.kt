@@ -67,6 +67,12 @@ interface SwardDao {
 
     @Query("DELETE FROM field_table")
     suspend fun deleteAllFields()
+    @Query("DELETE FROM sown_table")
+    suspend fun deleteAllSown()
+    @Query("DELETE FROM survey_table")
+    suspend fun deleteAllSurveys()
+    @Query("DELETE FROM record_table")
+    suspend fun deleteAllRecords()
     @Query("DELETE FROM field_table where fieldId=:fieldId")
     suspend fun deleteField(fieldId: Long)
     @Query("DELETE FROM survey_table where fieldId=:fieldId")

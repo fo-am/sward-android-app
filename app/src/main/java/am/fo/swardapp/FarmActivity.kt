@@ -21,6 +21,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_farm.*
@@ -50,6 +51,19 @@ class FarmActivity : SwardActivity() {
 
         download_data_button.setOnClickListener {
             startActivity(Intent(this, DownloadActivity::class.java))
+        }
+
+        delete_all.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle(getString(R.string.delete_all))
+            builder.setMessage(getString(R.string.delete_all_body))
+            builder.setPositiveButton(getString(R.string.field_delete_yes)) { dialog, which ->
+                swardViewModel.deleteAll()
+            }
+            builder.setNegativeButton(getString(R.string.field_delete_no)) { dialog, which ->
+                // don't need to to anything...
+            }
+            builder.show()
         }
 
     }

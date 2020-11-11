@@ -36,11 +36,11 @@ class SpeciesSelectorFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_species_selector, container, false)
     }
 
-    fun getSpeciesView(species: String): View {
+    fun getSpeciesView(species: String): View? {
         val id = resources.getIdentifier(species, "id", requireContext().packageName)
         if (id == 0) {
             Log.i("sward", "no widget found for species: $species")
-            error("no widget found for species: $species")
+            return null
         }
         return requireView().findViewById<View>(id)
     }
@@ -48,12 +48,12 @@ class SpeciesSelectorFragment : Fragment() {
     fun hideAll() {
         // deactivate all species toggle button
         SpeciesDesc.speciesList.forEach { species ->
-            getSpeciesView(species).visibility = View.GONE
+            getSpeciesView(species)?.let { it.visibility = View.GONE }
         }
     }
 
     fun show(species: String) {
-        getSpeciesView(species).visibility = View.VISIBLE
+        getSpeciesView(species)?.let { it.visibility = View.VISIBLE }
     }
 
 }

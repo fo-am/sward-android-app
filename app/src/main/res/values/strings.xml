@@ -354,4 +354,7 @@
     <string name="credit_meadow_foxtail_stem">Matt Lavin</string>
     <string name="credit_meadow_foxtail_flower2">T. Voekler</string>
 
+    <string name="delete_all">Delete all app data</string>
+    <string name="delete_all_body">Are you sure you want to delete everything in this app?</string>
+
     </resources>

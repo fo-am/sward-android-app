@@ -45,6 +45,9 @@ class SwardRepository(private val swardDao: SwardDao) {
     suspend fun insertRecord(record: Record) = swardDao.insertRecord(record)
 
     suspend fun deleteAllFields() = swardDao.deleteAllFields()
+    suspend fun deleteAllSown() = swardDao.deleteAllSown()
+    suspend fun deleteAllSurveys() = swardDao.deleteAllSurveys()
+    suspend fun deleteAllRecords() = swardDao.deleteAllRecords()
     suspend fun deleteField(fieldId: Long) = swardDao.deleteField(fieldId)
     suspend fun deleteSurveys(fieldId: Long) = swardDao.deleteSurveys(fieldId)
     suspend fun deleteRecords(surveyId: Long) = swardDao.deleteRecords(surveyId)

@@ -86,6 +86,13 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
         repository.deleteField(fieldId)
     }
 
+    fun deleteAll() = viewModelScope.launch(Dispatchers.IO) {
+        repository.deleteAllFields()
+        repository.deleteAllSown()
+        repository.deleteAllSurveys()
+        repository.deleteAllRecords()
+    }
+
     // data processing - general idea is to do as much of it here as possible, outside the UI thread
     data class BiodiversityItem(val date: String, val biodiversity: Int)
 

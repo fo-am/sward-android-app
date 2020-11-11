@@ -51,11 +51,14 @@ class SurveyEndFragment : SwardFragment() {
         view_results.setOnClickListener {
             Intent(context, FieldActivity::class.java).let {
                 it.putExtra("FIELD_ID", fieldId)
+                it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 requireContext().startActivity(it)
             }
         }
 
         download_data.setOnClickListener {
+            val intent = Intent(context, DownloadActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(Intent(context, DownloadActivity::class.java))
         }
     }

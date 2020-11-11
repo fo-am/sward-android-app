@@ -18,20 +18,37 @@
 package am.fo.swardapp.species_fragments
 
 import am.fo.swardapp.R
-import am.fo.swardapp.SwardFragment
 import am.fo.swardapp.data.DescImg
+import am.fo.swardapp.data.SpeciesDesc
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_species_photo.*
 
-class SpeciesPhotoFragment(val image: DescImg) : SwardFragment() {
+class SpeciesPhotoFragment() : Fragment() {
+    lateinit var image: DescImg
+
+    companion object {
+        private const val SPECIES = "species"
+        private const val IMAGE_NUM = "image_num"
+        fun newInstance(species: String, image_num:Int) = SpeciesPhotoFragment().apply {
+            arguments = Bundle(2).apply {
+                putString(SPECIES, species)
+                putInt(IMAGE_NUM, image_num)
+            }
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        arguments?.let {
+            image = SpeciesDesc.createSpeciesDesc(it.getString(SPECIES)).imgs[it.getInt(IMAGE_NUM)]
+        }
         return inflater.inflate(R.layout.fragment_species_photo, container, false)
     }
 

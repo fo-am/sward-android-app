@@ -28,8 +28,11 @@ class IdentificationActivity : SwardActivity() {
         setContentView(R.layout.activity_identification)
         setSupportActionBar(toolbar)
 
-        val host = NavHostFragment.create(R.navigation.id_nav_graph)
-        supportFragmentManager.beginTransaction().replace(R.id.id_fragment_container, host).setPrimaryNavigationFragment(host).commit()
-        
+        // don't restart everything if there is saved data (e.g. from rotate screen)
+        if (savedInstanceState == null) {
+            val host = NavHostFragment.create(R.navigation.id_nav_graph)
+            supportFragmentManager.beginTransaction().replace(R.id.id_fragment_container, host)
+                .setPrimaryNavigationFragment(host).commit()
+        }
     }
 }

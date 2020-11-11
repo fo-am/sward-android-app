@@ -18,15 +18,15 @@
 package am.fo.swardapp.species_fragments
 
 import am.fo.swardapp.R
-import am.fo.swardapp.SwardFragment
 import am.fo.swardapp.data.SpeciesDesc
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 
-class SpeciesSelectorFragment : SwardFragment() {
+class SpeciesSelectorFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

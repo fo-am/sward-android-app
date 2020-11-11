@@ -24,7 +24,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AlertDialog
-import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_field.*
 import java.util.*
 
@@ -40,7 +39,7 @@ class FieldActivity : SwardActivity() {
         fieldId = intent.getLongExtra("FIELD_ID", 0)
 
         // set up the widgets
-        swardViewModel.getBiodiversity(fieldId, 15).observe(this, Observer { surveys ->
+        swardViewModel.getBiodiversity(fieldId, 15).observe(this, { surveys ->
             field_canvas_view.addData(surveys)
         })
 
@@ -74,7 +73,7 @@ class FieldActivity : SwardActivity() {
             edit_field_soil_type.adapter = adapter
         }
 
-        swardViewModel.getField(fieldId).observe(this, Observer { field ->
+        swardViewModel.getField(fieldId).observe(this, { field ->
             field?.let {
                 toolbar.title = field.name
                 edit_field_name.setText(field.name)
@@ -87,6 +86,7 @@ class FieldActivity : SwardActivity() {
         field_survey.setOnClickListener {
             Intent(this, SurveyActivity::class.java).let {
                 it.putExtra("FIELD_ID", fieldId)
+                it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 this.startActivity(it)
             }
         }
@@ -104,7 +104,8 @@ class FieldActivity : SwardActivity() {
             builder.setMessage(getString(R.string.field_delete_body))
             builder.setPositiveButton(getString(R.string.field_delete_yes)) { dialog, which ->
                 swardViewModel.deleteField(fieldId)
-                startActivity(Intent(this, FarmActivity::class.java))
+                val intent = Intent(this, FarmActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             }
             builder.setNegativeButton(getString(R.string.field_delete_no)) { dialog, which ->
                 // don't need to to anything...

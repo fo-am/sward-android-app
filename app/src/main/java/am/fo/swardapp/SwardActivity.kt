@@ -50,19 +50,29 @@ abstract class SwardActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_farm -> {
-                startActivity(Intent(this, FarmActivity::class.java))
+                val intent = Intent(this, FarmActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
                 true }
             R.id.action_species -> {
-                startActivity(Intent(this, SpeciesActivity::class.java))
+                val intent = Intent(this, SpeciesActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
                 true }
             R.id.action_identification -> {
-                startActivity(Intent(this, IdentificationActivity::class.java))
+                val intent = Intent(this, IdentificationActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
                 true }
             R.id.action_survey -> {
-                startActivity(Intent(this, SurveyActivity::class.java))
+                val intent = Intent(this, SurveyActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
                 true }
             R.id.action_about -> {
-                startActivity(Intent(this, AboutActivity::class.java))
+                val intent = Intent(this, AboutActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
                 true }
             else -> super.onOptionsItemSelected(item)
         }

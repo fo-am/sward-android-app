@@ -21,7 +21,7 @@ import am.fo.swardapp.R
 import android.content.res.Resources
 import com.github.doyaaaaaken.kotlincsv.dsl.csvWriter
 
-class SwardExport(val data: List<FieldWithSurveysAndRecords>, val fileName: String, val resources: Resources, val thunk: () -> Unit ) {
+class SwardExport(val data: List<FieldWithSurveysAndRecords>, private val fileName: String, val resources: Resources, val thunk: () -> Unit ) {
     fun export() {
         csvWriter().open(fileName) {
             // Header

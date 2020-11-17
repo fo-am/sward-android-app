@@ -31,13 +31,13 @@ class AboutActivity : SwardActivity() {
 
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            about_1.setText(Html.fromHtml(getString(R.string.about_text),Html.FROM_HTML_MODE_LEGACY))
-            about_2.setText(Html.fromHtml(getString(R.string.about_2),Html.FROM_HTML_MODE_LEGACY))
-            about_3.setText(Html.fromHtml(getString(R.string.about_3),Html.FROM_HTML_MODE_LEGACY))
+            about_1.text = Html.fromHtml(getString(R.string.about_text),Html.FROM_HTML_MODE_LEGACY)
+            about_2.text = Html.fromHtml(getString(R.string.about_2),Html.FROM_HTML_MODE_LEGACY)
+            about_3.text = Html.fromHtml(getString(R.string.about_3),Html.FROM_HTML_MODE_LEGACY)
         } else {
-            about_1.setText(Html.fromHtml(getString(R.string.about_text)))
-            about_2.setText(Html.fromHtml(getString(R.string.about_2)))
-            about_3.setText(Html.fromHtml(getString(R.string.about_3)))
+            about_1.text = Html.fromHtml(getString(R.string.about_text))
+            about_2.text = Html.fromHtml(getString(R.string.about_2))
+            about_3.text = Html.fromHtml(getString(R.string.about_3))
         }
 
         about_1.movementMethod = LinkMovementMethod.getInstance()

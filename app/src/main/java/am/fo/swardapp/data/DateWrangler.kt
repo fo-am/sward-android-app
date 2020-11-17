@@ -3,7 +3,7 @@ package am.fo.swardapp.data
 import java.text.SimpleDateFormat
 import java.util.*
 
-class DateWrangler constructor() {
+class DateWrangler {
     companion object {
         fun dateViewToInternal(date: String): String {
             // get the value from the data text and convert it for internal storage

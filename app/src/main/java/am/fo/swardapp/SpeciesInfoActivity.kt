@@ -38,7 +38,7 @@ import kotlinx.android.synthetic.main.activity_species_info.*
 
 class SpeciesInfoActivity : SwardActivity() {
     lateinit var speciesDesc: SpeciesDesc
-    lateinit var speciesInfo: SpeciesInfo
+    private lateinit var speciesInfo: SpeciesInfo
     lateinit var species: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -102,7 +102,7 @@ class SpeciesInfoActivity : SwardActivity() {
                     )
 
                     val view: View? =
-                        supportFragmentManager.findFragmentByTag("f" + position)!!.view
+                        supportFragmentManager.findFragmentByTag("f$position")!!.view
                     view?.let { view ->
                         view.post {
                             val wMeasureSpec =
@@ -132,14 +132,12 @@ class SpeciesInfoActivity : SwardActivity() {
             adapter.setSpeciesInfo(speciesInfo)
 
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                traits_blurb.setText(
-                    Html.fromHtml(
-                        getString(R.string.trait_list_blurb),
-                        Html.FROM_HTML_MODE_LEGACY
-                    )
+                traits_blurb.text = Html.fromHtml(
+                    getString(R.string.trait_list_blurb),
+                    Html.FROM_HTML_MODE_LEGACY
                 )
             } else {
-                traits_blurb.setText(Html.fromHtml(getString(R.string.trait_list_blurb)))
+                traits_blurb.text = Html.fromHtml(getString(R.string.trait_list_blurb))
             }
             traits_blurb.movementMethod = LinkMovementMethod.getInstance()
     }

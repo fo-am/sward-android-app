@@ -28,7 +28,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_survey_howto.*
 import java.util.*
@@ -74,7 +73,7 @@ class SurveyHowtoFragment : SwardFragment() {
 
         start_survey.setOnClickListener {
             swardViewModel.insertSurvey(Survey(DateWrangler.dateViewToInternal(dateText.text as String), fieldId!!))
-                .observe(viewLifecycleOwner, Observer { surveyId ->
+                .observe(viewLifecycleOwner, { surveyId ->
                     Log.i("sward", "made new survey ID is:$surveyId")
                     val bundle = bundleOf(
                         "field_id" to fieldId,

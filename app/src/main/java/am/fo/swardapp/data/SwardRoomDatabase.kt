@@ -60,14 +60,6 @@ abstract class SwardRoomDatabase : RoomDatabase() {
             }
         }
 
-        override fun onOpen(db: SupportSQLiteDatabase) {
-            super.onOpen(db)
-            /*INSTANCE?.let { database ->
-                scope.launch {
-                    val swardDao = database.swardDao()
-                }
-            }*/
-        }
     }
 
    companion object {

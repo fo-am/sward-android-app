@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.activity_species_info.*
 
 class SurveyActivity : SwardActivity() {
 
-    var startFieldId: Long =-1L
+    private var startFieldId: Long =-1L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

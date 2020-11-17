@@ -22,7 +22,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_farm.*
 
@@ -39,7 +38,7 @@ class FarmActivity : SwardActivity() {
         fields_recycler_view.adapter = adapter
         fields_recycler_view.layoutManager = LinearLayoutManager(this)
 
-        swardViewModel.allFields.observe(this, Observer { fields ->
+        swardViewModel.allFields.observe(this, { fields ->
             // Update the cached copy of the words in the adapter.
             fields?.let { adapter.setFields(it) }
         })

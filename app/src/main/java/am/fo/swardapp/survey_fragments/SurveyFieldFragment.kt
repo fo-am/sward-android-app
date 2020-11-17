@@ -25,7 +25,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_farm.*
 
@@ -46,7 +45,7 @@ class SurveyFieldFragment : SwardFragment() {
         fields_recycler_view.layoutManager = LinearLayoutManager(requireContext())
 
         val sa: SwardActivity = activity as SwardActivity
-        sa.swardViewModel.allFields.observe(viewLifecycleOwner, Observer { fields ->
+        sa.swardViewModel.allFields.observe(viewLifecycleOwner, { fields ->
             // Update the cached copy of the words in the adapter.
             fields?.let { adapter.setFields(it) }
         })

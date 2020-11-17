@@ -31,7 +31,7 @@ class LauncherActivity : SwardActivity() {
         title_image.setImageResource(R.drawable.sward)
 
         // none of the layout modes quite work, so turn the title image off in landscape for now
-        val orientation = getResources().getConfiguration().orientation;
+        val orientation = resources.configuration.orientation
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             title_image.visibility = View.GONE
         }

@@ -29,7 +29,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ToggleButton
 import androidx.core.os.bundleOf
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_survey_sample.*
 
@@ -68,7 +67,7 @@ class SurveySampleFragment : SwardFragment() {
 
         // reactivate the sown ones
         swardViewModel.getSown(fieldId!!)
-            .observe(viewLifecycleOwner, Observer { sownList: List<Sown> ->
+            .observe(viewLifecycleOwner, { sownList: List<Sown> ->
                 sownList.forEach { sown ->
                     sf.show(sown.species)
                 }
@@ -88,7 +87,7 @@ class SurveySampleFragment : SwardFragment() {
             }
             save.setOnClickListener {
                 // check the sown species for this field
-                swardViewModel.getSown(fieldId!!).observe(viewLifecycleOwner, Observer { sownList ->
+                swardViewModel.getSown(fieldId!!).observe(viewLifecycleOwner, { sownList ->
                     sownList.forEach { sown ->
                         val v = sf.getSpeciesView(sown.species) as ToggleButton
                         if (v.isChecked) {

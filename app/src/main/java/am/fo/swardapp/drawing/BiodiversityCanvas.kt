@@ -33,7 +33,7 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
                                                    defStyleAttr: Int = 0)
     : View(context, attrs, defStyleAttr) {
 
-    var renderList = listOf<SwardViewModel.BiodiversityItem>()
+    private var renderList = listOf<SwardViewModel.BiodiversityItem>()
     var maxBiodiversity = 0
 
     private val barPaint = Paint().apply {

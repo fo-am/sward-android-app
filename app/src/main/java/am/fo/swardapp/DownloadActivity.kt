@@ -28,7 +28,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
-import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_download.*
 import kotlinx.android.synthetic.main.activity_farm.toolbar
 import java.io.File
@@ -42,7 +41,7 @@ class DownloadActivity : SwardActivity() {
         setContentView(R.layout.activity_download)
         setSupportActionBar(toolbar)
 
-        swardViewModel.settings.observe(this, Observer {
+        swardViewModel.settings.observe(this, {
             it?.let {
                 email_address.setText(it.email)
             }
@@ -81,12 +80,12 @@ class DownloadActivity : SwardActivity() {
         }
     }
 
-    fun export(email: String) {
+    private fun export(email: String) {
         val fileLocation = File(getExternalFilesDir(null)!!.absolutePath, exportFilename)
         val filePath = getExternalFilesDir(null)!!.absolutePath +"/"+exportFilename
         val fileURI = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".fileprovider", fileLocation)
 
-        swardViewModel.getExportData().observe(this, Observer {
+        swardViewModel.getExportData().observe(this, {
             SwardExport(it, filePath, resources, thunk = {
                 val emailIntent = Intent(Intent.ACTION_SEND)
 
@@ -109,7 +108,7 @@ class DownloadActivity : SwardActivity() {
 
     }
 
-    fun hasPermissions(context: Context, permissions: Array<String>): Boolean {
+    private fun hasPermissions(context: Context, permissions: Array<String>): Boolean {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             permissions.forEach {
                 if (ActivityCompat.checkSelfPermission(context, it) != PackageManager.PERMISSION_GRANTED) {
@@ -130,7 +129,7 @@ class DownloadActivity : SwardActivity() {
             newPermissionRequestCode -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // get the email address
-                    swardViewModel.settings.observe(this, Observer {
+                    swardViewModel.settings.observe(this, {
                         it?.let {
                             // send when we/if have one
                             export(it.email)

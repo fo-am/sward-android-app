@@ -42,7 +42,7 @@ class SpeciesSelectorFragment : Fragment() {
             Log.i("sward", "no widget found for species: $species")
             return null
         }
-        return requireView().findViewById<View>(id)
+        return requireView().findViewById(id)
     }
 
     fun hideAll() {

@@ -90,8 +90,16 @@ interface SwardDao {
     fun syncGetSurveys(fieldId: Long): List<Survey>
 
     @Transaction
+    @Query("SELECT * from sown_table Where fieldId=:fieldId")
+    fun syncGetSown(fieldId: Long): List<Sown>
+
+    @Transaction
     @Query("SELECT * from record_table Where surveyId=:surveyId")
     fun syncGetRecords(surveyId: Long): List<Record>
+
+    @Transaction
+    @Query("SELECT * from record_table Where surveyId=:surveyId and species=:species")
+    fun syncGetRecord(surveyId: Long, species: String): List<Record>
 
     @Transaction
     @Query("SELECT * from field_table")

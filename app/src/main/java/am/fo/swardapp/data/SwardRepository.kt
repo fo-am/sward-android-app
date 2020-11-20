@@ -54,7 +54,9 @@ class SwardRepository(private val swardDao: SwardDao) {
 
     // blocking calls
     fun syncGetSurveys(fieldId: Long): List<Survey> = swardDao.syncGetSurveys(fieldId)
+    fun syncGetSown(fieldId: Long): List<Sown> = swardDao.syncGetSown(fieldId)
     fun syncGetRecords(surveyId: Long): List<Record> = swardDao.syncGetRecords(surveyId)
+    fun syncGetRecord(surveyId: Long, species: String): List<Record> = swardDao.syncGetRecord(surveyId, species)
     fun syncGetSurveysAndRecords(fieldId: Long, limit: Int): List<SurveyAndRecords> =
         swardDao.syncGetSurveysAndRecords(fieldId, limit)
     fun syncGetExportData(): List<FieldWithSurveysAndRecords> = swardDao.syncGetExportData()

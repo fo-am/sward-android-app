@@ -129,17 +129,21 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch(Dispatchers.IO) {
             // doing this off the main UI thread like a good person!
             val ret = mutableMapOf<String,MutableList<SpeciesSurveyCount>>()
+            val sownSpecies = repository.syncGetSown(fieldId)
 
             repository.syncGetSurveys(fieldId).forEach { survey ->
                 // count each species for this survey
                 val diversity = mutableMapOf<String,Int>()
-                repository.syncGetRecords(survey.surveyId).forEach { record ->
-                    if (diversity.containsKey(record.species)) {
-                        diversity[record.species]?.let {
-                            diversity[record.species]=it+1
+                sownSpecies.forEach { sown ->
+                    diversity[sown.species]=0
+                    repository.syncGetRecord(survey.surveyId, sown.species).forEach { record ->
+                        if (diversity.containsKey(sown.species)) {
+                            diversity[sown.species]?.let {
+                                diversity[sown.species] = it + 1
+                            }
+                        } else {
+                            diversity[sown.species] = 1
                         }
-                    } else {
-                        diversity[record.species]=1
                     }
                 }
 

@@ -159,19 +159,19 @@
         <item quantity="other">studies</item>
     </plurals>
 
-    <string name="trait_protein">High protein</string>
-    <string name="trait_digestibility">High digestibility</string>
-    <string name="trait_mineral">High mineral content</string>
-    <string name="trait_yield_cut">High relative yield (cut)</string>
-    <string name="trait_yield_grazed">High relative yield (grazed)</string>
-    <string name="trait_persistence">Long persistence (grazed)</string>
-    <string name="trait_tolerance">Tolerant to frequent cut/graze</string>
+    <string name="trait_protein">Protein</string>
+    <string name="trait_mineral">Minerals</string>
+    <string name="trait_digestibility">Digestibility</string>
+    <string name="trait_persistence">Persistence (grazed)</string>
+    <string name="trait_yield_cut">Relative yield (cut)</string>
+    <string name="trait_yield_grazed">Relative yield (grazed)</string>
+    <string name="trait_tolerance">Intensive cut/graze tolerance</string>
     <string name="trait_anthelminthic">Anthelminthic properties</string>
+    <string name="trait_waterlogging">Waterlogging tolerance</string>
+    <string name="trait_fertility">Marginal soils tolerance</string>
+    <string name="trait_drought">Drought tolerance</string>
+    <string name="trait_frost">Frost tolerance</string>
     <string name="trait_bloat">Bloat safe</string>
-    <string name="trait_drought">Drought tolerant</string>
-    <string name="trait_waterlogging">Waterlogging tolerant</string>
-    <string name="trait_fertility">Tolerant of low soil fertility</string>
-    <string name="trait_frost">Tolerant to hard frosts</string>
 
     <string name="popup_birdsfoottrefoil_protein">For the literature up to 2020, 7 studies partially agreed with score</string>
     <string name="popup_lucerne_protein">For the literature up to 2020, 12 studies partially agreed with score</string>

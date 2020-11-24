@@ -43,7 +43,7 @@ class SpeciesCountCanvas @JvmOverloads constructor(context: Context,
         isAntiAlias = true
         color = Color.BLACK
         style = Paint.Style.STROKE
-        strokeWidth = 6f
+        strokeWidth = resources.getDimensionPixelSize(R.dimen.canvas_box_width).toFloat()
     }
 
     override fun onDraw(canvas: Canvas?) {

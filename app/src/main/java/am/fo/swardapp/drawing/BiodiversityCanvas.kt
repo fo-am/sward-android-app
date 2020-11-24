@@ -46,21 +46,21 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
         isAntiAlias = true
         color = Color.BLACK
         style = Paint.Style.STROKE
-        strokeWidth = 3f
+        strokeWidth = resources.getDimensionPixelSize(R.dimen.canvas_axis_width).toFloat()
     }
 
     private val textPaint = Paint().apply {
         isAntiAlias = true
         color = Color.BLACK
         style = Paint.Style.FILL
-        textSize = 40.0f
+        textSize = resources.getDimensionPixelSize(R.dimen.canvas_text_size).toFloat()
     }
 
     private val smallTextPaint = Paint().apply {
         isAntiAlias = true
         color = Color.BLACK
         style = Paint.Style.FILL
-        textSize = 30.0f
+        textSize = resources.getDimensionPixelSize(R.dimen.canvas_small_text_size).toFloat()
     }
 
     fun addData(surveyAndRecords: List<SwardViewModel.BiodiversityItem>) {
@@ -93,12 +93,16 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
             c.drawLine((xzero-30)*sx,yzero*sy,1000*sx,yzero*sy, linePaint)
 
             for (y in 0..(yzero/bioScale).toInt() step 5) {
-                c.drawText(""+y, xzero-92f*sx, (yzero-68)-y*bioScale*sy, textPaint)
+                val yy = y.toFloat()
+                c.drawText(""+y,
+                    (xzero-80f)*sx,
+                    (yzero+15-yy*bioScale)*sy,
+                    textPaint)
                 c.drawLine(
                     (xzero-30)*sx,
-                    (yzero-77)-y*bioScale*sy,
+                    (yzero-yy*bioScale)*sy,
                     xzero*sx,
-                    (yzero-77)-y*bioScale*sy, linePaint)
+                    (yzero-yy*bioScale)*sy, linePaint)
             }
 
             renderList.forEach {

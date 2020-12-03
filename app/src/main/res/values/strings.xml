@@ -83,7 +83,8 @@
     <string name="download_address">Email address</string>
     <string name="download_consent">I consent to sharing my farm data for research</string>
     <string name="download_send">Send data</string>
-    <string name="download_citsci">Researchers at Duchy College are interested in your data to understand how multi-species swards perform. Tick this box if you are happy to automatically send them your data for research purposes only.</string>
+    <string name="download_citsci">Researchers at Duchy College are interested in your data to understand how multispecies swards perform. Tick this box if you are happy to automatically send them your data for research purposes only.</string>
+    <string name="download_data"><![CDATA[Information on this form will not be used for any other purpose, apart from research. If you would like your personal data removed in the future, please contact rbs@duchy.ac.uk. Duchy College is part of TCCG. For our privacy notice <a href="https://www.cornwall.ac.uk/wp-content/uploads/2020/02/TCCG-Privacy-Notice-Commercial-Supplier-Organisation-v1.pdf">click here</a>.]]></string>
 
     <string name="export_subject">Your farm data from the Sward app</string>
     <string name="export_body">Your farm data is attached in a csv spreadsheet, which you can open in excel or open office.</string>

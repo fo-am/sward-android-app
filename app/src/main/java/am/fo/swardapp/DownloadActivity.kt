@@ -25,6 +25,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
@@ -78,6 +80,15 @@ class DownloadActivity : SwardActivity() {
         cancel_button.setOnClickListener {
             finish()
         }
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            data_info.text = Html.fromHtml(getString(R.string.download_data), Html.FROM_HTML_MODE_LEGACY)
+        } else {
+            data_info.text = Html.fromHtml(getString(R.string.download_data))
+        }
+
+        data_info.movementMethod = LinkMovementMethod.getInstance()
+
     }
 
     private fun export(email: String) {

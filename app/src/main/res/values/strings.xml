@@ -259,30 +259,30 @@
     <string name="grass_cocksfoot_flower_cap">Flower: One-sided, clumped flower head.</string>
     <string name="grass_cocksfoot_stem_cap">Stem: Base of stem is flattened (image shows cross-section of stem).</string>
     <string name="grass_cocksfoot_leaf_cap">Leaf: Long flat leaves (2–14mm wide) that narrow to a point. Each leaf has a prominent keel (like the keel on a boat)</string>
-    <string name="grass_cocksfoot_stemsheath_cap">Stemsheath: No auricles, ligule generally long (2–12mm), ligule has torn, jagged edges.</string>
+    <string name="grass_cocksfoot_stemsheath_cap">Stem sheath: No auricles, ligule generally long (2–12mm), ligule has torn, jagged edges.</string>
 
     <string name="grass_meadowfescue_plant_cap">Plant: Up to 80cm, loose tufts (sometimes forms clumps), variable green</string>
     <string name="grass_meadowfescue_flower_cap">Flower: Tinged reddish/brown.</string>
     <string name="grass_meadowfescue_leaf_cap">Leaf: The leaf blades are ribbed on the upper side and more glossy on the underside. The leaves clasp the stem by long sheaths</string>
-    <string name="grass_meadowfescue_stemsheath_cap">Stemsheath: Short, stubby ligule – barely visible (1mm). Small auricles with no hairs.</string>
+    <string name="grass_meadowfescue_stemsheath_cap">Stem sheath: Short, stubby ligule – barely visible (1mm). Small auricles with no hairs.</string>
 
     <string name="grass_meadowfoxtail_plant_cap">Plant: Up to 120cm, whitish-green, erect tufts.</string>
-    <string name="grass_meadowfoxtail_stemsheath_cap">Stemsheath: No auricles, ligule typically short (1–4mm), ligule tatty.</string>
+    <string name="grass_meadowfoxtail_stemsheath_cap">Stem sheath: No auricles, ligule typically short (1–4mm), ligule tatty.</string>
     <string name="grass_meadowfoxtail_leaf_cap">Leaf: The basal (bottom) leaf sheath is often black or brown, the leaves are hairless.</string>
     <string name="grass_meadowfoxtail_flower_cap">Flower: Tassel-like, cylindrical, up to 13cm long, yellow-green, covered in silver hairs.</string>
 
     <string name="grass_perennial_ryegrass_plant_cap">Plant: Up to 100cm, dark green and glossy, dense tufts.</string>
-    <string name="grass_perennial_ryegrass_stemsheath_cap">Stemsheath: Long auricles clasping the stem. Short ligule (1–2mm) that is hard to see.</string>
+    <string name="grass_perennial_ryegrass_stemsheath_cap">Stem sheath: Long auricles clasping the stem. Short ligule (1–2mm) that is hard to see.</string>
     <string name="grass_perennial_ryegrass_leaf_cap">Leaf: The underside of the leaf is smooth and glossy, with the top side being slightly rougher, both are hairless. The younger leaves are folded in the sheath before they extend.</string>
     <string name="grass_perennial_ryegrass_flower_cap">Flower: Simple \'florets\' arranged in alternating pattern; no awns (bristle-like hairs).</string>
 
     <string name="grass_tallfescue_plant_cap">Plant: Up to 200cm, loose tufts, dark green</string>
-    <string name="grass_tallfescue_stemsheath_cap">Stemsheath: Short ligule (2mm, hard to see). Narrow auricles with fine, wispy hairs.</string>
+    <string name="grass_tallfescue_stemsheath_cap">Stem sheath: Short ligule (2mm, hard to see). Narrow auricles with fine, wispy hairs.</string>
     <string name="grass_tallfescue_leaf_cap">Leaf: The leaves are long, hairless with rough edges and a characteristic twist or whorl to each leaf. They are rolled in the bud.</string>
     <string name="grass_tallfescue_flower_cap">Flower: Tassel-like, cylindrical, up to 15cm long, green to grey-purple, no silver hairs.</string>
 
     <string name="grass_timothy_plant_cap">Plant: Up to 150cm, light grey-green, erect tufts.</string>
-    <string name="grass_timothy_stemsheath_cap">Stemsheath: No auricles, ligule up to 6mm long with notched edges and pointed tip.</string>
+    <string name="grass_timothy_stemsheath_cap">Stem sheath: No auricles, ligule up to 6mm long with notched edges and pointed tip.</string>
     <string name="grass_timothy_leaf_cap">Leaft: The leaves are long, hairless with rough edges and a characteristic twist or whorl to each leaf. They are rolled in the bud.</string>
     <string name="grass_timothy_flower_cap">Flower: Tassel-like, cylindrical, up to 15cm long, green to grey-purple, no silver hairs.</string>
 

@@ -188,7 +188,7 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.legume_redclover_lat,
                     R.drawable.legume_redclover_leaf_1,
                     arrayOf(
-                        DescImg(R.drawable.legume_redclover_leaf_1,R.string.legume_redclover_leaf_cap),
+                        DescImg(R.drawable.legume_redclover_leaf_1,R.string.legume_redclover_plant_cap),
                         DescImg(R.drawable.legume_redclover_leaf_2,R.string.legume_redclover_leaf_cap),
                         DescImg(R.drawable.legume_redclover_flower,R.string.legume_redclover_flower_cap),
                         DescImg(R.drawable.legume_redclover_seedling_annotated,R.string.legume_redclover_seedling_cap)

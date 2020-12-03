@@ -276,7 +276,7 @@
     <string name="grass_perennial_ryegrass_flower_cap">Flower: Spikelets attached to stem in alternating pattern, no awns, unbranched.</string>
 
     <string name="grass_tallfescue_plant_cap">Plant: Up to 200cm, loose tufts, dark green</string>
-    <string name="grass_tallfescue_stemsheath_cap">Stemsheath: No auricles, ligule up to 6mm long with notched edges and pointed tip.</string>
+    <string name="grass_tallfescue_stemsheath_cap">Stemsheath: Short ligule (2mm, hard to see). Narrow auricles with fine, wispy hairs.</string>
     <string name="grass_tallfescue_leaf_cap">Leaf: The leaves are long, hairless with rough edges and a characteristic twist or whorl to each leaf. They are rolled in the bud.</string>
     <string name="grass_tallfescue_flower_cap">Flower: Tassel-like, cylindrical, up to 15cm long, green to grey-purple, no silver hairs.</string>
 
@@ -348,10 +348,15 @@
     <string name="credit_timothy_stemsheath">Rasbak</string>
     <string name="credit_tallfescue_stem_1">Lavin</string>
     <string name="credit_tallfescue_stem_2">Lavin</string>
+
+    <string name="credit_meadowfescue_stemsheath">Matt Lavin</string>
+    <string name="credit_meadowfescue_flower">T. Voekler</string>
+    <string name="credit_legules_ragged">Photo credit: Rasbak</string>
+
     <string name="credit_perennial_ryegrass_stem">Rasbak</string>
     <string name="credit_meadow_foxtail_flower">Fir</string>
     <string name="credit_meadow_foxtail_stem2">Lefnaer</string>
-    <string name="credit_meadow_foxtail_stem">Matt Lavin</string>
+    <string name="credit_meadow_foxtail_stem">Lefnaer</string>
     <string name="credit_meadow_foxtail_flower2">T. Voekler</string>
 
     <string name="delete_all">Delete all app data</string>

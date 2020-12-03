@@ -51,8 +51,8 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.drawable.grass_meadowfescue_plant,
                     arrayOf(
                         DescImg(R.drawable.grass_meadowfescue_plant,R.string.grass_meadowfescue_plant_cap),
-                        DescImg(R.drawable.grass_meadowfescue_flower,R.string.grass_meadowfescue_flower_cap),
-                        DescImg(R.drawable.grass_meadowfescue_stemsheath_annotated,R.string.grass_meadowfescue_stemsheath_cap)
+                        DescImg(R.drawable.grass_meadowfescue_flower,R.string.grass_meadowfescue_flower_cap,R.string.credit_meadowfescue_flower),
+                        DescImg(R.drawable.grass_meadowfescue_stemsheath_annotated,R.string.grass_meadowfescue_stemsheath_cap,R.string.credit_meadowfescue_stemsheath)
                     )
                 )
                 "grass_meadowfoxtail" -> SpeciesDesc(

@@ -89,17 +89,21 @@ class SurveySampleFragment : SwardFragment() {
                 // check the sown species for this field
                 swardViewModel.getSown(fieldId!!).observe(viewLifecycleOwner, { sownList ->
                     sownList.forEach { sown ->
-                        val v = sf.getSpeciesView(sown.species) as ToggleButton
-                        if (v.isChecked) {
-                            // add a record for this species
-                            Log.i("sward", "adding record for survey id: $surveyId")
-                            swardViewModel.insertRecord(
-                                Record(
-                                    surveyId!!,
-                                    sown.species,
-                                    sampleNum
-                                )
-                            )
+                        sf.getSpeciesView(sown.species)?.let {
+                            if (it is ToggleButton) {
+                                val v = it as ToggleButton
+                                if (v.isChecked) {
+                                    // add a record for this species
+                                    Log.i("sward", "adding record for survey id: $surveyId")
+                                    swardViewModel.insertRecord(
+                                        Record(
+                                            surveyId!!,
+                                            sown.species,
+                                            sampleNum
+                                        )
+                                    )
+                                }
+                            }
                         }
                     }
 

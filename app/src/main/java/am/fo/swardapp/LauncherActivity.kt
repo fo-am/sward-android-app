@@ -26,7 +26,10 @@ class LauncherActivity : SwardActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_launcher)
         super.onCreate(savedInstanceState)
-        setTitle(R.string.title_activity_launcher)
+        setTitle("")
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.toms_icon)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
         version_name.text = packageManager.getPackageInfo(packageName, 0).versionName
         title_image.setImageResource(R.drawable.sward)
 

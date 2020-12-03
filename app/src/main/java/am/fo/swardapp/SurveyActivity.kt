@@ -26,6 +26,7 @@ import kotlinx.android.synthetic.main.activity_species_info.*
 class SurveyActivity : SwardActivity() {
 
     private var startFieldId: Long =-1L
+    private var alreadyStarted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,10 +46,13 @@ class SurveyActivity : SwardActivity() {
 
     override fun onStart() {
         super.onStart()
-        if (startFieldId!=-1L) {
-            // if field id has been passed in skip the field selector fragment
+        // if field id has been passed in skip the field selector fragment
+        if (!alreadyStarted && startFieldId!=-1L) {
+            // sometimes onStart is called after sleeping (twice) but not onCreate, in this case
+            // we don't want to do this
             val bundle = bundleOf("field_id" to startFieldId)
             findNavController(this,R.id.survey_fragment_container).navigate(R.id.action_surveyFieldFragment_to_surveyHowtoFragment,bundle)
         }
+        alreadyStarted=true
     }
 }

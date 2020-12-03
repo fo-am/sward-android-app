@@ -40,4 +40,11 @@
         android:drawableRight="@drawable/grass_key_ligule_ragged"
         android:text="@string/id_grass_ligule_two" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/credit_legules_ragged" />
+
 </LinearLayout>

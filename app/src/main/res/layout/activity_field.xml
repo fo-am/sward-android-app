@@ -53,8 +53,9 @@
                     android:gravity="start|center_vertical"
                     android:hint="@string/field_name"
                     android:importantForAutofill="no"
-                    android:inputType="textAutoComplete"
-                    android:paddingLeft="10dp" />
+                    android:inputType="textAutoComplete|textCapSentences"
+                    android:paddingLeft="10dp"
+                    tools:inputType="textCapSentences" />
             </LinearLayout>
 
             <Space
@@ -150,10 +151,11 @@
                 android:gravity="start|top"
                 android:hint="@string/field_notes_hint"
                 android:importantForAutofill="no"
-                android:inputType="textMultiLine"
+                android:inputType="textMultiLine|textCapSentences"
                 android:minLines="5"
                 android:paddingLeft="10dp"
-                android:paddingTop="5dp" />
+                android:paddingTop="5dp"
+                tools:inputType="textCapSentences" />
 
             <Space
                 android:layout_width="match_parent"

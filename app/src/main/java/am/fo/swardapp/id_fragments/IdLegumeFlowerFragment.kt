@@ -46,9 +46,5 @@ class IdLegumeFlowerFragment : Fragment() {
         two.setOnClickListener {
             findNavController().navigate(R.id.action_idLegumeFlowerFragment_to_idResultFragment2)
         }
-
-        three.setOnClickListener {
-            findNavController().navigate(R.id.action_idLegumeFlowerFragment_to_idResultFragment3)
-        }
     }
 }

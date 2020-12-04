@@ -119,7 +119,7 @@
     <string name="id_legume_crescent_two">No leaves have crescent marks.</string>
 
     <string name="id_legume_flower_text">If there are flowers, what colour are they?</string>
-    <string name="id_legume_flower_one">Pink.</string>
+    <string name="id_legume_flower_one">Pink, or no flowers.</string>
     <string name="id_legume_flower_two">White.</string>
     <string name="id_legume_flower_three">No flowers.</string>
 

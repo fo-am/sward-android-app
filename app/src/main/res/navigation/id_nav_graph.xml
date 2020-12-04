@@ -131,13 +131,6 @@
                 android:name="answer"
                 android:defaultValue="legume_whiteclover" />
         </action>
-        <action
-            android:id="@+id/action_idLegumeFlowerFragment_to_idResultFragment3"
-            app:destination="@id/idResultFragment">
-            <argument
-                android:name="answer"
-                android:defaultValue="legume_alsike" />
-        </action>
     </fragment>
     <fragment
         android:id="@+id/idGrassStemFragment"

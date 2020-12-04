@@ -20,18 +20,6 @@
         android:layout_height="@dimen/default_padding" />
 
     <Button
-        android:id="@+id/one"
-        style="@style/SwardImageButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableRight="@drawable/legume_flower_pink"
-        android:text="@string/id_legume_flower_one" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/default_padding" />
-
-    <Button
         android:id="@+id/two"
         style="@style/SwardImageButton"
         android:layout_width="match_parent"
@@ -44,10 +32,11 @@
         android:layout_height="@dimen/default_padding" />
 
     <Button
-        android:id="@+id/three"
-        style="@style/SwardButton"
+        android:id="@+id/one"
+        style="@style/SwardImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/id_legume_flower_three" />
+        android:drawableRight="@drawable/legume_flower_pink"
+        android:text="@string/id_legume_flower_one" />
 
 </LinearLayout>

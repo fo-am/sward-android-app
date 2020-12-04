@@ -26,6 +26,7 @@ import android.app.DatePickerDialog
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_new_field.*
 import java.util.*
 
@@ -82,7 +83,10 @@ class NewFieldActivity : SwardActivity() {
 
         new_field_button_save.setOnClickListener {
             if (TextUtils.isEmpty(new_field_name.text)) {
-                setResult(Activity.RESULT_CANCELED)
+                Toast.makeText(
+                    applicationContext,
+                    R.string.empty_field_not_saved,
+                    Toast.LENGTH_LONG).show()
             } else {
 
                 val field = Field(
@@ -102,11 +106,18 @@ class NewFieldActivity : SwardActivity() {
                     }
                 }
 
-                swardViewModel.insertFieldWithSpeciesSown(field, sown)
-
-                setResult(Activity.RESULT_OK)
+                if (sown.isEmpty()) {
+                    Toast.makeText(
+                        applicationContext,
+                        R.string.unsown_field_not_saved,
+                        Toast.LENGTH_LONG
+                    ).show()
+                } else {
+                    swardViewModel.insertFieldWithSpeciesSown(field, sown)
+                    setResult(Activity.RESULT_OK)
+                    finish()
+                }
             }
-            finish()
         }
     }
 

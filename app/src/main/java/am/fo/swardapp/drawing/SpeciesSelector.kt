@@ -1,5 +1,6 @@
 package am.fo.swardapp.drawing
 
+import am.fo.swardapp.R
 import am.fo.swardapp.data.Sown
 import android.content.Context
 import android.content.res.Resources
@@ -18,10 +19,10 @@ class SpeciesSelector {
     }
 
     fun buildFromSown(sownList: List<Sown>, ctx: Context, parent: GridLayout) {
-        build(sownList.map{ it.species }.toTypedArray(),ctx,parent)
+        build(sownList.map{ it.species }.toTypedArray(),ctx,parent,false)
     }
 
-    fun build(speciesList: Array<String>, ctx: Context, parent: GridLayout) {
+    fun build(speciesList: Array<String>, ctx: Context, parent: GridLayout, addUnknown:Boolean=true) {
         parent.setAlignmentMode(GridLayout.ALIGN_BOUNDS)
         // default for 17 species
         var cols = 6
@@ -47,10 +48,11 @@ class SpeciesSelector {
                 drawable?.setBounds(0, 0, dpToPx(80), dpToPx(80))
                 button.setCompoundDrawables(null, drawable,null,null)
             }
-
+            var pos=i
+            if (addUnknown) pos+=1
             val layoutParams = GridLayout.LayoutParams()
-            val col: Int = i%cols
-            val row: Int = i/cols
+            val col: Int = pos%cols
+            val row: Int = pos/cols
 
             layoutParams.height = dpToPx(140)
             layoutParams.width = dpToPx(90)
@@ -60,6 +62,36 @@ class SpeciesSelector {
 
             parent.addView(button, layoutParams)
 
+        }
+
+        // add the unknown button at the end
+        if (addUnknown) {
+            val button = ToggleButton(ctx)
+    //            buttons.put("unknown", button)
+            button.text = ctx.resources.getString(R.string.unknown_species)
+            button.textSize = 12.0f
+
+            button.setOnClickListener {
+                buttons.forEach {
+                    it.value.isChecked = button.isChecked
+                }
+            }
+
+            val drawable = ContextCompat.getDrawable(ctx, R.drawable.thumb_q)
+            drawable?.setBounds(0, 0, dpToPx(80), dpToPx(80))
+            button.setCompoundDrawables(null, drawable, null, null)
+
+            val layoutParams = GridLayout.LayoutParams()
+            val col: Int = 0
+            val row: Int = 0
+
+            layoutParams.height = dpToPx(140)
+            layoutParams.width = dpToPx(90)
+            layoutParams.columnSpec = GridLayout.spec(col)
+            layoutParams.rowSpec = GridLayout.spec(row)
+            layoutParams.setGravity(Gravity.LEFT or Gravity.TOP)
+
+            parent.addView(button, layoutParams)
         }
     }
 }

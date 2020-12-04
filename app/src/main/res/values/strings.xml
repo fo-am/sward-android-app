@@ -45,7 +45,9 @@
     <string name="field_name">Field name</string>
     <string name="button_field_save">Save</string>
     <string name="species_sown">Species sown</string>
-    <string name="empty_field_not_saved">Field not saved because it is empty.</string>
+    <string name="empty_field_not_saved">You need to give your field a name.</string>
+    <string name="unsown_field_not_saved">Select some sown species for this field, or unknown if you are not sure.</string>
+    <string name="unknown_species">I\'m not sure (select all)</string>
 
     <string name="title_activity_field_detail">FIELD DETAILS</string>
     <string name="field_detail_about">Each species listed is one that was sown. Each bar shows the number of samples out of nine in each survey that was found.</string>

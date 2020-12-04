@@ -41,6 +41,7 @@ class SwardRepository(private val swardDao: SwardDao) {
     suspend fun insertField(field: Field): Long = swardDao.insertField(field)
     suspend fun updateField(field: Field) = swardDao.updateField(field)
     suspend fun insertSurvey(survey: Survey): Long = swardDao.insertSurvey(survey)
+    suspend fun updateSurvey(survey: Survey) = swardDao.updateSurvey(survey)
     suspend fun insertSown(sown: Sown) = swardDao.insertSown(sown)
     suspend fun insertRecord(record: Record) = swardDao.insertRecord(record)
 
@@ -54,6 +55,7 @@ class SwardRepository(private val swardDao: SwardDao) {
 
     // blocking calls
     fun syncGetSurveys(fieldId: Long): List<Survey> = swardDao.syncGetSurveys(fieldId)
+    fun syncGetSurvey(surveyId: Long): List<Survey> = swardDao.syncGetSurvey(surveyId)
     fun syncGetSown(fieldId: Long): List<Sown> = swardDao.syncGetSown(fieldId)
     fun syncGetRecords(surveyId: Long): List<Record> = swardDao.syncGetRecords(surveyId)
     fun syncGetRecord(surveyId: Long, species: String): List<Record> = swardDao.syncGetRecord(surveyId, species)

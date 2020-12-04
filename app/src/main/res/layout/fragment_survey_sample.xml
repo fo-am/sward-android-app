@@ -21,21 +21,15 @@
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:fadeScrollbars="false">
 
-        <LinearLayout
+        <GridLayout
             android:id="@+id/species_list"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_gravity="top|left"></GridLayout>
 
-            <fragment
-                android:id="@+id/selector_fragment"
-                android:name="am.fo.swardapp.species_fragments.SpeciesSelectorFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
     </HorizontalScrollView>
 
     <Space

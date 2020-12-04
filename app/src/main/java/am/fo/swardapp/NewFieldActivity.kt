@@ -20,17 +20,18 @@ package am.fo.swardapp
 import am.fo.swardapp.data.DateWrangler
 import am.fo.swardapp.data.Field
 import am.fo.swardapp.data.SpeciesDesc
+import am.fo.swardapp.drawing.SpeciesSelector
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.ToggleButton
 import kotlinx.android.synthetic.main.activity_new_field.*
 import java.util.*
 
 class NewFieldActivity : SwardActivity() {
+
+    val speciesSelector = SpeciesSelector()
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +78,8 @@ class NewFieldActivity : SwardActivity() {
                 cal.get(Calendar.DAY_OF_MONTH)).show()
         }
 
+        speciesSelector.build(SpeciesDesc.speciesList,this, species_list)
+
         new_field_button_save.setOnClickListener {
             if (TextUtils.isEmpty(new_field_name.text)) {
                 setResult(Activity.RESULT_CANCELED)
@@ -92,12 +95,8 @@ class NewFieldActivity : SwardActivity() {
                 val sown = mutableListOf<String>()
                 // scan over species widgets, inserting them for this field where required
                 SpeciesDesc.speciesList.forEach { species ->
-                    val id = resources.getIdentifier(species, "id", packageName)
-                    if (id == 0) {
-                        Log.i("sward", "new_field: no widget found for sewn species: $species")
-                    } else {
-                        val v: ToggleButton = findViewById(id)
-                        if (v.isChecked) {
+                    speciesSelector.buttons[species]?.let {
+                        if (it.isChecked) {
                             sown.add(species)
                         }
                     }

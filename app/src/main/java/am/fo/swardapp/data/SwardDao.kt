@@ -52,6 +52,9 @@ interface SwardDao {
     suspend fun insertSettings(settings: Settings): Long
 
     @Update
+    suspend fun updateSurvey(survey: Survey)
+
+    @Update
     suspend fun updateField(field: Field)
 
     @Update
@@ -82,12 +85,16 @@ interface SwardDao {
 
     // blocking versions
     @Transaction
-    @Query("SELECT * from survey_table Where fieldId=:fieldId order by time desc limit :limit")
+    @Query("SELECT * from survey_table Where fieldId=:fieldId and (complete=1 or complete is null) order by time desc limit :limit")
     fun syncGetSurveysAndRecords(fieldId: Long, limit: Int): List<SurveyAndRecords>
 
     @Transaction
-    @Query("SELECT * from survey_table Where fieldId=:fieldId")
+    @Query("SELECT * from survey_table Where fieldId=:fieldId and (complete=1 or complete is null)")
     fun syncGetSurveys(fieldId: Long): List<Survey>
+
+    @Transaction
+    @Query("SELECT * from survey_table Where surveyId=:surveyId")
+    fun syncGetSurvey(surveyId: Long): List<Survey>
 
     @Transaction
     @Query("SELECT * from sown_table Where fieldId=:fieldId")

@@ -44,6 +44,7 @@ data class Survey(val time: String,
                   val fieldId: Long) {
     @PrimaryKey(autoGenerate = true)
     var surveyId: Long = 0
+    var complete: Long? = 0
 }
 
 @Entity(tableName="record_table")

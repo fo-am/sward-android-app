@@ -21,13 +21,12 @@ import am.fo.swardapp.R
 import am.fo.swardapp.SwardFragment
 import am.fo.swardapp.data.Record
 import am.fo.swardapp.data.Sown
-import am.fo.swardapp.species_fragments.SpeciesSelectorFragment
+import am.fo.swardapp.drawing.SpeciesSelector
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ToggleButton
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_survey_sample.*
@@ -36,6 +35,8 @@ class SurveySampleFragment : SwardFragment() {
     private var fieldId: Long? = null
     private var surveyId: Long? = null
     private var sampleNum: Int? = null
+
+    val speciesSelector = SpeciesSelector()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,20 +58,14 @@ class SurveySampleFragment : SwardFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sf =
-            childFragmentManager.findFragmentById(R.id.selector_fragment) as SpeciesSelectorFragment
-        sf.hideAll()
-
         // note: we probably don't need to continually get the sown species for this field as it won't change
         // (although this is super safe - as we could conceivably make it editable in the lifecylce of these fragments
         // - but perhaps store in activity instead?)
 
-        // reactivate the sown ones
+        // build the sown species buttons
         swardViewModel.getSown(fieldId!!)
             .observe(viewLifecycleOwner, { sownList: List<Sown> ->
-                sownList.forEach { sown ->
-                    sf.show(sown.species)
-                }
+                speciesSelector.buildFromSown(sownList, requireContext(), species_list)
             })
 
         sampleNum?.let { sampleNum ->
@@ -89,20 +84,17 @@ class SurveySampleFragment : SwardFragment() {
                 // check the sown species for this field
                 swardViewModel.getSown(fieldId!!).observe(viewLifecycleOwner, { sownList ->
                     sownList.forEach { sown ->
-                        sf.getSpeciesView(sown.species)?.let {
-                            if (it is ToggleButton) {
-                                val v = it as ToggleButton
-                                if (v.isChecked) {
-                                    // add a record for this species
-                                    Log.i("sward", "adding record for survey id: $surveyId")
-                                    swardViewModel.insertRecord(
-                                        Record(
-                                            surveyId!!,
-                                            sown.species,
-                                            sampleNum
-                                        )
+                        speciesSelector.buttons[sown.species]?.let {
+                            if (it.isChecked) {
+                                // add a record for this species
+                                Log.i("sward", "adding record for survey id: $surveyId")
+                                swardViewModel.insertRecord(
+                                    Record(
+                                        surveyId!!,
+                                        sown.species,
+                                        sampleNum
                                     )
-                                }
+                                )
                             }
                         }
                     }
@@ -120,6 +112,8 @@ class SurveySampleFragment : SwardFragment() {
                         )
                     } else {
                         // we are done...
+                        swardViewModel.surveyComplete(surveyId!!)
+
                         val bundle = bundleOf("field_id" to fieldId)
                         findNavController().navigate(
                             R.id.action_surveySampleFragment_to_surveyEndFragment,

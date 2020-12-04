@@ -63,6 +63,14 @@ class SwardViewModel(application: Application) : AndroidViewModel(application) {
         repository.setSettings(settings)
     }
 
+    fun surveyComplete(surveyId: Long) = viewModelScope.launch(Dispatchers.IO) {
+        val survey = repository.syncGetSurvey(surveyId)
+        survey[0]?.let {
+            it.complete=1
+            repository.updateSurvey(it)
+        }
+    }
+
     fun insertSurvey(survey: Survey): LiveData<Long> {
         val liveData = MutableLiveData<Long>()
         viewModelScope.launch(Dispatchers.IO) {

@@ -26,7 +26,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities= [Settings::class, Field::class, Sown::class, Survey::class, Record::class], version = 4, exportSchema = false)
+@Database(entities= [Settings::class, Field::class, Sown::class, Survey::class, Record::class], version = 5, exportSchema = false)
 abstract class SwardRoomDatabase : RoomDatabase() {
 
     abstract fun swardDao(): SwardDao
@@ -68,23 +68,12 @@ abstract class SwardRoomDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: SwardRoomDatabase? = null
 
-        val MIGRATION_1_2 = object : Migration(1, 2) {
+        val MIGRATION_4_5 = object : Migration(4, 5) {
             override fun migrate(database: SupportSQLiteDatabase) {
-             // remove species and replaced with string
-             /*database.execSQL("""
-                CREATE TABLE new_Song (
-                    id INTEGER PRIMARY KEY NOT NULL,
-                    name TEXT,
-                    tag TEXT NOT NULL DEFAULT ''
-                )
-                """.trimIndent())
-        database.execSQL("""
-                INSERT INTO new_Song (id, name, tag)
-                SELECT id, name, tag FROM Song
-                """.trimIndent())
-        database.execSQL("DROP TABLE Song")
-        database.execSQL("ALTER TABLE new_Song RENAME TO Song")
-            */
+                // add complete int to surveys, and default them to true
+                database.execSQL("""
+                    ALTER TABLE survey_table ADD complete INTEGER
+                    """.trimIndent())
             }
         }
 
@@ -102,8 +91,8 @@ abstract class SwardRoomDatabase : RoomDatabase() {
                         context.applicationContext,
                         SwardRoomDatabase::class.java,
                         "sward_database")
-                    //.addMigrations(MIGRATION_1_2)
-                    .fallbackToDestructiveMigration() // TODO: remove
+                    .addMigrations(MIGRATION_4_5)
+                    //.fallbackToDestructiveMigration() // TODO: remove
                     .addCallback(SwardDatabaseCallback(scope))
                     .build()
                 INSTANCE = instance

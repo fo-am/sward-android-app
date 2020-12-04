@@ -4,6 +4,7 @@ import am.fo.swardapp.data.Sown
 import android.content.Context
 import android.content.res.Resources
 import android.util.Log
+import android.view.Gravity
 import android.widget.GridLayout
 import android.widget.ToggleButton
 import androidx.core.content.ContextCompat
@@ -55,6 +56,7 @@ class SpeciesSelector {
             layoutParams.width = dpToPx(90)
             layoutParams.columnSpec = GridLayout.spec(col)
             layoutParams.rowSpec = GridLayout.spec(row)
+            layoutParams.setGravity(Gravity.LEFT or Gravity.TOP)
 
             parent.addView(button, layoutParams)
 

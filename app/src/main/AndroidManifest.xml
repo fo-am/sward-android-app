@@ -53,6 +53,7 @@
         <activity
             android:name=".SurveyActivity"
             android:label="@string/title_activity_survey"
+            android:launchMode="singleInstance"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FieldDetailActivity"

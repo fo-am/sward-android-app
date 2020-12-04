@@ -49,6 +49,7 @@ class SurveyEndFragment : SwardFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view_results.setOnClickListener {
+            activity?.finish()
             Intent(context, FieldActivity::class.java).let {
                 it.putExtra("FIELD_ID", fieldId)
                 it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -59,6 +60,7 @@ class SurveyEndFragment : SwardFragment() {
         download_data.setOnClickListener {
             val intent = Intent(context, DownloadActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            activity?.finish()
             startActivity(Intent(context, DownloadActivity::class.java))
         }
     }

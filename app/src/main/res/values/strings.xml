@@ -70,6 +70,7 @@
     <string name="survey_howto_1">To complete your field survey you need to walk through your field in a \'W\' shape, stopping at 9 points.</string>
     <string name="survey_howto_2">At each point, complete a sample survey by recording all the species you can see within a 1m radius of where you are standing.</string>
     <string name="survey_howto_3">Surveys can be completed between March and October. If you only have time for one annual survey, this should be done between May and July.</string>
+    <string name="survey_example_field">Example field</string>
     <string name="survey_date">Survey date</string>
     <string name="survey_image_desc">Diagram showing a W shaped path through a field.</string>
     <string name="survey_start">Start survey</string>

@@ -89,7 +89,7 @@ interface SwardDao {
     fun syncGetSurveysAndRecords(fieldId: Long, limit: Int): List<SurveyAndRecords>
 
     @Transaction
-    @Query("SELECT * from survey_table Where fieldId=:fieldId and (complete=1 or complete is null)")
+    @Query("SELECT * from survey_table Where fieldId=:fieldId and (complete=1 or complete is null) order by time")
     fun syncGetSurveys(fieldId: Long): List<Survey>
 
     @Transaction

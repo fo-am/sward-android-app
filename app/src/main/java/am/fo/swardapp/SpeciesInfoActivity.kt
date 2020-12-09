@@ -53,6 +53,12 @@ class SpeciesInfoActivity : SwardActivity() {
             species_name.setText(speciesDesc.name)
             species_name_lat.setText(speciesDesc.lat)
 
+            traits_title.text = when {
+                species.startsWith("grass") -> getString(R.string.trait_list_title_grass)
+                species.startsWith("legume") -> getString(R.string.trait_list_title_legume)
+                else -> getString(R.string.trait_list_title_herb)
+            }
+
             // set up the images
             val pagerAdapter = ScreenSlidePagerAdapter(this)
             species_images.adapter = pagerAdapter

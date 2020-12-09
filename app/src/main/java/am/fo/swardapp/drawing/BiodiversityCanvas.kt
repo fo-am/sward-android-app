@@ -33,12 +33,19 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
                                                    defStyleAttr: Int = 0)
     : View(context, attrs, defStyleAttr) {
 
+    private var sownCount = 0
     private var renderList = listOf<SwardViewModel.BiodiversityItem>()
-    var maxBiodiversity = 0
+    private val bioScale=40f // pixels per species (max = 17*20)
 
     private val barPaint = Paint().apply {
         isAntiAlias = true
         color = ContextCompat.getColor(context,R.color.colorPopupBackground)
+        style = Paint.Style.FILL
+    }
+
+    private val sownBarPaint = Paint().apply {
+        isAntiAlias = true
+        color = ContextCompat.getColor(context,R.color.colorButtonBorder)
         style = Paint.Style.FILL
     }
 
@@ -63,9 +70,20 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
         textSize = resources.getDimensionPixelSize(R.dimen.canvas_small_text_size).toFloat()
     }
 
-    fun addData(surveyAndRecords: List<SwardViewModel.BiodiversityItem>) {
+    fun addData(surveyAndRecords: List<SwardViewModel.BiodiversityItem>, sown: Int) {
         renderList=surveyAndRecords
+        sownCount=sown
         invalidate()
+    }
+
+    fun drawBar(c:Canvas,sx:Float,sy:Float,x:Float,y:Float,count:Int,text:String,barPaint:Paint) {
+        c.save()
+        c.translate((x-30)*sx,(y+190)*sy)
+        c.rotate(-70.0f ,0.0f ,0.0f)
+        c.drawText(text, 0f, 0f, smallTextPaint)
+        c.restore()
+        c.drawRect(x*sx,(y-count*bioScale)*sy,(x+35)*sx,y*sy,barPaint)
+        c.drawRect(x*sx,(y-count*bioScale)*sy,(x+35)*sx,y*sy,linePaint)
     }
 
     // Called when the view should render its content.
@@ -76,7 +94,6 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
             // make some normalised display coordinates @ 1000*1000 to fit all screens
             val sx = width/1000f
             val sy = height/1000f
-            val bioScale=40f // pixels per species (max = 17*20)
 
             //c.drawCircle(500f*sx,500f*sy,500f*sx, linePaint)
 
@@ -86,8 +103,8 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
             c.drawText(resources.getString(R.string.field_canvas_y_axis), 0f, 0f, textPaint)
             c.restore()
 
-            val xzero = 150
-            val yzero = 750
+            val xzero = 150.0f
+            val yzero = 750.0f
 
             c.drawLine(xzero*sx,yzero*sy,xzero*sx,0*sy, linePaint)
             c.drawLine((xzero-30)*sx,yzero*sy,1000*sx,yzero*sy, linePaint)
@@ -105,19 +122,16 @@ class BiodiversityCanvas @JvmOverloads constructor(context: Context,
                     (yzero-yy*bioScale)*sy, linePaint)
             }
 
+            // render the first bar - the sown species
+            val x = 20+xzero+count*50.0f
+            val y = yzero
+            drawBar(c,sx,sy,x,y,sownCount,resources.getString(R.string.field_canvas_sown),sownBarPaint)
+            count+=1
+
+            // draw bars for each survey
             renderList.forEach {
                 val x = 20+xzero+count*50.0f
-                val y = yzero
-
-                c.save()
-                c.translate((x-30)*sx,(y+190)*sy)
-                c.rotate(-70.0f ,0.0f ,0.0f)
-                c.drawText(DateWrangler.dateInternalToView(it.date), 0f, 0f, smallTextPaint)
-                c.restore()
-
-                c.drawRect(x*sx,(y-it.biodiversity*bioScale)*sy,(x+35)*sx,y*sy,barPaint)
-                c.drawRect(x*sx,(y-it.biodiversity*bioScale)*sy,(x+35)*sx,y*sy,linePaint)
-
+                drawBar(c,sx,sy,x,y,it.biodiversity,DateWrangler.dateInternalToView(it.date),barPaint)
                 count+=1
             }
         }

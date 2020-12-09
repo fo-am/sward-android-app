@@ -40,7 +40,9 @@ class FieldActivity : SwardActivity() {
 
         // set up the widgets
         swardViewModel.getBiodiversity(fieldId, 15).observe(this, { surveys ->
-            field_canvas_view.addData(surveys)
+            swardViewModel.getSown(fieldId).observe(this, {
+                field_canvas_view.addData(surveys,it.size)
+            })
         })
 
         val cal = Calendar.getInstance()

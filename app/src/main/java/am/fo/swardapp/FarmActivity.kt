@@ -21,7 +21,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_farm.*
 
@@ -52,7 +51,7 @@ class FarmActivity : SwardActivity() {
             startActivity(Intent(this, DownloadActivity::class.java))
         }
 
-        delete_all.setOnClickListener {
+        /*delete_all.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setTitle(getString(R.string.delete_all))
             builder.setMessage(getString(R.string.delete_all_body))
@@ -63,7 +62,7 @@ class FarmActivity : SwardActivity() {
                 // don't need to to anything...
             }
             builder.show()
-        }
+        }*/
 
     }
 

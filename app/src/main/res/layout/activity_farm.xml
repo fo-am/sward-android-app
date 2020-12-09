@@ -23,6 +23,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="30dp"
@@ -68,24 +69,11 @@
             android:id="@+id/download_data_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/farm_download_data"
-            android:layout_marginTop="@dimen/default_padding"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fields_recycler_view" />
-
-        <Button
-            android:id="@+id/delete_all"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#faa"
-            android:text="@string/delete_all"
-            android:layout_marginTop="@dimen/default_padding"
             android:layout_marginBottom="@dimen/default_padding"
+            android:text="@string/farm_download_data"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/download_data_button" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

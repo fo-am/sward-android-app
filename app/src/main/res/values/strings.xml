@@ -20,13 +20,14 @@
     <string name="field_notes">Notes</string>
     <string name="field_notes_hint">Add your notes about this field here…</string>
     <string-array name="soil_types">
-        <item>Sandy/Shallow</item>
-        <item>Medium/Shallow</item>
-        <item>Medium</item>
-        <item>Deep clay</item>
-        <item>Deep silt</item>
-        <item>Organic</item>
-        <item>Peat</item>
+        <item>Predominantly sandy</item>
+        <item>Predominantly clay</item>
+        <item>Predominantly silt</item>
+        <item>Loam</item>
+        <item>Organic/peat</item>
+        <item>Shallow</item>
+        <item>Stony</item>
+        <item>Naturally wet/seasonally waterlogged</item>
     </string-array>
 
     <string name="title_activity_field">FIELD</string>

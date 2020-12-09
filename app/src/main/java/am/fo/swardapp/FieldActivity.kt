@@ -89,6 +89,9 @@ class FieldActivity : SwardActivity() {
             Intent(this, SurveyActivity::class.java).let {
                 it.putExtra("FIELD_ID", fieldId)
                 it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                    this.finishAffinity()
+                }
                 this.startActivity(it)
             }
         }

@@ -182,18 +182,18 @@
     <string name="trait_frost">Frost tolerance</string>
     <string name="trait_bloat">Bloat safe</string>
 
-    <string name="popup_birdsfoottrefoil_protein">For the literature up to 2020, 7 studies partially agreed with score.</string>
-    <string name="popup_lucerne_protein">For the literature up to 2020, 12 studies partially agreed with score.</string>
-    <string name="popup_sheepsburnet_protein">For the literature up to 2020, 2 studies partially agreed with score.</string>
-    <string name="popup_meadowfoxtail_protein">For the literature up to 2020, 3 studies partially agreed with score.</string>
-    <string name="popup_timothy_protein">For the literature up to 2020, 3 studies partially agreed with score.</string>
+    <string name="popup_birdsfoottrefoil_protein">Low in 4 studies, intermediate in 3 studies and high in 3 studies</string>
+    <string name="popup_lucerne_protein">Low in 4 studies, intermediate in 6 studies and high in 2 studies</string>
+    <string name="popup_sheepsburnet_protein">High in 1 study, low in 1 study</string>
+    <string name="popup_meadowfoxtail_protein">High in 1 study, low in 1 study</string>
+    <string name="popup_timothy_protein">High in 1 study, low in 1 study</string>
 
-    <string name="popup_sainfoin_digestibility">For the literature up to 2020, 3 studies partially agreed with score.</string>
-    <string name="popup_cocksfoot_digestibility">For the literature up to 2020, 4 studies partially agreed with score.</string>
-    <string name="popup_meadowfescue_digestibility">For the literature up to 2020, 4 studies partially agreed with score.</string>
-    <string name="popup_meadowfoxtail_digestibility">For the literature up to 2020, 2 studies partially agreed with score.</string>
-    <string name="popup_tallfescue_digestibility">For the literature up to 2020, 8 studies partially agreed with score.</string>
-    <string name="popup_timothy_digestibility">For the literature up to 2020, 3 studies partially agreed with score.</string>
+    <string name="popup_sainfoin_digestibility">Intermediate in 1 study, moderately high in 1 study, moderately low in 1 study</string>
+    <string name="popup_cocksfoot_digestibility">Intermediate in 2 studies, high in 1 study, low in 1 study</string>
+    <string name="popup_meadowfescue_digestibility">High in 2 studies, low in 2 studies</string>
+    <string name="popup_meadowfoxtail_digestibility">Intermediate in 2 studies</string>
+    <string name="popup_tallfescue_digestibility">Intermediate in 6 studies, low in 1 study, high in 1 study</string>
+    <string name="popup_timothy_digestibility">High in 1 study, intermediate in 1 study, low in 1 study.</string>
 
     <string name="popup_birdsfoottrefoil_mineral">For the literature up to 2020, Zinc (2 studies).</string>
     <string name="popup_redclover_mineral">For the literature up to 2020, Copper (3 studies).</string>
@@ -218,6 +218,25 @@
     <string name="popup_timothy_fertility">For the literature up to 2020, tolerant of low soil fertility (2 studies).</string>
 
 
+    <string name="popup_alsike_protein">Intermediate in 3 studies, low in 1 study</string>
+    <string name="popup_redclover_protein">Intermediate in 7 studies, high in 2 studies</string>
+    <string name="popup_meadowfescue_protein">Intermediate in 1 study</string>
+    <string name="popup_tallfescue_protein">Intermediate in 4 studies, low in 1 study</string>
+    <string name="popup_alsike_digestibility">Intermediate in 2 studies, low in 1 study</string>
+    <string name="popup_birdsfoottrefoil_digestibility">Intermediate in 5 studies, moderately high in 3 studies</string>
+    <string name="popup_lucerne_digestibility">Intermediate in 6 studies, high in 1 study, low in 1 study</string>
+    <string name="popup_plantain_digestibility">Intermediate in 2 studies, low in 1 study</string>
+    <string name="popup_chicory_yield_cut">Intermediate in 1 study</string>
+    <string name="popup_cocksfoot_yield_cut">Intermediate in 1 study</string>
+    <string name="popup_meadowfescue_yield_cut">Intermediate in 1 study, high in 1 study</string>
+    <string name="popup_ryegrass_yield_cut">Intermediate in 1 study</string>
+    <string name="popup_timothy_yield_cut">Intermediate in 2 studies, high in 1 study</string>
+    <string name="popup_lucerne_yield_grazed">Intermediate in 2 studies</string>
+    <string name="popup_plantain_yield_grazed">High in 1 study</string>
+    <string name="popup_timothy_yield_grazed">Intermediate in 1 study</string>
+    <string name="popup_birdsfoottrefoil_persistence">Low in 2 studies, high in 1 study</string>
+    <string name="popup_lucerne_persistence">Low in 4 studies, high in 1 study</string>
+    <string name="popup_timothy_persistence">Intermediate in 1 study</string>
 
     <string name="persistence">Persistence</string>
     <string name="productivity">Productivity</string>

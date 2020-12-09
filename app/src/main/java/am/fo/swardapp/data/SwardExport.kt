@@ -27,31 +27,54 @@ class SwardExport(val data: List<FieldWithSurveysAndRecords>, private val fileNa
             // Header
             writeRow(
                 listOf(
-                    "\"Field ID\"",
-                    "\"Field name\"",
-                    "\"Field date sown\"",
-                    "\"Field soil type\"",
-                    "\"Field notes\"",
-                    "\"Survey ID\"",
-                    "\"Survey time\"",
-                    "\"Record sample\"",
-                    "\"Record species\""
+                    "Data type",
+                    "Species",
+                    "Sample no",
+                    "Date",
+                    "Name",
+                    "Soil type",
+                    "Notes"
                 )
             )
+
             data.forEach { field ->
+                writeRow(
+                    listOf(
+                        "Field",
+                        "",
+                        "",
+                        field.field.dateSown,
+                        field.field.name,
+                        resources.getStringArray(R.array.soil_types)[field.field.soilType],
+                        field.field.notes,
+                    )
+                )
+
+                for (sown in field.sownSpecies) {
+                    writeRow(
+                        listOf(
+                            "Sown species",
+                            sown.species
+                        )
+                    )
+                }
+
                 for (surveyAndRecords in field.surveysAndRecords) {
+                    writeRow(
+                        listOf(
+                            "Survey",
+                            "",
+                            "",
+                            surveyAndRecords.survey.time,
+                        )
+                    )
+
                     for (record in surveyAndRecords.records) {
                         writeRow(
                             listOf(
-                                field.field.fieldId,
-                                field.field.name,
-                                field.field.dateSown,
-                                resources.getStringArray(R.array.soil_types)[field.field.soilType],
-                                field.field.notes,
-                                surveyAndRecords.survey.surveyId,
-                                surveyAndRecords.survey.time,
-                                record.sample,
-                                record.species
+                                "Species seen",
+                                record.species,
+                                record.sample
                             )
                         )
                     }

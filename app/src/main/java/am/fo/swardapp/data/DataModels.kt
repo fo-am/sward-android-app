@@ -82,7 +82,13 @@ data class FieldWithSurveysAndRecords (
         parentColumn = "fieldId",
         entityColumn = "fieldId"
     )
-    val surveysAndRecords: List<SurveyAndRecords>
+    val surveysAndRecords: List<SurveyAndRecords>,
+    @Relation(
+        entity = Sown::class,
+        parentColumn = "fieldId",
+        entityColumn = "fieldId"
+    )
+    val sownSpecies: List<Sown>
 )
 
 @Entity(tableName="settings_table")

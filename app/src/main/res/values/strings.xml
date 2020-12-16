@@ -161,7 +161,7 @@
     <string name="trait_list_title_herb">Herb traits</string>
     <string name="trait_list_blurb"><![CDATA[Click on each of the traits below for more information. <a href="https://www.swarmhub.co.uk/wp-content/uploads/2018/09/Multi-species-Sward.pdf">Visit this page for references</a>.]]></string>
     <string name="trait_list_blurb2">Please note that ‘thumb symbols’ only compare species of the same group (legume/herb/grass).</string>
-    <string name="trait_studies">For the literature up to 2020, %d %s agreed, %d %s disagreed.</string>
+    <string name="trait_studies">From published literature (up to 2020), %d %s agreed, %d %s disagreed.</string>
     <string name="trait_no_studies">No evidence was found, more research is needed.</string>
 
     <plurals name="studies">

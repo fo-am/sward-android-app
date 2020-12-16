@@ -50,7 +50,7 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.grass_meadowfescue_lat,
                     R.drawable.grass_meadowfescue_plant,
                     arrayOf(
-                        DescImg(R.drawable.grass_meadowfescue_plant,R.string.grass_meadowfescue_plant_cap),
+                        DescImg(R.drawable.grass_meadowfescue_plant,R.string.grass_meadowfescue_plant_cap,R.string.credit_cotswold),
                         DescImg(R.drawable.grass_meadowfescue_flower,R.string.grass_meadowfescue_flower_cap,R.string.credit_meadowfescue_flower),
                         DescImg(R.drawable.grass_meadowfescue_stemsheath_annotated,R.string.grass_meadowfescue_stemsheath_cap,R.string.credit_meadowfescue_stemsheath)
                     )
@@ -60,7 +60,7 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.grass_meadowfoxtail_lat,
                     R.drawable.grass_meadowfoxtail_plant,
                     arrayOf(
-                        DescImg(R.drawable.grass_meadowfoxtail_plant,R.string.grass_meadowfoxtail_plant_cap),
+                        DescImg(R.drawable.grass_meadowfoxtail_plant,R.string.grass_meadowfoxtail_plant_cap,R.string.credit_cotswold),
                         DescImg(R.drawable.grass_meadowfoxtail_flower,R.string.grass_meadowfoxtail_flower_cap,R.string.credit_meadow_foxtail_flower),
                         DescImg(R.drawable.grass_meadowfoxtail_stemsheath_annotated,R.string.grass_meadowfoxtail_stemsheath_cap,R.string.credit_meadow_foxtail_stem)
                     )
@@ -80,8 +80,8 @@ class SpeciesDesc constructor(val name: Int, val lat: Int, val img: Int, val img
                     R.string.grass_tallfescue_lat,
                     R.drawable.grass_tallfescue_plant,
                     arrayOf(
-                        DescImg(R.drawable.grass_tallfescue_plant,R.string.grass_tallfescue_plant_cap),
-                        DescImg(R.drawable.grass_tallfescue_flower,R.string.grass_tallfescue_flower_cap),
+                        DescImg(R.drawable.grass_tallfescue_plant,R.string.grass_tallfescue_plant_cap,R.string.credit_cotswold),
+                        DescImg(R.drawable.grass_tallfescue_flower,R.string.grass_tallfescue_flower_cap,R.string.credit_tallfescue_plant),
                         DescImg(R.drawable.grass_tallfescue_stemsheath_annotated,R.string.grass_tallfescue_stemsheath_cap,R.string.credit_tallfescue_stem_1)
                     )
                 )

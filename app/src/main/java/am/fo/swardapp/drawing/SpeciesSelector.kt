@@ -77,7 +77,7 @@ class SpeciesSelector {
                 }
             }
 
-            val drawable = ContextCompat.getDrawable(ctx, R.drawable.thumb_q)
+            val drawable = ContextCompat.getDrawable(ctx, R.drawable.q)
             drawable?.setBounds(0, 0, dpToPx(80), dpToPx(80))
             button.setCompoundDrawables(null, drawable, null, null)
 

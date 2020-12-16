@@ -121,7 +121,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/field_biodiversity" />
+                android:gravity="center_horizontal"
+                android:text="@string/field_biodiversity"
+                android:textSize="10pt" />
 
             <am.fo.swardapp.drawing.BiodiversityCanvas
                 android:id="@+id/field_canvas_view"

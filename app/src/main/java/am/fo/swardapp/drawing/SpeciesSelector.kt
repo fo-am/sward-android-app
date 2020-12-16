@@ -37,37 +37,41 @@ class SpeciesSelector {
         Log.i("sward","row count: "+speciesList.size / cols)
 
         speciesList.forEachIndexed { i,species ->
-            val button = ToggleButton(ctx)
-            buttons.put(species,button)
-            button.text = ctx.resources.getString(ctx.resources.getIdentifier(species,"string", ctx.packageName))
-            button.textSize = 12.0f
+            // check this species exists
+            val textId = ctx.resources.getIdentifier(species,"string", ctx.packageName)
+            if (textId!=0) {
+                val button = ToggleButton(ctx)
+                buttons.put(species, button)
+                button.text = ctx.resources.getString(textId)
+                button.textSize = 12.0f
 
-            val drawableId = ctx.resources.getIdentifier(species+"_button", "drawable", ctx.packageName)
-            if (drawableId!=0) {
-                val drawable = ContextCompat.getDrawable(ctx, drawableId)
-                drawable?.setBounds(0, 0, dpToPx(80), dpToPx(80))
-                button.setCompoundDrawables(null, drawable,null,null)
+                val drawableId =
+                    ctx.resources.getIdentifier(species + "_button", "drawable", ctx.packageName)
+                if (drawableId != 0) {
+                    val drawable = ContextCompat.getDrawable(ctx, drawableId)
+                    drawable?.setBounds(0, 0, dpToPx(80), dpToPx(80))
+                    button.setCompoundDrawables(null, drawable, null, null)
+                }
+                var pos = i
+                if (addUnknown) pos += 1
+                val layoutParams = GridLayout.LayoutParams()
+                val col: Int = pos % cols
+                val row: Int = pos / cols
+
+                layoutParams.height = dpToPx(140)
+                layoutParams.width = dpToPx(90)
+                layoutParams.columnSpec = GridLayout.spec(col)
+                layoutParams.rowSpec = GridLayout.spec(row)
+                layoutParams.setGravity(Gravity.LEFT or Gravity.TOP)
+
+                parent.addView(button, layoutParams)
             }
-            var pos=i
-            if (addUnknown) pos+=1
-            val layoutParams = GridLayout.LayoutParams()
-            val col: Int = pos%cols
-            val row: Int = pos/cols
-
-            layoutParams.height = dpToPx(140)
-            layoutParams.width = dpToPx(90)
-            layoutParams.columnSpec = GridLayout.spec(col)
-            layoutParams.rowSpec = GridLayout.spec(row)
-            layoutParams.setGravity(Gravity.LEFT or Gravity.TOP)
-
-            parent.addView(button, layoutParams)
-
         }
 
         // add the unknown button at the end
         if (addUnknown) {
             val button = ToggleButton(ctx)
-    //            buttons.put("unknown", button)
+
             button.text = ctx.resources.getString(R.string.unknown_species)
             button.textSize = 12.0f
 

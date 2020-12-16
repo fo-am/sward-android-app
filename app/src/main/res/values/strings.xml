@@ -176,7 +176,7 @@
     <string name="trait_yield_cut">Relative yield (cut)</string>
     <string name="trait_yield_grazed">Relative yield (grazed)</string>
     <string name="trait_tolerance">Intensive cut/graze tolerance</string>
-    <string name="trait_anthelminthic">Anthelminthic properties</string>
+    <string name="trait_anthelminthic">Anthelmintic properties</string>
     <string name="trait_waterlogging">Waterlogging tolerance</string>
     <string name="trait_fertility">Marginal soils tolerance</string>
     <string name="trait_drought">Drought tolerance</string>

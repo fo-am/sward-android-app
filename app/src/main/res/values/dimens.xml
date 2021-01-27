@@ -6,8 +6,8 @@
     <dimen name="species_selector_width">120dp</dimen>
     <dimen name="species_selector_margin">10dp</dimen>
 
-    <dimen name="canvas_text_size">14sp</dimen>
-    <dimen name="canvas_small_text_size">10sp</dimen>
+    <dimen name="canvas_text_size">14dp</dimen>
+    <dimen name="canvas_small_text_size">10dp</dimen>
     <dimen name="canvas_axis_width">1dp</dimen>
     <dimen name="canvas_box_width">2dp</dimen>
 

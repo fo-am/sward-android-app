@@ -13,8 +13,8 @@ android {
         applicationId "am.fo.swardapp"
         minSdkVersion 15
         targetSdkVersion 30
-        versionCode 18
-        versionName "rc 1.0"
+        versionCode 19
+        versionName "rc 1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

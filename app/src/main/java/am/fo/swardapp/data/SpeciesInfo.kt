@@ -1,3 +1,4 @@
+
 package am.fo.swardapp.data
 
 import am.fo.swardapp.R
@@ -58,7 +59,7 @@ data class SpeciesInfo(val traits:Array<Trait>) {
                     Trait("bloat",        "n",5,0)))
 
                 "legume_redclover" -> SpeciesInfo(arrayOf(
-                    Trait("protein",      "3",7,2, R.string.popup_redclover_protein),
+                    Trait("protein",      "2",7,2, R.string.popup_redclover_protein),
                     Trait("mineral",      "y", 0,0, R.string.popup_redclover_mineral),
                     Trait("digestibility","3",4,2),
                     Trait("persistence",  "1",4,0),
@@ -96,9 +97,9 @@ data class SpeciesInfo(val traits:Array<Trait>) {
                     Trait("yield_grazed", "3",2,1),
                     Trait("tolerance",    "y",5,0),
                     Trait("anthelminthic","n",2,1),
-                    Trait("fertility",    "y",0,0, R.string.popup_whiteclover_fertility),
-                    Trait("drought",      "n",7,0),
                     Trait("waterlogging", "y",4,0),
+                    Trait("fertility",    "n",0,0, R.string.popup_whiteclover_fertility),
+                    Trait("drought",      "n",7,0),
                     Trait("frost",        "?",0,0),
                     Trait("bloat",        "n",5,0)))
 
@@ -107,7 +108,7 @@ data class SpeciesInfo(val traits:Array<Trait>) {
                     Trait("mineral",      "y",0,0,R.string.popup_chicory_mineral),
                     Trait("digestibility","3",4,1),
                     Trait("persistence",  "1",6,0),
-                    Trait("yield_cut",    "2",1,R.string.popup_chicory_yield_cut),
+                    Trait("yield_cut",    "2",1, 0, R.string.popup_chicory_yield_cut),
                     Trait("yield_grazed", "3",1,0),
                     Trait("tolerance",    "n",3,0),
                     Trait("anthelminthic","y",9,1),
@@ -123,7 +124,7 @@ data class SpeciesInfo(val traits:Array<Trait>) {
                     Trait("digestibility","2",2,1,R.string.popup_plantain_digestibility),
                     Trait("persistence",  "1",1,0),
                     Trait("yield_cut",    "3",1,1),
-                    Trait("yield_grazed", "2",1,0,R.string.popup_plantain_yield_grazed),
+                    Trait("yield_grazed", "3",1,0,R.string.popup_plantain_yield_grazed),
                     Trait("tolerance",    "n",3,0),
                     Trait("anthelminthic","y",1,0),
                     Trait("waterlogging", "y",1,0),
@@ -176,7 +177,7 @@ data class SpeciesInfo(val traits:Array<Trait>) {
                 "grass_cocksfoot" -> SpeciesInfo(arrayOf(
                     Trait("protein",      "3",3,0),
                     Trait("mineral",      "y",0,0, R.string.popup_cocksfoot_mineral),
-                    Trait("digestibility","3", 0,0,R.string.popup_cocksfoot_digestibility),
+                    Trait("digestibility","2", 0,0,R.string.popup_cocksfoot_digestibility),
                     Trait("persistence",  "3",6,1),
                     Trait("yield_cut",    "2",1,0,R.string.popup_cocksfoot_yield_cut),
                     Trait("yield_grazed", "3",1,0),
@@ -193,7 +194,7 @@ data class SpeciesInfo(val traits:Array<Trait>) {
                     Trait("digestibility","2", 0,0,R.string.popup_meadowfescue_digestibility),
                     Trait("persistence",  "1",1,0),
                     Trait("yield_cut",    "2",1,1,R.string.popup_meadowfescue_yield_cut),
-                    Trait("yield_grazed", "1",3,0),
+                    Trait("yield_grazed", "3",3,0),
                     Trait("tolerance",    "n",2,1),
                     Trait("anthelminthic","n",0,0,R.string.popup_anthelminthic),
                     Trait("waterlogging", "?",0,0),
